@@ -1,0 +1,940 @@
+{
+  "status": "inventory_only_goal_incomplete",
+  "scope": "Active relative dependency closure of lib/main.dart",
+  "limits": [
+    "References and nearest class labels locate evidence; they do not prove reachability, state coverage or visual quality.",
+    "Dynamic route builders, transient feedback and anonymous modal variants require manual flow reconciliation."
+  ],
+  "counts": {
+    "active_sources": 50,
+    "screens_and_startup": 38,
+    "named_supplementary_surfaces": 15,
+    "modal_calls": 26
+  },
+  "screens": [
+    {
+      "name": "HomePage",
+      "source": "lib/main.dart",
+      "line": 1687,
+      "component_sha256": "3b14aaa618de190dd2e1d99ca1a62e917048dfaa98078dddef1c958a54c6219b",
+      "test_reference_candidates": [
+        "test/home_empty_sections_test.dart",
+        "test/startup_handoff_test.dart",
+        "test/locale_filter_regression_test.dart",
+        "test/ui_polish_test.dart",
+        "test/home_search_box_test.dart",
+        "test/nav6_probe_test.dart",
+        "test/settings_history_polish_test.dart",
+        "test/market_tab_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "HomeTab",
+      "source": "lib/main.dart",
+      "line": 1924,
+      "component_sha256": "f41d1a789c677da0f054f7f54b8d61ef7ec4d9e476a4791be8f4e20521dadc15",
+      "test_reference_candidates": [
+        "test/arabic_text_integrity_test.dart",
+        "test/home_empty_sections_test.dart",
+        "test/home_feed_recovery_test.dart",
+        "test/home_visible_polish_test.dart",
+        "test/dark_mode_test.dart",
+        "test/home_carousel_font_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/market_tab_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "CarRequestsPage",
+      "source": "lib/main.dart",
+      "line": 2487,
+      "component_sha256": "e3ae4193c83300ddedca1e1bca65b2d801d8ab0943f66e7bd4b1038812891674",
+      "test_reference_candidates": [
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/car_requests_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "CompareCarsPage",
+      "source": "lib/main.dart",
+      "line": 3559,
+      "component_sha256": "1058e5e053d05a07a01a2b856a2e4bc9dee525e9a58c8b2443a8b9a2e17b02d5",
+      "test_reference_candidates": [
+        "test/comparison_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "CarDetailsPage",
+      "source": "lib/main.dart",
+      "line": 3851,
+      "component_sha256": "80bd4b08ca585bd1c7d1caa3cb03800a97bddee5615351bea47d97551d22ed3e",
+      "test_reference_candidates": [
+        "test/share_price_polish_test.dart",
+        "test/admin_ads_polish_test.dart",
+        "test/dark_mode_test.dart",
+        "test/vehicle_decisions_polish_test.dart",
+        "test/reports_polish_test.dart",
+        "test/detail_polish_test.dart",
+        "test/owned_vehicle_polish_test.dart",
+        "test/form_polish_test.dart",
+        "test/car_details_contact_test.dart",
+        "test/ui_polish_test.dart",
+        "test/car_gallery_polish_test.dart",
+        "test/comparison_polish_test.dart",
+        "test/alerts_polish_test.dart",
+        "test/seller_verified_tick_test.dart",
+        "test/ui_probe_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "SectionPage",
+      "source": "lib/main.dart",
+      "line": 5003,
+      "component_sha256": "c10be3af576146c034fdfd03df313f2d8facfc4db80013b78606f52f36eec3c8",
+      "test_reference_candidates": [
+        "test/section_grid_polish_test.dart",
+        "test/home_empty_sections_test.dart",
+        "test/locale_wiring_test.dart",
+        "test/account_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/market_tab_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "FavoritesPage",
+      "source": "lib/main.dart",
+      "line": 5387,
+      "component_sha256": "edf3bed52a8418b084e5f82b27d2dcdc4962fa0c218f4b161923f4eee2a74c46",
+      "test_reference_candidates": [
+        "test/arabic_text_integrity_test.dart",
+        "test/seller_profile_polish_test.dart",
+        "test/dark_mode_test.dart",
+        "test/account_polish_test.dart",
+        "test/comparison_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "SearchTab",
+      "source": "lib/main.dart",
+      "line": 5735,
+      "component_sha256": "d9fae757a215c8605b3d760739214a237ed3877f086da1c9907961374e055b9c",
+      "test_reference_candidates": [
+        "test/arabic_text_integrity_test.dart",
+        "test/dark_mode_test.dart",
+        "test/locale_filter_regression_test.dart",
+        "test/ui_polish_test.dart",
+        "test/home_search_box_test.dart",
+        "test/settings_history_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/market_tab_test.dart",
+        "test/search_discovery_polish_test.dart",
+        "test/search_alert_save_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "AddCarTab",
+      "source": "lib/main.dart",
+      "line": 6341,
+      "component_sha256": "061d1a80037f0a6b8bae168ee284d0c36eb65636035f1463b14339e7cf3019d3",
+      "test_reference_candidates": [
+        "test/form_polish_test.dart",
+        "test/add_car_submission_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/market_tab_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "MyAdsPage",
+      "source": "lib/main.dart",
+      "line": 7501,
+      "component_sha256": "de87ad86c3107e308b8059fcaf0de92016449fa70bbe9b53c47564a8707f0523",
+      "test_reference_candidates": [
+        "test/state_polish_test.dart",
+        "test/vehicle_decisions_polish_test.dart",
+        "test/owned_vehicle_polish_test.dart",
+        "test/kurdish_full_ui_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "ManageShowroomPage",
+      "source": "lib/main.dart",
+      "line": 7746,
+      "component_sha256": "82aa72bf842749ae49744ed904cc799cb3504c36a2485ef72f26cedf9cd78b52",
+      "test_reference_candidates": [
+        "test/form_polish_test.dart",
+        "test/showroom_recovery_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "SellerProfilePage",
+      "source": "lib/main.dart",
+      "line": 8049,
+      "component_sha256": "90e78b40b71d48799ec1837c449c2b6a363084aad62c5c06d51a81de4d90d966",
+      "test_reference_candidates": [
+        "test/arabic_text_integrity_test.dart",
+        "test/seller_profile_polish_test.dart",
+        "test/follows_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "MySentOffersPage",
+      "source": "lib/main.dart",
+      "line": 8634,
+      "component_sha256": "44f79dfd91cba96d3c34cbf6ff899bef6c8a527b75e20d5d3638ef6927bd2771",
+      "test_reference_candidates": [
+        "test/state_polish_test.dart",
+        "test/activity_polish_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "CarOfferChatPage",
+      "source": "lib/main.dart",
+      "line": 8816,
+      "component_sha256": "450c90c5e5e3646082a2684f6ec77bddf44c30c0f158c53c9a73ae6a012836b0",
+      "test_reference_candidates": [
+        "test/seller_profile_polish_test.dart",
+        "test/seller_activity_polish_test.dart",
+        "test/activity_polish_test.dart",
+        "test/chat_polish_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "AdminAdsManagementPage",
+      "source": "lib/main.dart",
+      "line": 9308,
+      "component_sha256": "0ac5cd637515cfd4ec733838e970d5ef0a5bf8dbc4814724791fad9477ce164d",
+      "test_reference_candidates": [
+        "test/admin_ads_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "AdminDashboardPage",
+      "source": "lib/main.dart",
+      "line": 9636,
+      "component_sha256": "a23ae0b7fe01f3a8f35c1603b81160f315cfb042d157a52b18cd43ea05f23f7c",
+      "test_reference_candidates": [
+        "test/state_polish_test.dart",
+        "test/reports_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "AdminBusinessAdsPage",
+      "source": "lib/main.dart",
+      "line": 10147,
+      "component_sha256": "450b29c33e90271d0428aca01d7a5c3d51d63fbb5616b8d2b96d6a0b3968126f",
+      "test_reference_candidates": [
+        "test/state_polish_test.dart",
+        "test/business_admin_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "ActivityNotificationsPage",
+      "source": "lib/main.dart",
+      "line": 10618,
+      "component_sha256": "062d888f0aa719d5e41386e68847f4b625522eb7a16085d25b388a76046f0308",
+      "test_reference_candidates": [
+        "test/state_polish_test.dart",
+        "test/account_polish_test.dart",
+        "test/activity_polish_test.dart",
+        "test/ui_probe_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "AlertsPage",
+      "source": "lib/main.dart",
+      "line": 10826,
+      "component_sha256": "bf651dee6b19e3c7782e9fe69a416122ea4c03371fa6311815ec30d640158020",
+      "test_reference_candidates": [
+        "test/state_polish_test.dart",
+        "test/alerts_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "UserProfilePage",
+      "source": "lib/main.dart",
+      "line": 11057,
+      "component_sha256": "9597650b5396d4c39b145a80e9691032b5bb2fa74a4dca72b03a317712bf6a64",
+      "test_reference_candidates": [
+        "test/arabic_text_integrity_test.dart",
+        "test/account_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "MyFollowsPage",
+      "source": "lib/main.dart",
+      "line": 11280,
+      "component_sha256": "2bf46fa243e42e011300bfe799c9e639980d8522343560a5ea6620820dffd2aa",
+      "test_reference_candidates": [
+        "test/state_polish_test.dart",
+        "test/follows_polish_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "MyMessagesPage",
+      "source": "lib/main.dart",
+      "line": 11491,
+      "component_sha256": "2b60110348d8df658f962e83fa1e27fd0f9b93a2d1da68674ce812f9f5e0f9a5",
+      "test_reference_candidates": [
+        "test/state_polish_test.dart",
+        "test/account_polish_test.dart",
+        "test/seller_activity_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "MyReviewsPage",
+      "source": "lib/main.dart",
+      "line": 11645,
+      "component_sha256": "d02020f0e8a512f49deb1eb3cc1b554caec5080c47b7a7125aac1e1d8e85ff96",
+      "test_reference_candidates": [
+        "test/state_polish_test.dart",
+        "test/seller_activity_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "SettingsPage",
+      "source": "lib/main.dart",
+      "line": 11840,
+      "component_sha256": "b5a2cdec4c39613194e70d19892eebaf6f14c3b9ae4faa81e8845ea93bf0703a",
+      "test_reference_candidates": [
+        "test/arabic_text_integrity_test.dart",
+        "test/about_page_test.dart",
+        "test/dark_mode_test.dart",
+        "test/ui_polish_test.dart",
+        "test/settings_history_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "AboutPage",
+      "source": "lib/main.dart",
+      "line": 12063,
+      "component_sha256": "ff10ebf07347421c63d7a4eccab1ca18f3dcf43ae91e33498c70ef5176350ec0",
+      "test_reference_candidates": [
+        "test/arabic_text_integrity_test.dart",
+        "test/about_page_test.dart",
+        "test/support_legal_polish_test.dart",
+        "test/ui_probe_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "SupportCenterPage",
+      "source": "lib/main.dart",
+      "line": 12335,
+      "component_sha256": "d007453d04b2b32929747bfb49595097ecf34c1c0ca68b02e141d0b725d55dea",
+      "test_reference_candidates": [
+        "test/about_page_test.dart",
+        "test/dark_mode_test.dart",
+        "test/account_polish_test.dart",
+        "test/support_legal_polish_test.dart",
+        "test/ui_polish_test.dart",
+        "test/wallet_payment_polish_test.dart",
+        "test/support_contact_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "AccountTab",
+      "source": "lib/main.dart",
+      "line": 12803,
+      "component_sha256": "311b8c402b323f519adaf08512de9798c4c256d8801e580994c83f5abb623912",
+      "test_reference_candidates": [
+        "test/arabic_text_integrity_test.dart",
+        "test/dark_mode_test.dart",
+        "test/locale_wiring_test.dart",
+        "test/account_polish_test.dart",
+        "test/ui_polish_test.dart",
+        "test/settings_history_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/market_tab_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "FinesPage",
+      "source": "lib/main.dart",
+      "line": 14097,
+      "component_sha256": "99a9f7a5ab9fe3f49918c78329e19d995d37fbbc56d8ddb9b9bacf72a571aeea",
+      "test_reference_candidates": [
+        "test/ui_polish_test.dart",
+        "test/settings_history_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "WalletTopUpPage",
+      "source": "lib/main.dart",
+      "line": 14211,
+      "component_sha256": "d4154744d937e7d246df8d93c17afaac356f5579190926fb0613f0fa13500da9",
+      "test_reference_candidates": [
+        "test/wallet_payment_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "WalletAdminReviewPage",
+      "source": "lib/main.dart",
+      "line": 14840,
+      "component_sha256": "9421f7e59fdc443ee66662a49fad29107a20ac4a9151bfad82e35f6206c394de",
+      "test_reference_candidates": [
+        "test/state_polish_test.dart",
+        "test/wallet_review_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "SearchHistoryPage",
+      "source": "lib/main.dart",
+      "line": 15264,
+      "component_sha256": "e639dbc3c5909e84967d79dd5b4c7c03f2a3e1be8f700e6c60cfb8c97d0828dc",
+      "test_reference_candidates": [
+        "test/settings_history_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "PrivacyPolicyPage",
+      "source": "lib/main.dart",
+      "line": 15404,
+      "component_sha256": "7a95aae4fd0828d101ccc2177869d5beeb109e973353459625f3cd3011578ba5",
+      "test_reference_candidates": [
+        "test/about_page_test.dart",
+        "test/support_legal_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "TermsOfUsePage",
+      "source": "lib/main.dart",
+      "line": 15432,
+      "component_sha256": "54279add5f10a9083f4cd64e8a0ed7d9dc94a3b089add4ee3bbe32a1867fef6e",
+      "test_reference_candidates": [
+        "test/about_page_test.dart",
+        "test/support_legal_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "BusinessAdsPage",
+      "source": "lib/main.dart",
+      "line": 15905,
+      "component_sha256": "1c4435f5692821c4b1362457e0df27a04ca8551148e1bc7c34beda34e749c9e9",
+      "test_reference_candidates": [
+        "test/business_discovery_polish_test.dart",
+        "test/home_visible_polish_test.dart",
+        "test/locale_filter_regression_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "BusinessAdDetailsPage",
+      "source": "lib/main.dart",
+      "line": 16165,
+      "component_sha256": "dec1dabc8cfff0ffb22f85d2d910694be399ea9199e96a061e2384d601c4d979",
+      "test_reference_candidates": [
+        "test/business_discovery_polish_test.dart",
+        "test/share_price_polish_test.dart",
+        "test/detail_polish_test.dart",
+        "test/business_admin_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "CreateBusinessAdPage",
+      "source": "lib/main.dart",
+      "line": 16543,
+      "component_sha256": "36c442e704b7371eaeac56954c7f5520f3e67ef5a86383214af0bfa86c82c3f1",
+      "test_reference_candidates": [
+        "test/form_polish_test.dart",
+        "test/business_submission_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "PaymentPage",
+      "source": "lib/main.dart",
+      "line": 17610,
+      "component_sha256": "1b91edafa0153eeb588acf5fccdeb95d60867d39b965450ce8e9daecaddc08d7",
+      "test_reference_candidates": [
+        "test/wallet_payment_polish_test.dart",
+        "test/business_submission_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "MarketItemDetailsPage",
+      "source": "lib/market_images.dart",
+      "line": 685,
+      "component_sha256": "1293077389f57942120c72e36eab00adc3cbd802e8c49b683053bf884d030b13",
+      "test_reference_candidates": [
+        "test/seller_profile_polish_test.dart",
+        "test/market_details_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    }
+  ],
+  "named_supplementary_surfaces": [
+    {
+      "name": "MarketItemGallery",
+      "source": "lib/market_images.dart",
+      "line": 377,
+      "component_sha256": "ab8ff01b910fb80e473d9c8698733566f035adcf06f6a1a331289ea58179d370",
+      "test_reference_candidates": [
+        "test/business_discovery_polish_test.dart",
+        "test/market_details_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "EditMarketImagesDialog",
+      "source": "lib/market_images.dart",
+      "line": 543,
+      "component_sha256": "21007ed6499f8e83a9b90245016e8996a399921ef602305ff7e15cd39c8b526e",
+      "test_reference_candidates": [
+        "test/market_details_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "CarRequestEditorDialog",
+      "source": "lib/ui/car_request_editor_dialog.dart",
+      "line": 8,
+      "component_sha256": "ef52646cf0050aa00b20555435d4eb07bc2f4ddb385ab5ec23e7f8da66fd82e6",
+      "test_reference_candidates": [
+        "test/car_requests_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "GenericAdEditorDialog",
+      "source": "lib/ui/generic_ad_editor_dialog.dart",
+      "line": 20,
+      "component_sha256": "f790c66b23c4c7f464cbb115b23e828cf52fb6fe97da61621d1e0ae2c7f4dfbb",
+      "test_reference_candidates": [
+        "test/generic_ad_editor_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "LanguagePickerSheet",
+      "source": "lib/ui/language_picker_sheet.dart",
+      "line": 4,
+      "component_sha256": "36def4d3f2bef0dd6315e42a8e9006bb9bb95430f7f4429ef5e0732c0c26e985",
+      "test_reference_candidates": [
+        "test/language_picker_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "MessageHubSheet",
+      "source": "lib/ui/message_hub_sheet.dart",
+      "line": 11,
+      "component_sha256": "0c5ba40f87ea5806823446f9647d1b4efbe25fa94175adb115b6ae28a8d23d8e",
+      "test_reference_candidates": [
+        "test/account_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "OtpVerificationDialog",
+      "source": "lib/ui/otp_verification_dialog.dart",
+      "line": 4,
+      "component_sha256": "6394da8c04f5d133bc357b9b24ef370c25cddc488b4e752d1876145490084e19",
+      "test_reference_candidates": [
+        "test/account_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "OwnedVehicleDialog",
+      "source": "lib/ui/owned_vehicle_dialog.dart",
+      "line": 9,
+      "component_sha256": "6c1959a102a296ce9cb967be9cfea95215aaef6745aa2cb9b15bdb1e630f0c02",
+      "test_reference_candidates": [
+        "test/owned_vehicle_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "PhotoGallery",
+      "source": "lib/ui/photo_gallery.dart",
+      "line": 31,
+      "component_sha256": "9a3f49a7298565efb4614df81dbbec8e239c61dfb4be9ddd357801f166bd0cfb",
+      "test_reference_candidates": [
+        "test/market_details_polish_test.dart",
+        "test/car_gallery_polish_test.dart",
+        "test/photo_gallery_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "SearchFiltersSheet",
+      "source": "lib/ui/search_filters_sheet.dart",
+      "line": 7,
+      "component_sha256": "651df3763d417d6480f439b690766dab4dfe647c4a3846481206f2383cdcee89",
+      "test_reference_candidates": [
+        "test/locale_filter_regression_test.dart",
+        "test/search_criteria_safety_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "SellerRatingDialog",
+      "source": "lib/ui/seller_rating_dialog.dart",
+      "line": 10,
+      "component_sha256": "6b946b079238bd7b0209f117309965eb37de20accac6ef66dc449d5e59b0370d",
+      "test_reference_candidates": [
+        "test/seller_profile_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "UsernameEditorDialog",
+      "source": "lib/ui/username_editor_dialog.dart",
+      "line": 8,
+      "component_sha256": "fcb7256ffefd057463fa9d9cf303fabb735f8e7008fbb71eb08d46d1cc01d29b",
+      "test_reference_candidates": [
+        "test/account_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "VehicleOfferDialog",
+      "source": "lib/ui/vehicle_offer_dialog.dart",
+      "line": 10,
+      "component_sha256": "985c872ed0a70cca34a1e7d78c0a3b181ea14e0595afed1d01cc02a191479a7b",
+      "test_reference_candidates": [
+        "test/vehicle_offer_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "VehicleReportDialog",
+      "source": "lib/ui/vehicle_report_dialog.dart",
+      "line": 9,
+      "component_sha256": "fca5a85523214dbf78b3594666d7441d4ea169f31d582cbaa9fced1187d67e7e",
+      "test_reference_candidates": [
+        "test/vehicle_decisions_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    },
+    {
+      "name": "VehicleSaleDialog",
+      "source": "lib/ui/vehicle_sale_dialog.dart",
+      "line": 7,
+      "component_sha256": "81a825fb762acf85de7a4d504e26a6c7a27e419859c18f7f2a04af3c1a50d714",
+      "test_reference_candidates": [
+        "test/vehicle_decisions_polish_test.dart"
+      ],
+      "acceptance": "unproven_by_inventory"
+    }
+  ],
+  "modal_calls": [
+    {
+      "source": "lib/main.dart",
+      "line": 2600,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarRequestsPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 2688,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarRequestsPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 2751,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarRequestsPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 4131,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarDetailsPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 4176,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarDetailsPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 4218,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarDetailsPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 4244,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarDetailsPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 5156,
+      "api": "showDialog",
+      "nearest_class_candidate": "_SectionPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 6147,
+      "api": "showModalBottomSheet",
+      "nearest_class_candidate": "SearchTabState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 7304,
+      "api": "showDialog",
+      "nearest_class_candidate": "_AddCarTabState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 7565,
+      "api": "showDialog",
+      "nearest_class_candidate": "_MyAdsPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 8248,
+      "api": "showDialog",
+      "nearest_class_candidate": "_SellerProfilePageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 9252,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarOfferChatPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 9718,
+      "api": "showDialog",
+      "nearest_class_candidate": "_AdminDashboardPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 10278,
+      "api": "showDialog",
+      "nearest_class_candidate": "_AdminBusinessAdsPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 12417,
+      "api": "showSettledDialog",
+      "nearest_class_candidate": "_SupportCenterPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 12541,
+      "api": "showModalBottomSheet",
+      "nearest_class_candidate": "_SupportCenterPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 12980,
+      "api": "showDialog",
+      "nearest_class_candidate": "_AccountTabState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 13021,
+      "api": "showDialog",
+      "nearest_class_candidate": "_AccountTabState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 13816,
+      "api": "showModalBottomSheet",
+      "nearest_class_candidate": "_AccountTabState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 13855,
+      "api": "showModalBottomSheet",
+      "nearest_class_candidate": "_AccountTabState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 14975,
+      "api": "showDialog",
+      "nearest_class_candidate": "_WalletAdminReviewPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 15314,
+      "api": "showDialog",
+      "nearest_class_candidate": "_SearchHistoryPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 17477,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CreateBusinessAdPageState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/market_images.dart",
+      "line": 417,
+      "api": "showDialog",
+      "nearest_class_candidate": "_MarketItemGalleryState",
+      "acceptance": "requires_flow_reconciliation"
+    },
+    {
+      "source": "lib/market_images.dart",
+      "line": 750,
+      "api": "showDialog",
+      "nearest_class_candidate": "_MarketItemDetailsPageState",
+      "acceptance": "requires_flow_reconciliation"
+    }
+  ],
+  "source_and_font_sha256": {
+    "lib/auth/auth_capabilities.dart": "800542efc4f3c959cf42fdff987ebe46a52688db1723755601a33b26bef3d141",
+    "lib/auth/auth_feedback.dart": "b5b0225859e55c338f2749a74e72918c3dea5db86c22742ce1e34e86ea3098db",
+    "lib/business/submission.dart": "f0b03dbff03f95124d88d6b482efdcea3cf250755e97d616ebd9ec8bccf0d599",
+    "lib/car_image_watermark.dart": "370e65318f2e970d4f58dbac4acd322f606488dfefac78539d4ffe41e4dd3867",
+    "lib/contact/iraqi_phone.dart": "c0c11f1075a7ad685ab2eef96c81b75e4095892b36c53aacb5cbf9c7710be072",
+    "lib/contact/seller_phone.dart": "75b7779ce69033695f05b0811b3f0da8c7aaffcde9c3df3b432ea24dcd2f1dd1",
+    "lib/contact/wallet_receipt.dart": "cd22e4c31023e65070800faa0df33f5b1f51cc4d5e0b2798e48f3491a3c8d5cd",
+    "lib/design/app_icons.dart": "25fce58c622e24161306f93eacc11ef122014166c689c2c9f3f0129bc20b7899",
+    "lib/home_banner_ad.dart": "8edf5b3c0bdf54a7d6205a30791de10b66c911b2a1b8ce2e0f28d0394faef227",
+    "lib/l10n/app_delegates.dart": "e641508ff639fc1ba748cc204a1ddc6e676dae87db5d6e6680a8a252bde255b6",
+    "lib/l10n/app_locale.dart": "5509d95fe9445603d9aea2a814555c4305cda861308895e55e73a798a1331f45",
+    "lib/l10n/app_strings.dart": "0224c225f247dfdf288746a175547dc59f0852b438710bb24012f72442f190cf",
+    "lib/main.dart": "4ff1f7f193897ec2302a86347d4b59eb99acfaeafc68413be6b0628f317ebabd",
+    "lib/market_images.dart": "fd35b04575731b55491ba52cc02ec27040bed5bf6f0aa8a5bc18b0047130698c",
+    "lib/plate_detector.dart": "f3632f77b87b1f821c2bf2519d00ae0e7c278a81688cc7c90cc01b871db8f2db",
+    "lib/search/business_categories.dart": "f3d42f7bad52f6a534807c42d6936c16bda13419387cbf9848c9e1e67bc88e86",
+    "lib/search/job_types.dart": "07dc5c0e4b83757530a0f8ed109b382e1e1da378d91a590d78d824d5e3da6950",
+    "lib/search/saved_search_criteria.dart": "049410606311acf1580dbdfd2f95b1aaa6fbebc4543806d96ac4ba4e820dc3e8",
+    "lib/search/search_vocabulary.dart": "1a0bca736c0bec072dcce9c8d1986ee4c778d1a8af969f71d43e000ff5f6fd54",
+    "lib/search/smart_query.dart": "42e1e75a57f56e61fed4f19edfe181e724de7b7525f3eab2d91104fda99940ba",
+    "lib/seller_trust_cache.dart": "803db2da6d64eacbc6f94b03f33bbbe0e6e9072711ab579965286e5a51a12cac",
+    "lib/submission_id.dart": "2253747288aab248e7a1985688cbb890a04a5446c03edd73c5e83cb6b1f1c4f6",
+    "lib/ui/account_feed_state.dart": "9722875044fdb5ea23f5dc2286e0d498c626e82fe4ed03d25ecc06a839577779",
+    "lib/ui/account_navigation_tile.dart": "475b509a486caa8bdf8533d8f299194d541e07650d5090d6f7157f135aac892a",
+    "lib/ui/account_scoped_view.dart": "fdfa0ebd62e0dc75f2b83517f160e6fab2ba5e54abd88661e70406009c5b532f",
+    "lib/ui/activity_notification_tile.dart": "e30a2ec2f35d7aeb08ee541949480f666bb67082741e8ec515fb41d733a6de27",
+    "lib/ui/app_bottom_navigation.dart": "e640b6ee99b5e112b938eb1274013e63b2c289142308ffe0e143c6083ab89c52",
+    "lib/ui/app_state_panel.dart": "313185be88fabb389fda59b60168fa6bf4b78f1a278e3230b7ffe498ef765d6a",
+    "lib/ui/business_form_section.dart": "07fb5a635f2689d10569e0b388de62e419723f1ec4db47a53bc1b80254f1a0f4",
+    "lib/ui/car_request_editor_dialog.dart": "4dd77e4dc0827ffcdb3553e6e9970949b427643abbd8a31f8289fccb5ebf7150",
+    "lib/ui/carousel_position.dart": "fd27cdbafb789f6bad295aa08372a65b875c343de213a290242cdf892bb52fd8",
+    "lib/ui/compact_listing_card.dart": "d44736d804542a16ddef75cf48fe4b7aa6c7a6bf09fbea6497f01d3dc8ba8ffa",
+    "lib/ui/content_direction.dart": "72f4a2c776ff5118d5ef058fa776cef53ef4e74cc1d42b660bdb8363e5d0832c",
+    "lib/ui/form_section.dart": "66b2652ebd211f65d9f7b28867dc15803c2a8a1fc0305751e2d115b11b656723",
+    "lib/ui/generic_ad_editor_dialog.dart": "7c0b502d7614fda9f2349f452eaa19f6c151cb16e8c2c472d010a5a463f975ca",
+    "lib/ui/language_picker_sheet.dart": "68487309e5b85f748942cf92ce2fd39f3f5b1bc564baaa8bf2b234ce55838a6b",
+    "lib/ui/message_hub_sheet.dart": "9df1a95e2fff07185c77c2ceebc3afd1c8dba6f58654a9310fca64fffbbc5a62",
+    "lib/ui/otp_verification_dialog.dart": "1fca24608282e3efa9463adbfd96487adb40ba52b3a01da365ae03ca47b9ec2c",
+    "lib/ui/owned_vehicle_dialog.dart": "24d996046bb828dd458cd5f2edbbc074e3772b785c1d5b0d82465b9c7b496023",
+    "lib/ui/photo_gallery.dart": "7183c77756edbb9fe239df92956661247d304eab3bd467ec8b33a5d4421291a1",
+    "lib/ui/policy_document.dart": "1d25d4181a7a39d2317e28df1262de90acfd2869f5edcf6dc57bac1885587dbd",
+    "lib/ui/search_filters_sheet.dart": "1d8a4fe44234648b14be40430cecaa1e2d7da1f19738ea01184f8136c71b0561",
+    "lib/ui/seller_profile_header.dart": "8e4200c5c98e1324c1cc3f0132bf145835843a3eef7f8024753977abd5c98f2a",
+    "lib/ui/seller_profile_summary.dart": "f6382f98c79f03619b3f821d392d6dfd5c9d86f7c186fd892a4dd7d0f97596b8",
+    "lib/ui/seller_rating_dialog.dart": "c553d1c076102fb8da1d13681738f90899f5a7092543fb23af1f11fc7d909711",
+    "lib/ui/settled_dialog.dart": "23d19494a45e9130678b6ba2cd96b9b7cf7fb8d729999e2c6dc94997ce2ad3df",
+    "lib/ui/username_editor_dialog.dart": "9938037a922a7422cdecfc42641ba398a364057902395d22e038e86d30f411a4",
+    "lib/ui/vehicle_offer_dialog.dart": "921e3a3c33189a8beb8f55530c6e11f8e1a86f03d938f38e315992038be87971",
+    "lib/ui/vehicle_report_dialog.dart": "149793702cb33ad0cdc5e2c5a7b2b833a5b3ad84c5ed2613d3cf5122bfd867b8",
+    "lib/ui/vehicle_sale_dialog.dart": "045bc5c14e11d9e1cd8852eeb3512829230aecd7f36efa9bc7aaf35a046cd13e",
+    "assets/fonts/Cairo-Bold.ttf": "83a8b1bc360b9deedf8cefaedc8ef8d17bd08b8fc0a41feb4cc3a20368dc180e",
+    "assets/fonts/Cairo-ExtraBold.ttf": "f0ada16114c70725078e328a39d04996d5eabd088122df91319b3f3951f219d4",
+    "assets/fonts/Cairo-Medium.ttf": "6eabd829a2a182f589d9b67f7289bbe50040cc55a2cc8a29894161c958940e8f",
+    "assets/fonts/Cairo-Regular.ttf": "b85a5c4132b1dd9a46031756d2e7826c75eedcc40838405af12db6fe043bbeac",
+    "assets/fonts/Cairo-SemiBold.ttf": "83f3f287b9c9a5b13b1c9cf46695f754b79fa8da6756dca201fe1e625e8da274",
+    "assets/fonts/Inter-Bold.ttf": "278c15f6073fd3b1001f0fd9972d603e3fa8d0b0501106e5d6a7c3f218550f02",
+    "assets/fonts/Inter-ExtraBold.ttf": "63687b2b026470b0be4f1ea87142332357e844797c06299455156267fd0f8b0c",
+    "assets/fonts/Inter-Medium.ttf": "1a10c23006c89835c1d84582b9206ae1af8d9f8a8e021c17a6e90caaf415c4b2",
+    "assets/fonts/Inter-Regular.ttf": "89606b9f623acbfd869e694c05cfeea888874da82f6baefa3a0965a218e7bd78",
+    "assets/fonts/Inter-SemiBold.ttf": "4e6b4645706c2457e263ec95cfd8af30571ad8ede93c15dd5febf8e322820e63",
+    "assets/fonts/NotoSansArabic-Bold.ttf": "3eb9bca214643b6391d777c8117e8af778fdea5d6c9b5a6cddc4dcfc025fe134",
+    "assets/fonts/NotoSansArabic-ExtraBold.ttf": "fea1930786409edf3c4ef07970bb524d7df9816835abb3e5e24b229a971d5c3b",
+    "assets/fonts/NotoSansArabic-Medium.ttf": "5a214539318ebec1f9f20e7373393793260a25d628d9a6ca028ff8487494ab91",
+    "assets/fonts/NotoSansArabic-Regular.ttf": "2010623d973ece91b1e30478abb2ee318d4c0085bf07d036ba51bfa2873f36c8",
+    "assets/fonts/NotoSansArabic-SemiBold.ttf": "a4db9634eaeaec184193d0f1dd292794352795d9d3febbf0ae0fe0fb734fc666",
+    "assets/fonts/OFL-Cairo.txt": "a4554e1799d42e1405924b61eb0e0722ae1623b1f1f07f995348f96c496362a9",
+    "assets/fonts/OFL-Inter.txt": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+    "assets/fonts/OFL-NotoSansArabic.txt": "07fc70bfeb985cc1a87a8587d0a0c80bab11c86c9dc3fd95b6f0cb332f983e96"
+  }
+}

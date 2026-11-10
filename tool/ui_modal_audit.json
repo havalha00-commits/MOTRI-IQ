@@ -1,0 +1,446 @@
+{
+  "status": "incomplete",
+  "baseline_source_sha256": {
+    "lib/auth/auth_capabilities.dart": "800542efc4f3c959cf42fdff987ebe46a52688db1723755601a33b26bef3d141",
+    "lib/auth/auth_feedback.dart": "b5b0225859e55c338f2749a74e72918c3dea5db86c22742ce1e34e86ea3098db",
+    "lib/business/submission.dart": "f0b03dbff03f95124d88d6b482efdcea3cf250755e97d616ebd9ec8bccf0d599",
+    "lib/car_image_watermark.dart": "370e65318f2e970d4f58dbac4acd322f606488dfefac78539d4ffe41e4dd3867",
+    "lib/contact/iraqi_phone.dart": "c0c11f1075a7ad685ab2eef96c81b75e4095892b36c53aacb5cbf9c7710be072",
+    "lib/contact/seller_phone.dart": "75b7779ce69033695f05b0811b3f0da8c7aaffcde9c3df3b432ea24dcd2f1dd1",
+    "lib/contact/wallet_receipt.dart": "cd22e4c31023e65070800faa0df33f5b1f51cc4d5e0b2798e48f3491a3c8d5cd",
+    "lib/design/app_icons.dart": "c174359b975ed0ec9f6a6c1dac25b3486b9816f80532d1a28da105abe2f70375",
+    "lib/home_banner_ad.dart": "8edf5b3c0bdf54a7d6205a30791de10b66c911b2a1b8ce2e0f28d0394faef227",
+    "lib/l10n/app_delegates.dart": "e641508ff639fc1ba748cc204a1ddc6e676dae87db5d6e6680a8a252bde255b6",
+    "lib/l10n/app_locale.dart": "5509d95fe9445603d9aea2a814555c4305cda861308895e55e73a798a1331f45",
+    "lib/l10n/app_strings.dart": "b196beca7e35c1564f1c0bd7258768320d3092f35270784c545b9931e9bcf715",
+    "lib/main.dart": "16b1bdacd69b8be317dfa5bc8b022effe64a1eeb7cb83e6bcf0d6631ae25e1aa",
+    "lib/market_images.dart": "e9eb29725ded9b50e31b2b796d201057d0f74e2bcc335f396c19b2162f29e933",
+    "lib/plate_detector.dart": "f3632f77b87b1f821c2bf2519d00ae0e7c278a81688cc7c90cc01b871db8f2db",
+    "lib/search/business_categories.dart": "f3d42f7bad52f6a534807c42d6936c16bda13419387cbf9848c9e1e67bc88e86",
+    "lib/search/job_types.dart": "07dc5c0e4b83757530a0f8ed109b382e1e1da378d91a590d78d824d5e3da6950",
+    "lib/search/search_vocabulary.dart": "1a0bca736c0bec072dcce9c8d1986ee4c778d1a8af969f71d43e000ff5f6fd54",
+    "lib/search/smart_query.dart": "938e3502a9480971669f9edcaf7197a052047c21ed958e33d73edc6f5436417d",
+    "lib/seller_trust_cache.dart": "803db2da6d64eacbc6f94b03f33bbbe0e6e9072711ab579965286e5a51a12cac",
+    "lib/submission_id.dart": "2253747288aab248e7a1985688cbb890a04a5446c03edd73c5e83cb6b1f1c4f6",
+    "lib/ui/account_navigation_tile.dart": "a19bbcf7a9d948d047fe0c43ebe3c6278147e2b9ea4b9114938862a6b6f37251",
+    "lib/ui/activity_notification_tile.dart": "626b4eae786011ed3cad518b22219a6c758cd9ca49fb2ff82f86a063fa1bc95f",
+    "lib/ui/app_state_panel.dart": "313185be88fabb389fda59b60168fa6bf4b78f1a278e3230b7ffe498ef765d6a",
+    "lib/ui/car_request_editor_dialog.dart": "2064165edeb0e6c3d1cf8d6d82f8c2b42334cf8a52ba9c725673b7fccb2907c9",
+    "lib/ui/carousel_position.dart": "fd27cdbafb789f6bad295aa08372a65b875c343de213a290242cdf892bb52fd8",
+    "lib/ui/compact_listing_card.dart": "d8ca62ee3df2828a6905c21428f9f2b3e4412dd3ad63494120a71ef14b47ffd0",
+    "lib/ui/content_direction.dart": "ae1f1489a3165f5b945845c0477460c785e587315111152d52209ffa3ae0758a",
+    "lib/ui/form_section.dart": "66b2652ebd211f65d9f7b28867dc15803c2a8a1fc0305751e2d115b11b656723",
+    "lib/ui/generic_ad_editor_dialog.dart": "5eb72bae830b3ce81de9bf1ac7751ed60cafb671a0a66049c35ff9eaba062a95",
+    "lib/ui/language_picker_sheet.dart": "ccbac529193ad325095bcdb2f1f4dbbc9c78f071e2285a45ee54bc5bbbc4d482",
+    "lib/ui/otp_verification_dialog.dart": "1fca24608282e3efa9463adbfd96487adb40ba52b3a01da365ae03ca47b9ec2c",
+    "lib/ui/owned_vehicle_dialog.dart": "367473b4468992ee94b9709676042a544b622be06a9ec4f1b8e2fc79e4e9d6bf",
+    "lib/ui/photo_gallery.dart": "228997055320f81bba8bed0867a70f92ca6ffc6726b661d35f441eea68dd9da0",
+    "lib/ui/policy_document.dart": "1d25d4181a7a39d2317e28df1262de90acfd2869f5edcf6dc57bac1885587dbd",
+    "lib/ui/search_filters_sheet.dart": "ad1729252676442ca9385ded359b1d649697eb811fe10e0e4b068ae2deb7fc5c",
+    "lib/ui/seller_profile_header.dart": "42fdc094e7441e982c2963b86e1a848d86810f14d7c921f26ddc0587d2502ddf",
+    "lib/ui/seller_profile_summary.dart": "f6382f98c79f03619b3f821d392d6dfd5c9d86f7c186fd892a4dd7d0f97596b8",
+    "lib/ui/seller_rating_dialog.dart": "c553d1c076102fb8da1d13681738f90899f5a7092543fb23af1f11fc7d909711",
+    "lib/ui/settled_dialog.dart": "23d19494a45e9130678b6ba2cd96b9b7cf7fb8d729999e2c6dc94997ce2ad3df",
+    "lib/ui/vehicle_offer_dialog.dart": "59ba6827509a06567a2777ab739ed77e0fc4a1afce062576fc641ba0fdcf1cb3",
+    "assets/fonts/NotoSansArabic-Bold.ttf": "3eb9bca214643b6391d777c8117e8af778fdea5d6c9b5a6cddc4dcfc025fe134",
+    "assets/fonts/NotoSansArabic-ExtraBold.ttf": "fea1930786409edf3c4ef07970bb524d7df9816835abb3e5e24b229a971d5c3b",
+    "assets/fonts/NotoSansArabic-Medium.ttf": "5a214539318ebec1f9f20e7373393793260a25d628d9a6ca028ff8487494ab91",
+    "assets/fonts/NotoSansArabic-Regular.ttf": "2010623d973ece91b1e30478abb2ee318d4c0085bf07d036ba51bfa2873f36c8",
+    "assets/fonts/NotoSansArabic-SemiBold.ttf": "a4db9634eaeaec184193d0f1dd292794352795d9d3febbf0ae0fe0fb734fc666",
+    "assets/fonts/OFL-NotoSansArabic.txt": "07fc70bfeb985cc1a87a8587d0a0c80bab11c86c9dc3fd95b6f0cb332f983e96"
+  },
+  "scope": "26 imperative modal call sites. AddCar no longer opens a raw diagnostic dialog; its submission feedback is inline. Standard selectors remain parent-screen states.",
+  "limits": [
+    "A file reference is a candidate, not proof of a modal action or state.",
+    "Production auth, media/storage, payments and moderation are separate documented verification limits."
+  ],
+  "flows": [
+    {
+      "source": "lib/main.dart",
+      "line": 2657,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarRequestsPageState",
+      "acceptance": "current_font_editor_and_recovery_native_reviewed_staging_unverified",
+      "flow": "car_request_create",
+      "reviewed_owner": "CarRequestsPage",
+      "role": "guest/signed-in",
+      "evidence_candidate": "test/car_requests_polish_test.dart",
+      "current_evidence": [
+        "test/car_requests_polish_test.dart",
+        "tool/ui_review_artifacts/request_recovery_final_android.json",
+        "tool/ui_review_artifacts/request_recovery_final_ios.json"
+      ],
+      "limits": "Auth and database writes mocked; deployed RLS/publication unverified. Final confirmation visual acceptance remains separate."
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 2708,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarRequestsPageState",
+      "acceptance": "current_font_editor_and_recovery_native_reviewed_staging_unverified",
+      "flow": "car_request_offer",
+      "reviewed_owner": "CarRequestsPage",
+      "role": "signed-in",
+      "evidence_candidate": "test/car_requests_polish_test.dart",
+      "current_evidence": [
+        "test/car_requests_polish_test.dart",
+        "tool/ui_review_artifacts/request_recovery_final_android.json",
+        "tool/ui_review_artifacts/request_recovery_final_ios.json"
+      ],
+      "limits": "Auth and database writes mocked; deployed RLS/publication unverified. Final confirmation visual acceptance remains separate."
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 2766,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarRequestsPageState",
+      "acceptance": "current_font_confirmation_and_local_session_guards_native_reviewed_staging_unverified",
+      "flow": "car_request_decision",
+      "reviewed_owner": "CarRequestsPage",
+      "role": "request owner",
+      "evidence_candidate": "test/car_requests_polish_test.dart",
+      "current_evidence": [
+        "test/admin_ads_polish_test.dart",
+        "test/car_requests_polish_test.dart",
+        "test/market_details_polish_test.dart",
+        "tool/ui_review_artifacts/admin_decisions_android.json",
+        "tool/ui_review_artifacts/admin_decisions_cached_ios.json",
+        "tool/ui_review_artifacts/admin_decisions_progress_android.json",
+        "tool/ui_review_artifacts/admin_decisions_progress_ios.json"
+      ],
+      "limits": "Shared delete UI reviewed through admin manager; actual deployed admin roles/RPC and request mutations unverified. Remaining whole-app review active."
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 4055,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarDetailsPageState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "vehicle_photo_gallery",
+      "reviewed_owner": "CarDetailsPage",
+      "role": "guest/signed-in",
+      "evidence_candidate": "test/photo_gallery_test.dart"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 4098,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarDetailsPageState",
+      "acceptance": "host_and_native_fixture_verified_staging_rls_unverified",
+      "flow": "vehicle_offer",
+      "reviewed_owner": "CarDetailsPage / VehicleOfferDialog",
+      "role": "buyer",
+      "evidence_candidate": "test/vehicle_offer_polish_test.dart",
+      "evidence": [
+        "test/vehicle_offer_polish_test.dart",
+        "tool/ui_review_artifacts/vehicle_offer_android.json",
+        "tool/ui_review_artifacts/vehicle_offer_ios.json"
+      ],
+      "historical_source_gap": "Vehicle offer closes/disposes the editor before insert, has no acknowledged-ID requirement and shows raw Arabic server failures. Existing form test proves local validation/cancellation only; failed-write draft recovery remains open.",
+      "reconciliation_note": "Historical gap is resolved by the route-owned dialog and action/recovery fixtures cited in the acceptance entry; preserved here as history only."
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 4132,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarDetailsPageState",
+      "acceptance": "host_and_native_fixture_verified_staging_unverified",
+      "flow": "vehicle_report",
+      "reviewed_owner": "CarDetailsPage",
+      "role": "non-owner",
+      "evidence_candidate": "test/vehicle_decisions_polish_test.dart",
+      "verified_evidence": [
+        "tool/ui_review_artifacts/direction_decisions_revision_android.json",
+        "tool/ui_review_artifacts/direction_decisions_revision_ios.json"
+      ],
+      "limits": "28 isolated cases include both sale and report actions. Report uses INSERT-only acknowledgement because reporter RLS does not grant SELECT. Real staging policy behavior remains unverified.",
+      "visual_review": "All sale/report failure and owned sold captures reviewed in direction_decisions revision; see typography_visual_acceptance.json."
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 4198,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarDetailsPageState",
+      "acceptance": "host_and_native_fixture_verified_staging_unverified",
+      "flow": "vehicle_mark_sold",
+      "reviewed_owner": "CarDetailsPage",
+      "role": "seller",
+      "evidence_candidate": "test/vehicle_decisions_polish_test.dart",
+      "verified_evidence": [
+        "tool/ui_review_artifacts/direction_decisions_revision_android.json",
+        "tool/ui_review_artifacts/direction_decisions_revision_ios.json"
+      ],
+      "limits": "28 isolated cases include both sale and report actions. Report uses INSERT-only acknowledgement because reporter RLS does not grant SELECT. Real staging policy behavior remains unverified.",
+      "visual_review": "All sale/report failure and owned sold captures reviewed in direction_decisions revision; see typography_visual_acceptance.json."
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 4979,
+      "api": "showDialog",
+      "nearest_class_candidate": "_SectionPageState",
+      "acceptance": "current_fonts_media_recovery_native_reviewed_mocked_backend",
+      "flow": "generic_ad_create",
+      "reviewed_owner": "SectionPage",
+      "role": "seller",
+      "evidence_candidate": "test/generic_ad_editor_test.dart",
+      "current_evidence": [
+        "test/generic_ad_editor_test.dart",
+        "test/market_details_polish_test.dart",
+        "tool/ui_review_artifacts/media_recovery_android.json",
+        "tool/ui_review_artifacts/media_recovery_ios.json",
+        "tool/ui_review_artifacts/media_recovery_footer_android.json",
+        "tool/ui_review_artifacts/media_recovery_footer_ios.json"
+      ],
+      "limits": "Deployed Storage/RLS and live publication are not verified; whole-app state reconciliation remains active."
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 5939,
+      "api": "showModalBottomSheet",
+      "nearest_class_candidate": "SearchTabState",
+      "acceptance": "host_and_native_numeric_recovery_verified_staging_alert_trigger_unverified",
+      "flow": "advanced_search",
+      "reviewed_owner": "SearchTab",
+      "role": "guest/signed-in",
+      "evidence_candidate": [
+        "test/search_criteria_safety_test.dart",
+        "test/search_alert_save_polish_test.dart",
+        "test/locale_filter_regression_test.dart",
+        "test/search_discovery_polish_test.dart"
+      ],
+      "source_review": "Numeric overflow/representability fixed by shared validation; exact supported alert criteria are mapped from SmartQuery, unsupported schemas receive explicit localized guidance. No deployed trigger changes were made.",
+      "verified_evidence": [
+        "tool/ui_review_artifacts/font_carousel_filters_android.json",
+        "tool/ui_review_artifacts/font_carousel_filters_ios.json"
+      ]
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 7097,
+      "api": "showDialog",
+      "nearest_class_candidate": "_AddCarTabState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "vehicle_upload_preview",
+      "reviewed_owner": "AddCarTab",
+      "role": "seller",
+      "evidence_candidate": "test/photo_gallery_test.dart"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 7262,
+      "api": "showDialog",
+      "nearest_class_candidate": "_MyAdsPageState",
+      "acceptance": "host_and_native_fixture_verified_staging_rls_unverified",
+      "flow": "owned_vehicle_edit_and_delete",
+      "reviewed_owner": "MyAdsPage / OwnedVehicleDialog",
+      "role": "seller",
+      "evidence_candidate": "test/owned_vehicle_polish_test.dart",
+      "evidence": [
+        "test/owned_vehicle_polish_test.dart",
+        "tool/ui_review_artifacts/owned_vehicle_android.json",
+        "tool/ui_review_artifacts/owned_vehicle_ios.json"
+      ],
+      "historical_source_gap": "Current inline editor uses int/double.tryParse, always paired numeric fields, closes before update and disposes caller-owned controllers during the closing transition. It does not require an acknowledged updated ID and exposes raw errors. Existing MyAds references cover empty/read states, not this populated editor.",
+      "reconciliation_note": "Historical gap is resolved by the route-owned dialog and action/recovery fixtures cited in the acceptance entry; preserved here as history only."
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 7771,
+      "api": "showDialog",
+      "nearest_class_candidate": "_SellerProfilePageState",
+      "acceptance": "current_fonts_native_keyboard_cancel_and_mocked_review_recovery_session_guards_reviewed",
+      "flow": "seller_rating",
+      "reviewed_owner": "SellerProfilePage",
+      "role": "non-owner",
+      "evidence_candidate": "test/seller_profile_polish_test.dart",
+      "current_evidence": [
+        "test/seller_profile_polish_test.dart",
+        "tool/ui_review_artifacts/seller_chat_final_android.json",
+        "tool/ui_review_artifacts/seller_chat_final_ios.json"
+      ],
+      "limits": "Review mutations mocked; native keyboard geometry and final dark label contrast verified. Live review publication/RLS requires staging."
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 8629,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CarOfferChatPageState",
+      "acceptance": "current_font_confirmation_and_local_session_guards_native_reviewed_staging_unverified",
+      "flow": "shared_admin_delete",
+      "reviewed_owner": "shared confirmAdminDeleteAd",
+      "role": "admin",
+      "evidence_candidate": "test/admin_ads_polish_test.dart",
+      "current_evidence": [
+        "test/admin_ads_polish_test.dart",
+        "test/car_requests_polish_test.dart",
+        "test/market_details_polish_test.dart",
+        "tool/ui_review_artifacts/admin_decisions_android.json",
+        "tool/ui_review_artifacts/admin_decisions_cached_ios.json",
+        "tool/ui_review_artifacts/admin_decisions_progress_android.json",
+        "tool/ui_review_artifacts/admin_decisions_progress_ios.json"
+      ],
+      "limits": "Shared delete UI reviewed through admin manager; actual deployed admin roles/RPC and request mutations unverified. Remaining whole-app review active."
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 9006,
+      "api": "showDialog",
+      "nearest_class_candidate": "_AdminDashboardPageState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "report_admin_confirmation",
+      "reviewed_owner": "AdminDashboardPage",
+      "role": "admin",
+      "evidence_candidate": "test/reports_polish_test.dart"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 9532,
+      "api": "showDialog",
+      "nearest_class_candidate": "_AdminBusinessAdsPageState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "business_admin_confirmation",
+      "reviewed_owner": "AdminBusinessAdsPage",
+      "role": "admin",
+      "evidence_candidate": "test/business_admin_polish_test.dart"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 11504,
+      "api": "showSettledDialog",
+      "nearest_class_candidate": "_SupportCenterPageState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "support_report",
+      "reviewed_owner": "SupportCenterPage",
+      "role": "guest/signed-in",
+      "evidence_candidate": "test/support_legal_polish_test.dart"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 11625,
+      "api": "showModalBottomSheet",
+      "nearest_class_candidate": "_SupportCenterPageState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "support_contacts",
+      "reviewed_owner": "SupportCenterPage",
+      "role": "guest/signed-in",
+      "evidence_candidate": "test/support_legal_polish_test.dart"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 12049,
+      "api": "showSettledDialog",
+      "nearest_class_candidate": "_AccountTabState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "choose_username",
+      "reviewed_owner": "AccountTab",
+      "role": "signed-in",
+      "evidence_candidate": "test/account_polish_test.dart"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 12141,
+      "api": "showDialog",
+      "nearest_class_candidate": "_AccountTabState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "phone_otp",
+      "reviewed_owner": "AccountTab",
+      "role": "guest",
+      "evidence_candidate": "test/account_polish_test.dart"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 12926,
+      "api": "showModalBottomSheet",
+      "nearest_class_candidate": "_AccountTabState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "locale_picker",
+      "reviewed_owner": "AccountTab",
+      "role": "guest/signed-in",
+      "evidence_candidate": "test/locale_filter_regression_test.dart"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 12969,
+      "api": "showModalBottomSheet",
+      "nearest_class_candidate": "_AccountTabState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "message_destinations",
+      "reviewed_owner": "AccountTab",
+      "role": "signed-in",
+      "evidence_candidate": "test/account_polish_test.dart"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 14065,
+      "api": "showDialog",
+      "nearest_class_candidate": "_WalletAdminReviewPageState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "wallet_admin_confirmation",
+      "reviewed_owner": "WalletAdminReviewPage",
+      "role": "admin",
+      "evidence_candidate": "test/wallet_review_polish_test.dart"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 14389,
+      "api": "showDialog",
+      "nearest_class_candidate": "_SearchHistoryPageState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "clear_search_history",
+      "reviewed_owner": "SearchHistoryPage",
+      "role": "device-local",
+      "evidence_candidate": "test/settings_history_polish_test.dart"
+    },
+    {
+      "source": "lib/main.dart",
+      "line": 16507,
+      "api": "showDialog",
+      "nearest_class_candidate": "_CreateBusinessAdPageState",
+      "acceptance": "host_and_native_fixture_verified_staging_unverified",
+      "flow": "business_submit_confirmation",
+      "reviewed_owner": "CreateBusinessAdPage",
+      "role": "seller",
+      "evidence_candidate": "test/business_submission_polish_test.dart",
+      "source_gap": "Historical submission/confirmation gap fixed. Reviewed concrete package/price, duplicate/pending/disposal, retained draft and stable-ID partial-write recovery. Confirmation text corrected to match immediate payment-instructions navigation.",
+      "evidence": [
+        "test/business_submission_test.dart",
+        "test/business_submission_polish_test.dart",
+        "tool/ui_review_artifacts/business_submission_final_android.json",
+        "tool/ui_review_artifacts/business_submission_final_ios.json",
+        "tool/ui_review_artifacts/business_confirmation_copy_android.json",
+        "tool/ui_review_artifacts/business_confirmation_copy_ios.json"
+      ]
+    },
+    {
+      "source": "lib/market_images.dart",
+      "line": 403,
+      "api": "showDialog",
+      "nearest_class_candidate": "_MarketItemGalleryState",
+      "acceptance": "assertions_and_state_coverage_require_reconciliation",
+      "flow": "market_photo_gallery",
+      "reviewed_owner": "MarketItemGallery",
+      "role": "guest/signed-in",
+      "evidence_candidate": "test/market_details_polish_test.dart"
+    },
+    {
+      "source": "lib/market_images.dart",
+      "line": 683,
+      "api": "showDialog",
+      "nearest_class_candidate": "_MarketItemDetailsPageState",
+      "acceptance": "current_fonts_media_recovery_native_reviewed_mocked_backend",
+      "flow": "owned_market_images",
+      "reviewed_owner": "MarketItemDetailsPage",
+      "role": "owner",
+      "evidence_candidate": "test/market_details_polish_test.dart",
+      "current_evidence": [
+        "test/generic_ad_editor_test.dart",
+        "test/market_details_polish_test.dart",
+        "tool/ui_review_artifacts/media_recovery_android.json",
+        "tool/ui_review_artifacts/media_recovery_ios.json",
+        "tool/ui_review_artifacts/media_recovery_footer_android.json",
+        "tool/ui_review_artifacts/media_recovery_footer_ios.json"
+      ],
+      "limits": "Deployed Storage/RLS and live publication are not verified; whole-app state reconciliation remains active."
+    }
+  ]
+}

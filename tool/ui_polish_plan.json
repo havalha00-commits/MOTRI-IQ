@@ -1,0 +1,1656 @@
+{
+  "goal": "Polish every MOTRI IQ screen with a coherent automotive marketplace design",
+  "status": "active",
+  "brand": {
+    "accent": "existing burgundy",
+    "locales": [
+      "ar",
+      "ku",
+      "en"
+    ],
+    "directions": [
+      "rtl",
+      "ltr"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "icons": "Material Symbols Rounded; native directional back/disclosure icons"
+  },
+  "reference_candidates": [
+    {
+      "name": "Cars.com",
+      "url": "https://www.cars.com/shopping/advanced-search/",
+      "study": "Search grouping, filters, listing information hierarchy"
+    },
+    {
+      "name": "Autotrader",
+      "url": "https://www.autotrader.com/cars-for-sale/advanced-search",
+      "study": "Marketplace browsing, vehicle comparison and seller actions"
+    },
+    {
+      "name": "Polestar",
+      "url": "https://www.polestar.com/us/stock-cars",
+      "study": "Vehicle photography, typography, whitespace and specification presentation"
+    }
+  ],
+  "approach": "Study references visually before implementation; adapt useful patterns to MOTRI IQ rather than copying branding, assets or layouts.",
+  "phases": [
+    {
+      "id": "foundation",
+      "scope": "Screen/state inventory, reference review, typography, spacing, surfaces, components and responsive rules"
+    },
+    {
+      "id": "discovery",
+      "scope": "Home, carousel, listing cards, Market, search, filters, saved items and comparison"
+    },
+    {
+      "id": "details",
+      "scope": "Car and business details, photo galleries, specifications, seller profiles and contact actions"
+    },
+    {
+      "id": "seller",
+      "scope": "Login/signup, account, create/edit listings, showroom, offers, messages, reviews and alerts"
+    },
+    {
+      "id": "support_admin",
+      "scope": "Settings, help, legal, wallet, payment, notifications and all admin screens"
+    },
+    {
+      "id": "verification",
+      "scope": "Full analysis/tests, visual state review and Android/iOS device checks"
+    }
+  ],
+  "acceptance": [
+    "Every screen has reviewed spacing, typography, icon alignment and action hierarchy",
+    "Loading, empty, error, validation and populated states are reviewed where applicable",
+    "No clipped text or overflow at narrow widths or increased text sizes",
+    "Arabic/Kurdish RTL and English LTR work in light and dark modes",
+    "Navigation, filters and existing application behavior remain correct",
+    "Android emulator and iOS Device Hub builds are installed and reviewed",
+    "Authenticated seller/admin/payment flows are identified honestly when staging access is unavailable",
+    "Production signing, backend and store dependencies remain documented; no live financial or account mutations for visual QA"
+  ],
+  "screens": [
+    {
+      "screen": "HomePage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Responsive six-tab shell; existing search-tab callback and compare navigation",
+        "Normal rebuilt Home visually inspected on Android API31 and iOS26.5",
+        "Required car/selected Market failure, retry and actual empty distinguished: 8 native cases per platform; enlarged ar/light and ku/dark captures inspected; fixed artwork scale and reduced motion."
+      ],
+      "notes": []
+    },
+    {
+      "screen": "HomeTab",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Burgundy discovery/search panel and three working quick destinations",
+        "ar/ku/en, light/dark, 320px at 1.0 and 1.8 text scale",
+        "Empty optional sections collapse; selected Market remains reachable",
+        "Real public listings on rebuilt Android and iOS; screenshots inspected",
+        "Required car/selected Market failure, retry and actual empty distinguished: 8 native cases per platform; enlarged ar/light and ku/dark captures inspected; fixed artwork scale and reduced motion."
+      ],
+      "notes": [
+        "Shared compact listing-card polish implemented; narrow-width large-text tests cover ar/ku/en and light/dark. Full screen/state review remains pending.",
+        "Visible opening-screen redesign installed after user reported no noticeable change. Brand header reduced, search promoted into burgundy panel, cars/market/business quick actions added. Large text stacks actions and wraps section links; decorative IQ placeholders no longer scale beyond their bounds. Full discovery/photo review remains active.",
+        "Reference-led follow-up replaces the oversized burgundy panel and tall action tiles with compact search and action chips; removes duplicate carousel/top-ad mosaic from opening flow. Latest feed uses full regular photo-led cards. Heading action width now follows its content instead of taking half the row."
+      ]
+    },
+    {
+      "screen": "CarRequestsPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "populated request/offer cards: ar/ku/en light/dark, narrow enlarged text",
+        "request and offer editors: locale numbers, finite prices, SQL year bounds, locale/draft preservation",
+        "failed/no-op publishing retry, duplicate offer feedback, duplicate submit/dismissal guard",
+        "acknowledged owner accept/reject/close decisions, no-op failure, cancellation",
+        "read retry/mine query and guest guidance; editor disposal during write",
+        "native 33 cases per platform; final form layout cases passed after external wrapping labels; all six screenshots inspected"
+      ],
+      "notes": "Wrapping request/offer cards and shared prices, open/mine chips, persistent publish action, awaited retry/refresh; owned locale-aware editors with finite localized numbers, SQL year bounds and guarded submissions. Confirmed owner decisions require scoped acknowledged updates. Native 33-case suite passed on each platform. Final wrapping-label review passed and all six screenshots inspected; duplicate-after-cancel refresh assertion passed on widget/Android/iOS; real RLS/concurrency requires staging."
+    },
+    {
+      "screen": "CompareCarsPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "local snapshot: no asynchronous page loader/error state",
+        "empty/one/two selections: ar/ku/en light/dark at enlarged text size",
+        "wide normal-text 1024px alignment: host widget test",
+        "individual/all removal; trimmed IDs and two-selection limit",
+        "live locale, currencies, missing values, legacy mileage and listing navigation",
+        "24 native cases per platform plus focused final currency visual case; all four final screenshots inspected"
+      ],
+      "notes": "Responsive spec cards stack on narrow/large-text layouts and compare side by side on wide normal text; full names, shared currencies, mileage fallback/units, explicit missing labels. Per-car removal/view listing, clear, live locale and two-selection invariant covered. Twenty-four native cases passed per platform; wide layout is a host-only check. Final currency wrapping case passed on each platform and all four screenshots inspected. Shared media/live listing availability remains a separate verification scope."
+    },
+    {
+      "screen": "CarDetailsPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Active and sold listing fixtures: ar/ku/en, light/dark at 320px and 1.6 text scale",
+        "Long specifications, no-photo fallback and valid seller-contact controls",
+        "Shared gallery: RTL/LTR swipe, counter stability across rebuild, clamp and dismissal",
+        "Native Android and iOS detail matrix; shared gallery swipe/pinch/pan checks passed on both",
+        "share preview/content, failure/retry, duplicate/disposal guard: 23 intercepted native checks per platform; no real share sheet/message",
+        "Vehicle offer: 14 final native cases per platform and eight inspected captures; retained draft/retry/acknowledgement/pending/session guards and normal/enlarged adaptive footer."
+      ],
+      "notes": [
+        "Shared full-screen zoom gallery owns/disposes its page controller. Contact actions stack on narrow/large-text layouts; sold banners wrap. Date, comparison sample and mileage labels localized. Actual photo-loading, reputation-bearing seller rows and staging mutations remain pending.",
+        "Shared gallery now yields one-finger paging to two-finger zoom, supports horizontal/vertical pinch, and exposes previous/next/reset-zoom controls with localized tooltips. Native validation is part of the seller-profile pass.",
+        "VehicleOfferDialog now owns its draft/controllers, validates localized positive finite amounts, guards pending/session/disposal, requires matching acknowledgement and reuses one UUID on retry. Final native footer and recovery checks passed on both platforms; real offer/RLS/notification delivery remains staging-only."
+      ]
+    },
+    {
+      "screen": "SectionPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Initial loading/error retry/empty scrollable state",
+        "Responsive one-to-three column grid, ar/ku/en light/dark and 1.0/1.6 text scales",
+        "Pagination busy guard, failed cursor retry, ID deduplication and stable server ordering",
+        "Refresh replaces pending pages and retains prior rows on failure; brand changes invalidate older results",
+        "20 native action/layout cases per platform; 12 loaded-photo visual cases per platform with 4:3 thumbnail assertions"
+      ],
+      "notes": [
+        "Compact cards share photo/title/primary USD/secondary IQD hierarchy with discovery. Enlarged text switches to one column. Full-width retry/status slivers preserve loaded listings. Explicit bundled font in app bars; long toolbar labels reduce to one ellipsized line at larger scale."
+      ]
+    },
+    {
+      "screen": "FavoritesPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Populated car grid ar/ku/en, light/dark at 320px and 1.6 scale",
+        "Failed listing read to successful grid retry; refresh failure on short grid"
+      ],
+      "notes": [
+        "Shared compact listing-card polish implemented; narrow-width large-text tests cover ar/ku/en and light/dark. Full screen/state review remains pending.",
+        "Applied shared empty/error panels; removed fixed spacer gaps. Section headers now constrain long brand labels. Screen-specific populated/action review remains pending.",
+        "Populated grid now uses square cards and adapts columns/heights for width and text scale. Removed redundant icon/title row. Failed saved-item reads now show retry instead of empty/partial results. Short grids remain pull-to-refresh capable.",
+        "Shared compact card hierarchy and cell sizing updated with Sections; current dedicated mixed Favorites native visual acceptance remains open.",
+        "Shared confirmed Favorite changes synchronize across mounted cards; duplicate/pending/rebind cases passed in the updated native Section suite. Production mutations not exercised."
+      ]
+    },
+    {
+      "screen": "SearchTab",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Themed search header: ar/ku/en, light/dark, 320px enlarged text",
+        "Latest manual search wins; clearing invalidates pending requests; obsolete filter-query errors ignored",
+        "Initial error versus empty results with explicit retry",
+        "30-row pagination failure retains results, stops automatic retries, retries raw cursor and deduplicates IDs",
+        "Localized quick-filter numbers, invalid and reversed ranges, directional text inputs",
+        "11 native controlled cases on Android and iOS; visual error/header checkpoints inspected",
+        "City/body type apply through unified sheet; supported saved-alert payload, unsupported guidance, failure/no-ack retry, duplicate guard and disposal with isolated auth/client."
+      ],
+      "notes": [
+        "Shared compact listing-card polish implemented; narrow-width large-text tests cover ar/ku/en and light/dark. Full screen/state review remains pending.",
+        "Applied shared empty/error panels; removed fixed spacer gaps. Section headers now constrain long brand labels. Screen-specific populated/action review remains pending.",
+        "Shared regular listing card now stacks imagery and metadata on narrow/large-text layouts; actions have a separate row. Populated whole-search review remains pending.",
+        "Every replacement read now has a generation token; raw offset is separate from deduplicated row count, with stable ID ordering. Search errors are rendered with recovery instead of false no-match feedback. Header uses burgundy theme surfaces. Native fixture screenshots initially omitted the shell SafeArea; fixture host corrected, and real-shell live screenshots are being captured separately. Unsubmitted quick-filter edits during pagination and saved-alert persistence remain explicit follow-up work.",
+        "Reference-led follow-up removes the duplicate inline criteria form; the single owned filter sheet now includes city/body type. Compact heading/search/sort keep result photos near the top. Submitted searches dismiss keyboard/suggestions. Active summary chips edit criteria instead of presenting a misleading remove icon. Supported saved-alert fields are acknowledged and guarded; unsupported criteria get localized guidance, not silent omission."
+      ]
+    },
+    {
+      "screen": "AddCarTab",
+      "status": "in_progress",
+      "states_reviewed": [
+        "ar/ku/en, light/dark: narrow 320px layout at 1.4 text scale",
+        "Android and iOS native form layouts with isolated HTTP/auth fixtures",
+        "localized year/price validation and Arabic/Persian numeric parsing",
+        "dark-mode native screenshots inspected on Android and iOS",
+        "Atomic picker read/decode failure/cancellation/cap/removal, partial upload caching/stable path, retained server/no-ack/wrong-ack retry ID, pending fields/selectors/disposal and session loss: 18 initial native cases per platform.",
+        "Final four native cases per platform: error+publish visibility, high-contrast photo controls, normal keyboard layout and two acknowledged success cycles with fresh IDs, and offscreen-invalid-field rejection; all ten final captures inspected.",
+        "Normal installed app: real Android and iOS native picker selection returns a decoded image, removal restores the empty picker, cancellation retains the draft. No Publish action invoked; six captures inspected."
+      ],
+      "notes": [
+        "Grouped fields, adaptive field pairs, direction-aware inputs, keyboard actions and minimum-size save actions. Real uploads/submissions remain pending staging checks.",
+        "Required make/model validation runs before uploads; numeric year/price values persist through shared normalized parsers. Native media selection and populated photo editing still need review.",
+        "Upload preview now uses the shared owned-controller zoom gallery; its counter updates on swipe. Native media picker still pending.",
+        "Android native evidence exposed zoom/paging gesture competition in the initial shared gallery. Zoom now wraps the pager, and paging is disabled while zoomed; swipe, pinch and pan tests added.",
+        "Shared gallery now yields one-finger paging to two-finger zoom, supports horizontal/vertical pinch, and exposes previous/next/reset-zoom controls with localized tooltips. Native validation is part of the seller-profile pass.",
+        "Submission now snapshots fields/photos, keeps failures inline, requires matching row ID and clears only confirmed successes. Final visibility/contrast and complete-draft validation native checks passed; source/hash evidence is in the revision reports. Real OS picker and production RLS remain unverified."
+      ]
+    },
+    {
+      "screen": "MyAdsPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "loading: code review and localized shared view",
+        "error: controlled page-level HTTP fixture",
+        "retry to successful empty: widget and Android/iOS native fixtures",
+        "large text/short screen: shared panel tested ar/ku/en at 1.8 scale",
+        "Populated cards and editor: ar/ku/en × both themes at enlarged text; all 12 native list/editor/error captures individually inspected.",
+        "Scoped acknowledged edit/delete, finite localized validation, preserved legacy selectors, draft retry, session/owner guards and disposal: 18 dedicated host cases; 17 + one corrected input-case native verification per platform.",
+        "Two optional-year/price preserve/clear native cases passed per platform; nullable edits now match creation."
+      ],
+      "notes": [
+        "Shared state panel and read-only retry verified; populated data/actions and screen-specific visual review remain pending. Native page cases use Arabic/light; the shared panel additionally has all-language dark/large-text checks.",
+        "Current route-owned editor and bounded wrapping management cards replace the old anonymous editor. Real production RLS remains unverified."
+      ]
+    },
+    {
+      "screen": "ManageShowroomPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "ar/ku/en, light/dark: narrow 320px layout at 1.4 text scale",
+        "Android and iOS native form layouts with isolated HTTP/auth fixtures",
+        "signed-out locked view instead of endless loading"
+      ],
+      "notes": [
+        "Grouped fields, adaptive field pairs, direction-aware inputs, keyboard actions and minimum-size save actions. Real uploads/submissions remain pending staging checks."
+      ]
+    },
+    {
+      "screen": "SellerProfilePage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Public and owner populated profile: ar/ku/en, light/dark, narrow 320px and 1.6 text scale",
+        "Verified/gold seller, long name/description, reputation-bearing listing, reviews and received offer",
+        "Failed read to empty profile retry in ar/ku/en",
+        "Review draft retained after failed isolated save; retry saves selected rating/comment",
+        "Duplicate offer update prevention, failure recovery and rejected status",
+        "Rating cancellation above keyboard in ar/ku/en",
+        "Guest review explains sign-in; invalid showroom contact hidden",
+        "Populated pull-to-refresh failure and retry"
+      ],
+      "notes": [
+        "Consistent inset header/sections/cards, wrapped badges and stats, localized counts/status/amount, normalized contact parsing and owned rating-dialog inputs. Owner self-review action hidden. Review save invalidates cached seller reputation.",
+        "Load failures are explicit result states rather than raw error futures through refresh callbacks. Actual backend permissions, external WhatsApp launch, successful offer acceptance/chat navigation and more-than-page-size data still need staging/richer-fixture review."
+      ]
+    },
+    {
+      "screen": "MySentOffersPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "loading: code review and localized shared view",
+        "error: controlled page-level HTTP fixture",
+        "retry to successful empty: widget and Android/iOS native fixtures",
+        "large text/short screen: shared panel tested ar/ku/en at 1.8 scale",
+        "Populated narrow/large-text layouts in ar/ku/en and both themes; dark native screenshots inspected on Android and iOS",
+        "Accepted sent-offer and unread-notification navigation to chat; duplicate-open guard, failed mark-read retry, missing conversation feedback, refresh failure recovery"
+      ],
+      "notes": [
+        "Shared state panel and read-only retry verified; populated data/actions and screen-specific visual review remain pending. Native page cases use Arabic/light; the shared panel additionally has all-language dark/large-text checks.",
+        "Sent-offer amounts/statuses localized with burgundy theme hierarchy. Activity rows wrap, use explicit unread text and mirrored disclosure arrows. Refresh awaits explicit result values; failures do not masquerade as empty data. All 17 native scenarios passed on each platform after the explicit refresh-result fix. New-offer-to-seller-profile navigation and long-list pagination remain pending."
+      ]
+    },
+    {
+      "screen": "CarOfferChatPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Populated buyer/seller bubbles: ar/ku/en, light/dark, narrow display and 1.6 text scale",
+        "Error/retry, keyboard composer position, send failure and duplicate prevention, newer-draft retention, route disposal during pending send, pending polling retains messages",
+        "12 native checks passed on Android and 12 on iOS; dark populated screenshots inspected on both"
+      ],
+      "notes": [
+        "Theme-based burgundy bubbles with matching foregrounds and selectable text. Keyboard inset keeps composer visible. Polling retains messages, newest 200 messages load at the bottom, failure feedback is localized without diagnostics. New draft text survives pending sends; route closure safely ignores completed sends. Real authenticated staging authorization, long-history paging beyond the newest 200 and notification-to-accepted-offer navigation remain pending."
+      ]
+    },
+    {
+      "screen": "AdminAdsManagementPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Populated cars/market/jobs with long titles at narrow width, large text, ar/ku/en and light/dark",
+        "Non-admin, failed access check/retry, per-table read failure/retry",
+        "Delete confirmation/cancel, pending duplicate guard, success, failure and route disposal via local fixtures"
+      ],
+      "notes": [
+        "Failed access checks no longer claim permission denial; failed table reads no longer appear empty. Long titles wrap, typography matches shared theme, short content refreshes, and deletion shows per-row progress with localized failure feedback. 12 native checks passed on each platform; real server authorization and larger result pagination remain pending."
+      ]
+    },
+    {
+      "screen": "AdminDashboardPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "loading: code review and localized shared view",
+        "error: controlled page-level HTTP fixture",
+        "retry to successful empty: widget and Android/iOS native fixtures",
+        "large text/short screen: shared panel tested ar/ku/en at 1.8 scale",
+        "populated: three locales/both themes narrow enlarged text",
+        "access denied vs failed check; read retry and empty refresh",
+        "confirmed resolve/reopen, failed/no-op decisions retain retry",
+        "verification cancel/success/duplicate/failure/no-op",
+        "reported listing success/missing/failure; guarded pending decision/disposal"
+      ],
+      "notes": "Access denied vs failure, awaited refresh including empty state, wrapping IDs/reasons/status/actions with localized dates and messages; confirmed guarded decisions acknowledge matching server row and match original status. Reopen clears review fields; verification handles duplicate/no-op/error and guards same seller. Twenty-one native cases passed on each platform. Final clock-time review passed six cases on each platform and both screenshots inspected; actual admin/RLS and concurrent server behavior require staging."
+    },
+    {
+      "screen": "AdminBusinessAdsPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "loading: code review and localized shared view",
+        "error: controlled page-level HTTP fixture",
+        "retry to successful empty: widget and Android/iOS native fixtures",
+        "large text/short screen: shared panel tested ar/ku/en at 1.8 scale",
+        "populated: ar/ku/en light/dark, narrow enlarged text",
+        "access denied vs access failure; read retry; all-status filter and live locale",
+        "confirmed approval/reject/payment/activate/pause; failed/no-op updates retain retry",
+        "missing package duration; duplicate/disposal guard",
+        "both native dark screenshots inspected"
+      ],
+      "notes": "Dynamic translated filters/status/payment labels; body filter, wrapping cards/actions; role gate with denied vs failure; guarded confirmed status/payment updates require matching returned row and scope original status. UTC period uses one instant. Eighteen native cases passed on each platform; actual admin/RLS and concurrent server behavior still require staging."
+    },
+    {
+      "screen": "ActivityNotificationsPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "loading: code review and localized shared view",
+        "error: controlled page-level HTTP fixture",
+        "retry to successful empty: widget and Android/iOS native fixtures",
+        "large text/short screen: shared panel tested ar/ku/en at 1.8 scale",
+        "Populated narrow/large-text layouts in ar/ku/en and both themes; dark native screenshots inspected on Android and iOS",
+        "Accepted sent-offer and unread-notification navigation to chat; duplicate-open guard, failed mark-read retry, missing conversation feedback, refresh failure recovery"
+      ],
+      "notes": [
+        "Shared state panel and read-only retry verified; populated data/actions and screen-specific visual review remain pending. Native page cases use Arabic/light; the shared panel additionally has all-language dark/large-text checks.",
+        "Sent-offer amounts/statuses localized with burgundy theme hierarchy. Activity rows wrap, use explicit unread text and mirrored disclosure arrows. Refresh awaits explicit result values; failures do not masquerade as empty data. All 17 native scenarios passed on each platform after the explicit refresh-result fix. New-offer-to-seller-profile navigation and long-list pagination remain pending."
+      ]
+    },
+    {
+      "screen": "AlertsPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "loading: code review and localized shared view",
+        "error: controlled page-level HTTP fixture",
+        "retry to successful empty: widget and Android/iOS native fixtures",
+        "large text/short screen: shared panel tested ar/ku/en at 1.8 scale",
+        "populated: ar/ku/en light/dark enlarged text fixtures",
+        "listing fetch failure preserves unread, retry opens",
+        "denied/no-op status update still allows valid listing navigation",
+        "scoped read update, unavailable listing, duplicate opening and disposal",
+        "both native dark screenshots inspected"
+      ],
+      "notes": "Shared activity cards, localized currency/unread text, directional arrow, guarded opening, public listing read before scoped acknowledged status update; localized failures/no-op detection. Twelve cases passed on each native platform. Real alert/RLS permissions require staging."
+    },
+    {
+      "screen": "UserProfilePage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Signed-in profile ar/ku/en in both themes at narrow/large-text settings",
+        "Failed username read to successful retry",
+        "Favorites navigates to the real saved-list screen"
+      ],
+      "notes": [
+        "Localized greeting, wrapping identity, shared directional option rows and explicit failure results. Refresh waits for completion; auth changes clear stale profile UI. Staging reads/sign-out permissions remain unverified."
+      ]
+    },
+    {
+      "screen": "MyFollowsPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "loading: code review and localized shared view",
+        "error: controlled page-level HTTP fixture",
+        "retry to successful empty: widget and Android/iOS native fixtures",
+        "large text/short screen: shared panel tested ar/ku/en at 1.8 scale",
+        "populated seller names and localized dates: all locales/themes, narrow large text fixture",
+        "missing/failed optional profiles retain seller navigation",
+        "follow read retry and empty pull-to-refresh fixture",
+        "Android/iOS dark screenshots inspected at 1.6 text scale"
+      ],
+      "notes": "Batched optional profile names, localized dates, seller navigation with refresh on return; nine native cases passed on each platform. Actual authenticated RLS/profile visibility requires staging."
+    },
+    {
+      "screen": "MyMessagesPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "loading: code review and localized shared view",
+        "error: controlled page-level HTTP fixture",
+        "retry to successful empty: widget and Android/iOS native fixtures",
+        "large text/short screen: shared panel tested ar/ku/en at 1.8 scale",
+        "Populated long names/comment/previews at narrow width, 1.6 text, ar/ku/en and light/dark",
+        "Awaited refresh with explicit read failure/retry; locale-aware missing seller-name fallback; conversation navigation and refresh on return"
+      ],
+      "notes": [
+        "Shared state panel and read-only retry verified; populated data/actions and screen-specific visual review remain pending. Native page cases use Arabic/light; the shared panel additionally has all-language dark/large-text checks.",
+        "Reviews place rating below wrapping seller names and support short-list refresh. Conversations use shared Material icon tiles, mirrored arrows, bounded previews and localized offer amounts. Nested message query fetches one newest message per offer using the existing FK, fixing a global-limit preview bug. 18 native checks passed on each platform; actual authenticated server query/RLS and larger result pagination remain unverified."
+      ]
+    },
+    {
+      "screen": "MyReviewsPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "loading: code review and localized shared view",
+        "error: controlled page-level HTTP fixture",
+        "retry to successful empty: widget and Android/iOS native fixtures",
+        "large text/short screen: shared panel tested ar/ku/en at 1.8 scale",
+        "Populated long names/comment/previews at narrow width, 1.6 text, ar/ku/en and light/dark",
+        "Awaited refresh with explicit read failure/retry; locale-aware missing seller-name fallback; conversation navigation and refresh on return"
+      ],
+      "notes": [
+        "Shared state panel and read-only retry verified; populated data/actions and screen-specific visual review remain pending. Native page cases use Arabic/light; the shared panel additionally has all-language dark/large-text checks.",
+        "Reviews place rating below wrapping seller names and support short-list refresh. Conversations use shared Material icon tiles, mirrored arrows, bounded previews and localized offer amounts. Nested message query fetches one newest message per offer using the existing FK, fixing a global-limit preview bug. 18 native checks passed on each platform; actual authenticated server query/RLS and larger result pagination remain unverified."
+      ]
+    },
+    {
+      "screen": "SettingsPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Narrow/enlarged-text ar/ku/en layouts in light/dark; native visual review in progress",
+        "Settings read/retry and local save failure; history read/retry, clear/cancel/failure and exact replay query result",
+        "Account history now selects/mounts SearchTab before applying the query; fixture verifies actual cars_public search request",
+        "Fines configured URL and localized failure feedback using injected launcher without opening external apps"
+      ],
+      "notes": [
+        "Shared icon wells and directional disclosures. Settings uses semantic SwitchListTile with wrapping labels and explicitly describes locally stored notification choices, which are not wired to delivery or OS permissions. History retains newest-first order, drops duplicate/empty entries, guards clear actions and reports local storage failures. Fines scrolls on short screens and uses readable theme colors; corrected two mixed-language Kurdish subtitles. Real notification delivery integration and external fines browser handoff remain unverified."
+      ]
+    },
+    {
+      "screen": "AboutPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Narrow/enlarged text layouts in ar/ku/en and both themes; dark native screenshots inspected on Android and iOS",
+        "Legal content section counts and localized update date retained; document footer reachable by scrolling",
+        "Support contact sheet, report category selection, keyboard/cancel, share content and share failure recovery covered with platform interception"
+      ],
+      "notes": [
+        "About/support use icon backgrounds and RTL disclosure arrows. Support report uses one radio group with stable category keys, includes selected type in shared text and uses real line breaks; duplicate report actions guarded. Contact sheet scrolls with adaptive wrapping actions. Legal pages share a bounded-width selectable reading layout, preserve every original section and localize the existing update label/date. All 32 native scenarios passed on each platform after screenshot-led support contrast/heading fixes. External calls/WhatsApp and real share-sheet behavior remain unverified; tests intercept sharing without sending messages."
+      ]
+    },
+    {
+      "screen": "SupportCenterPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "FAQ questions update in ar/ku/en after previous locale was already shown",
+        "Narrow/enlarged text layouts in ar/ku/en and both themes; dark native screenshots inspected on Android and iOS",
+        "Legal content section counts and localized update date retained; document footer reachable by scrolling",
+        "Support contact sheet, report category selection, keyboard/cancel, share content and share failure recovery covered with platform interception"
+      ],
+      "notes": [
+        "Removed first-locale static FAQ cache. Remaining support layout, report/contact dialogs and external actions still need the support pass.",
+        "About/support use icon backgrounds and RTL disclosure arrows. Support report uses one radio group with stable category keys, includes selected type in shared text and uses real line breaks; duplicate report actions guarded. Contact sheet scrolls with adaptive wrapping actions. Legal pages share a bounded-width selectable reading layout, preserve every original section and localize the existing update label/date. All 32 native scenarios passed on each platform after screenshot-led support contrast/heading fixes. External calls/WhatsApp and real share-sheet behavior remain unverified; tests intercept sharing without sending messages."
+      ]
+    },
+    {
+      "screen": "AccountTab",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Sign-in, signup and signed-in account: ar/ku/en, light/dark at 320px and 1.6 scale",
+        "Local required/email/username/password validation prevents requests",
+        "Email/username session fixtures, signup confirmation and password clearing",
+        "Duplicate sign-in prevention and localized failure/retry without lost draft",
+        "Iraqi phone and Arabic/Persian OTP normalization; failed verification stays in dialog",
+        "OTP cancellation above keyboard in ar/ku/en",
+        "Server feedback and field validation update across locale switches",
+        "Username dialog validates before closing and masks backend diagnostics",
+        "Failed unread count does not block messages navigation",
+        "Email-only header, long display name, directional rows and sign-out",
+        "Current-font Account/Profile 48-case native matrix per platform and 8 captures inspected; subsequent six signed-in cases per platform verify compact action rows."
+      ],
+      "notes": [
+        "Grouped autofill-aware forms, separate phone/email validation, content-sized actions, adaptive quick-action grid and identity header. Shared navigation tile owns Material ink and mirrors disclosure arrows.",
+        "Auth/OTP/username requests in tests are isolated HTTP fixtures. Native avatar picker/upload, actual SMS delivery, email confirmation links, real username function deployment and staging authorization still need verification.",
+        "Public auth capabilities are read safely with retry. Phone sign-in controls appear only when the provider enables them; disabled production phone auth presents an email/username alternative. Both OTP-enabled fixtures and disabled/retry states are covered.",
+        "Enlarged-text single-column actions now use natural-height rows, shared icons and mirrored arrows; regular/tablet grids remain."
+      ]
+    },
+    {
+      "screen": "FinesPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Narrow/enlarged-text ar/ku/en layouts in light/dark; native visual review in progress",
+        "Settings read/retry and local save failure; history read/retry, clear/cancel/failure and exact replay query result",
+        "Account history now selects/mounts SearchTab before applying the query; fixture verifies actual cars_public search request",
+        "Fines configured URL and localized failure feedback using injected launcher without opening external apps"
+      ],
+      "notes": [
+        "Shared icon wells and directional disclosures. Settings uses semantic SwitchListTile with wrapping labels and explicitly describes locally stored notification choices, which are not wired to delivery or OS permissions. History retains newest-first order, drops duplicate/empty entries, guards clear actions and reports local storage failures. Fines scrolls on short screens and uses readable theme colors; corrected two mixed-language Kurdish subtitles. Real notification delivery integration and external fines browser handoff remain unverified."
+      ]
+    },
+    {
+      "screen": "WalletTopUpPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Narrow/enlarged-text layouts in ar/ku/en and both themes; scroll to final action",
+        "Wallet settings failure/retry versus unconfigured account, guest sign-in state, amount/receipt validation, picker failure/disposal",
+        "Fixture receipt upload/insert success with duplicate prevention, insert failure retaining draft, upload failure without transaction insert; existing support navigation from payment"
+      ],
+      "notes": [
+        "Wallet uses scrollable bounded-width layout, semantic content-sized amount choices, explicit IQD labels, wrapping payment heading and cached receipt preview bytes. Account read errors no longer appear as missing configuration. Duplicate picker/submit/admin actions guarded; async picker handles disposal. Manual payment replaces placeholder contact number/activation promise with localized guidance and existing support link; selectable summary fields wrap, with explicit separate USD/IQD lines and LTR identifiers. Actual native media selection, storage/RLS permissions, balance/admin confirmation and payment settlement remain unverified."
+      ]
+    },
+    {
+      "screen": "WalletAdminReviewPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "loading: code review and localized shared view",
+        "error: controlled page-level HTTP fixture",
+        "retry to successful empty: widget and Android/iOS native fixtures",
+        "large text/short screen: shared panel tested ar/ku/en at 1.8 scale",
+        "Populated long requester names, account identifiers, amounts and receipt/actions at narrow width and enlarged text in ar/ku/en and light/dark",
+        "Permission denial versus read failure/retry; missing optional profile names retain pending requests",
+        "Approval/rejection confirmation, duplicate prevention, false/malformed/mismatched RPC results, already-reviewed refresh, receipt failure, failed-refresh recovery and disposal during decision via fixtures"
+      ],
+      "notes": [
+        "Shared state panel and read-only retry verified; populated data/actions and screen-specific visual review remain pending. Native page cases use Arabic/light; the shared panel additionally has all-language dark/large-text checks.",
+        "Removed Future-returning setState callbacks; populated pull-to-refresh waits for read completion. Populated refresh interaction still needs a richer fixture.",
+        "Client now requires RPC ok=true and returned status matching the requested decision before showing success. Explicit read result avoids refresh exception propagation. Optional batched profile lookup replaces an inner embedding not supported by the declared wallet FK, so profile lookup failure cannot hide pending rows. Receipt action is labelled and guarded; adaptive action buttons and wrapping fields use shared theme. Removed unused/unmounted balance card and its zero-on-error helper after confirming no live call sites. 17 native scenarios passed on each platform, with a focused final visual rerun for fallback/method labels; real ledger/RLS/receipt permissions and concurrent server decisions remain unverified."
+      ]
+    },
+    {
+      "screen": "SearchHistoryPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Narrow/enlarged-text ar/ku/en layouts in light/dark; native visual review in progress",
+        "Settings read/retry and local save failure; history read/retry, clear/cancel/failure and exact replay query result",
+        "Account history now selects/mounts SearchTab before applying the query; fixture verifies actual cars_public search request",
+        "Fines configured URL and localized failure feedback using injected launcher without opening external apps"
+      ],
+      "notes": [
+        "Applied shared empty/error panels; removed fixed spacer gaps. Section headers now constrain long brand labels. Screen-specific populated/action review remains pending.",
+        "Shared icon wells and directional disclosures. Settings uses semantic SwitchListTile with wrapping labels and explicitly describes locally stored notification choices, which are not wired to delivery or OS permissions. History retains newest-first order, drops duplicate/empty entries, guards clear actions and reports local storage failures. Fines scrolls on short screens and uses readable theme colors; corrected two mixed-language Kurdish subtitles. Real notification delivery integration and external fines browser handoff remain unverified."
+      ]
+    },
+    {
+      "screen": "PrivacyPolicyPage",
+      "status": "complete",
+      "states_reviewed": [
+        "Narrow/enlarged text layouts in ar/ku/en and both themes; dark native screenshots inspected on Android and iOS",
+        "Legal content section counts and localized update date retained; document footer reachable by scrolling",
+        "Support contact sheet, report category selection, keyboard/cancel, share content and share failure recovery covered with platform interception"
+      ],
+      "notes": [
+        "About/support use icon backgrounds and RTL disclosure arrows. Support report uses one radio group with stable category keys, includes selected type in shared text and uses real line breaks; duplicate report actions guarded. Contact sheet scrolls with adaptive wrapping actions. Legal pages share a bounded-width selectable reading layout, preserve every original section and localize the existing update label/date. All 32 native scenarios passed on each platform after screenshot-led support contrast/heading fixes. External calls/WhatsApp and real share-sheet behavior remain unverified; tests intercept sharing without sending messages.",
+        "Static reading-screen UI review complete: section content retained, selectable paragraphs, localized date, full-height scrolling through footer, all locales/themes/large text tested on both native platforms. No backend-dependent states apply."
+      ]
+    },
+    {
+      "screen": "TermsOfUsePage",
+      "status": "complete",
+      "states_reviewed": [
+        "Narrow/enlarged text layouts in ar/ku/en and both themes; dark native screenshots inspected on Android and iOS",
+        "Legal content section counts and localized update date retained; document footer reachable by scrolling",
+        "Support contact sheet, report category selection, keyboard/cancel, share content and share failure recovery covered with platform interception"
+      ],
+      "notes": [
+        "About/support use icon backgrounds and RTL disclosure arrows. Support report uses one radio group with stable category keys, includes selected type in shared text and uses real line breaks; duplicate report actions guarded. Contact sheet scrolls with adaptive wrapping actions. Legal pages share a bounded-width selectable reading layout, preserve every original section and localize the existing update label/date. All 32 native scenarios passed on each platform after screenshot-led support contrast/heading fixes. External calls/WhatsApp and real share-sheet behavior remain unverified; tests intercept sharing without sending messages.",
+        "Static reading-screen UI review complete: section content retained, selectable paragraphs, localized date, full-height scrolling through footer, all locales/themes/large text tested on both native platforms. No backend-dependent states apply."
+      ]
+    },
+    {
+      "screen": "BusinessAdsPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Initial failure versus empty and explicit retry",
+        "Pagination failure retains data, avoids automatic retry loop, retries same offset",
+        "Category persists across locale switch with localized dropdown",
+        "Full-width selector reached from Home in all locales/themes, narrow enlarged text",
+        "Delayed old category success/failure and pagination versus refresh verified in the 11-case native Business suite on each platform."
+      ],
+      "notes": [
+        "Applied shared empty/error panels; removed fixed spacer gaps. Section headers now constrain long brand labels. Screen-specific populated/action review remains pending.",
+        "Strict load errors, generation-scoped responses, stable created_at/id order, raw pagination cursor and ID deduplication. Wrapping cards and tappable Home business banners. Category/refresh races are now verified by the dedicated native Business fixture suite.",
+        "Category/refresh generations are verified in isolated fixtures; preserve them during future changes."
+      ]
+    },
+    {
+      "screen": "BusinessAdDetailsPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Long business name, address, hours and description in ar/ku/en, light/dark at 320px and 1.6 text scale",
+        "No-photo collapsed header, one local view event and persistent share action",
+        "Native Android and iOS detail matrix; shared gallery swipe/pinch/pan checks passed on both",
+        "share preview/content, failure/retry, duplicate/disposal guard: 23 intercepted native checks per platform; no real share sheet/message",
+        "Photo-first shared gallery with readable pinned toolbar, invalid-media collapse and decoded public-photo fixtures: 11 native cases per platform.",
+        "Follow-up four Arabic/Kurdish cases per platform and eight screenshots prove numeric-only hours stay LTR; contacts readable in enlarged text.",
+        "Isolated contact interactions record one click each; social links no longer count as map events."
+      ],
+      "notes": [
+        "Removed redundant side-by-side paid badge; appbar retains paid context. Shared full-screen image viewer and bounded carousel indicator. Contact spacing only exists for shown actions. Real image loading, external links and staging analytics still need verification.",
+        "Screenshot-led follow-up: collapsed no-photo hero and trimmed/deduplicated business location; distinct locations use a neutral separator.",
+        "Visual review caught an iOS toolbar/placeholder collision despite clean overflow checks; no-photo headers now omit flexible space entirely.",
+        "Shared gallery now yields one-finger paging to two-finger zoom, supports horizontal/vertical pinch, and exposes previous/next/reset-zoom controls with localized tooltips. Native validation is part of the seller-profile pass.",
+        "Current Business presentation supersedes the older flexible photo-toolbar design. External contacts and actual production analytics are not exercised."
+      ]
+    },
+    {
+      "screen": "CreateBusinessAdPage",
+      "status": "verified_local_scope",
+      "states_reviewed": [
+        "ar/ku/en, light/dark: narrow 320px layout at 1.4 text scale",
+        "Android and iOS native form layouts with isolated HTTP/auth fixtures",
+        "package selection in one radio group",
+        "failed package load then retry preserves typed draft",
+        "18 final native cases per platform, ar/ku/en × light/dark at enlarged text; contact/media/error/retry, normal confirmation cancellation, upload/ad/order recovery and pending/session/disposal. One native confirmation-copy follow-up per platform; 20 Business captures inspected including superseded wording captures."
+      ],
+      "notes": [
+        "Grouped fields, adaptive field pairs, direction-aware inputs, keyboard actions and minimum-size save actions. Real uploads/submissions remain pending staging checks.",
+        "Five-photo limit enforced when adding more photos; every photo can be removed with a 44px action. Native picker and actual upload remain unverified. Package failures remain visible and recoverable."
+      ]
+    },
+    {
+      "screen": "PaymentPage",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Narrow/enlarged-text layouts in ar/ku/en and both themes; scroll to final action",
+        "Wallet settings failure/retry versus unconfigured account, guest sign-in state, amount/receipt validation, picker failure/disposal",
+        "Fixture receipt upload/insert success with duplicate prevention, insert failure retaining draft, upload failure without transaction insert; existing support navigation from payment",
+        "shared multiline currency output with nonbreaking amount/unit and conversion overflow fallback; focused payment suite passed"
+      ],
+      "notes": [
+        "Wallet uses scrollable bounded-width layout, semantic content-sized amount choices, explicit IQD labels, wrapping payment heading and cached receipt preview bytes. Account read errors no longer appear as missing configuration. Duplicate picker/submit/admin actions guarded; async picker handles disposal. Manual payment replaces placeholder contact number/activation promise with localized guidance and existing support link; selectable summary fields wrap, with explicit separate USD/IQD lines and LTR identifiers. Actual native media selection, storage/RLS permissions, balance/admin confirmation and payment settlement remain unverified."
+      ]
+    },
+    {
+      "screen": "MarketItemDetailsPage",
+      "source": "lib/market_images.dart",
+      "status": "in_progress",
+      "states_reviewed": [
+        "Current theme ar/ku/en × light/dark × ordinary/1.6 text verified on Android and iOS; decoded public photo required; 10 final detail/editor screenshots inspected.",
+        "No-photo detail and job salary without invented currency; wrapping long metadata and selectable LTR phone.",
+        "Owner image editor validates count, guards pending interactions and requires one scoped acknowledged row; job images update jobs, not market_items.",
+        "Admin delete cancellation/pending/no-ack/retry/success through isolated RPC fixture."
+      ],
+      "notes": [
+        "Photo-first bounded layout, theme-aware surfaces and content direction, shared rounded symbols. Gallery uses directional accessible arrows and shared PhotoGallery zoom/paging.",
+        "Editor retains draft on generic localized failure, refuses another owner, rechecks session and tolerates disposal. Original detail route remains open after saving and receives refreshed images. All writes were isolated fixtures; production Storage/RLS/admin behavior remains unverified.",
+        "Native OS media selection and actual storage uploads still require dedicated staging/device verification. Market/job creation now uses GenericAdEditorDialog, with separate native fixture evidence."
+      ]
+    }
+  ],
+  "design_decisions": [
+    {
+      "reference": "https://www.polestar.com/us/stock-cars",
+      "evidence": "Visually reviewed in Chrome on 2026-10-21",
+      "adaptation": "Quieter vehicle presentation, restrained accent colors, clear title/price hierarchy and more separation between metadata groups"
+    },
+    {
+      "component": "Home carousel",
+      "changes": [
+        "At most five position dots with a numeric count for longer feeds",
+        "Larger photo area",
+        "Autoplay respects reduced motion and disabled ticker mode"
+      ]
+    },
+    {
+      "component": "Compact car cards",
+      "changes": [
+        "Larger titles, prices and key facts",
+        "Separate location line; deduplicate matching city and province",
+        "Remove empty seller badge reservation",
+        "Readable sold badge and localized mileage/discount labels"
+      ]
+    },
+    {
+      "component": "Cross-screen state and typography foundation",
+      "changes": [
+        "Consistent title/body sizes and line spacing in the shared theme",
+        "Content-sized bordered state cards with contextual rounded icons",
+        "Localized loading, error and retry copy without raw backend exceptions",
+        "Scrollable full-screen panels for large text/short windows",
+        "Restored API errors to the follow and wallet-review loaders so failed reads are not presented as empty results"
+      ]
+    },
+    {
+      "component": "Seller and listing forms",
+      "changes": [
+        "Icon-led section headings and responsive field pairs",
+        "LTR numeric/contact fields inside RTL forms",
+        "Visible dark-theme focus, text actions and selection",
+        "Content-sized photo picker and minimum-height actions for large text",
+        "Localized package duration/placements and inline year/price validation"
+      ]
+    },
+    {
+      "component": "Detail galleries and actions",
+      "changes": [
+        "Full-screen safe-area gallery with owned controller and stable live counter",
+        "Up to 4x photo zoom and localized native close control",
+        "Adaptive seller contact actions",
+        "Wrapped sold status and specification values",
+        "Long business heading uses full available width; paid context appears in appbar",
+        "Collapse business photo header when there are no images instead of reserving a blank hero"
+      ]
+    },
+    {
+      "component": "Seller profiles, regular listing cards and saved grids",
+      "changes": [
+        "Full-width wrapping seller heading with separate verification/tier badges and count group",
+        "Aligned sections with contextual rounded icons; content-sized empty/error panels",
+        "Rating dialog owns temporary state and preserves draft after failed save",
+        "Separate image, metadata and action regions in narrow regular cards",
+        "Adaptive saved-grid columns and height; explicit failure/retry results for refresh"
+      ]
+    },
+    {
+      "component": "Account identity and authentication",
+      "changes": [
+        "Separate credential and phone validation with autofill and suitable keyboard actions",
+        "Code-based localized auth feedback; inline feedback and validation follow locale changes",
+        "Owned OTP dialog retains failed code, scrolls title/content and validates localized digits",
+        "Minimum-height actions, wrapped labels, adaptive quick actions and directional navigation rows",
+        "Email identity fallback when phone is absent; shared field validation can wrap to four lines"
+      ]
+    },
+    "Shared currency runs use explicit USD/IQD codes and LTR Unicode isolation within translated prose. Compact/display prices accept normalized Arabic/Persian digits; nonnumeric labels retain their text without an invented currency. Market estimate removes duplicate unit/amount labels."
+  ],
+  "verification": {
+    "analysis": "No issues: /tmp/motriiq-share-currency-final-analysis.txt",
+    "full_suite": "869 passed: /tmp/motriiq-share-currency-full-suite.txt",
+    "native_fixture_android": "Passed ar/ku/en, light/dark: /tmp/motriiq-discovery-fixture-android.txt",
+    "native_fixture_ios": "Passed ar/ku/en, light/dark: /tmp/motriiq-discovery-fixture-ios.txt",
+    "live_service": "Live public-service guest journeys passed on Android and iOS: /tmp/motriiq-profile-live-android.txt and /tmp/motriiq-profile-live-ios.txt. All three locales, real public car details, filters, theme, settings/support, navigation and refresh; authenticated staging workflows remain pending.",
+    "remaining": "Remaining per-screen visual/state review, populated details/seller/admin fixtures, authentication/support/payment polish and live staging checks.",
+    "state_pass": {
+      "analysis": "No issues: /tmp/motriiq-states-final-analysis.txt",
+      "unit_widget_suite": "430 passed: /tmp/motriiq-states-complete-suite.txt",
+      "native_android": "13 passed: /tmp/motriiq-states-verified-android.txt",
+      "native_ios": "13 passed: /tmp/motriiq-states-verified-ios.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/error_state_ios.png",
+        "tool/ui_review_artifacts/report_menu_android.png"
+      ],
+      "scope_limit": "Controlled HTTP/auth fixtures; no production backend, account, wallet or moderation mutations. These tests do not prove real staging permissions or end-to-end payment behavior."
+    },
+    "form_pass": {
+      "unit_widget_suite": "455 passed: /tmp/motriiq-forms-verified-suite.txt",
+      "native_android": "25 passed: /tmp/motriiq-forms-verified-native-android.txt",
+      "native_ios": "25 passed: /tmp/motriiq-forms-verified-native-ios.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/vehicle_form_dark_android.png",
+        "tool/ui_review_artifacts/vehicle_form_dark_ios.png"
+      ],
+      "scope_limit": "Isolated read-only HTTP/auth fixtures; no production uploads, listing writes, payments or account operations. Actual media picker and real staging permissions remain unverified."
+    },
+    "detail_pass": {
+      "unit_widget_suite": "481 passed: /tmp/motriiq-details-complete-suite.txt",
+      "native_android": "25 passed: /tmp/motriiq-details-native-android-final.txt; 6 business cases reverified after final no-photo header change: /tmp/motriiq-business-native-android-final.txt",
+      "native_ios": "25 passed: /tmp/motriiq-details-native-ios-final.txt; 6 business cases reverified after final no-photo header change: /tmp/motriiq-business-native-ios-final.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/business_details_dark_android.png",
+        "tool/ui_review_artifacts/business_details_dark_ios.png"
+      ],
+      "visual_review": "Both final 1.6-scale dark business screenshots inspected; no-photo toolbar collision removed. Final shared gallery tested with swipe, pinch, pan, rebuild, clamp and dismissal.",
+      "scope_limit": "Controlled local HTTP/auth and analytics fixtures. No production offers, uploads, calls, shares, payments or moderation writes. Loaded photo imagery, populated market estimates and seller reputation still await richer fixtures or staging. Automated pinch scenario expands vertically; additional natural media gestures and horizontal pinch remain on the richer-gallery review.",
+      "live_service": "DNS still failed during direct host check: /tmp/motriiq-details-dns-check.txt",
+      "normal_builds": "Android APK and iOS simulator app built successfully, installed and launched after the final native tests. Logs: /tmp/motriiq-details-android-normal-final.txt and /tmp/motriiq-details-ios-normal-final.txt"
+    },
+    "profile_pass": {
+      "unit_widget_suite": "513 passed: /tmp/motriiq-profile-complete-suite.txt",
+      "native_android": "38 passed: /tmp/motriiq-profile-native-android-final.txt",
+      "native_ios": "38 passed: /tmp/motriiq-profile-native-ios-final.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/seller_profile_dark_android.png",
+        "tool/ui_review_artifacts/seller_profile_dark_ios.png"
+      ],
+      "visual_review": "Both final populated verified/gold profile screenshots inspected at 1.6 text scale, with corrected singular listing copy.",
+      "scope_limit": "Fixture Supabase client intercepts all requests. Review upserts and offer status patches mutate local fixture state only. These results do not prove real server authorization or successful accepted-offer/chat/payment workflows. Loaded photo imagery, mixed Favorites and pagination remain pending.",
+      "network_recheck": "Backend is reachable outside sandbox, and real guest journeys now pass. Earlier DNS results came from sandbox-limited requests; do not treat them as a current service outage. HEAD log: /tmp/motriiq-profile-service-check.txt.",
+      "live_guest": {
+        "android": "Passed: /tmp/motriiq-profile-live-android.txt",
+        "ios": "Passed: /tmp/motriiq-profile-live-ios.txt",
+        "scope": "Guest journey uses real service; fixture review/offer mutations are separate. No account creation, SMS, upload, offer submission, payment or moderation action was performed against production."
+      },
+      "normal_builds": "Current normal debug Android APK and iOS simulator app built, preserved during the live test, then installed and launched. Logs: /tmp/motriiq-profile-android-normal.txt and /tmp/motriiq-profile-ios-normal.txt"
+    },
+    "account_pass": {
+      "unit_widget_suite": "561 passed: /tmp/motriiq-account-verified-suite.txt",
+      "native_android": "48 passed: /tmp/motriiq-account-native-android-final.txt",
+      "native_ios": "48 passed: /tmp/motriiq-account-native-ios-final.txt",
+      "scope_limit": "Auth, signup, username, OTP and profile fixtures are local only; no production account creation, SMS, upload or mutation. Native avatar picker and authenticated staging permissions remain pending.",
+      "public_auth_settings": "Read-only production /auth/v1/settings check: email enabled, phone disabled, signup enabled, mailer_autoconfirm true. No service settings were changed.",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/account_login_dark_android.png",
+        "tool/ui_review_artifacts/account_login_dark_ios.png",
+        "tool/ui_review_artifacts/account_signed_in_dark_android.png",
+        "tool/ui_review_artifacts/account_signed_in_dark_ios.png",
+        "tool/ui_review_artifacts/account_otp_dark_android.png",
+        "tool/ui_review_artifacts/account_otp_dark_ios.png",
+        "tool/ui_review_artifacts/account_phone_unavailable_light_android.png",
+        "tool/ui_review_artifacts/account_phone_unavailable_light_ios.png"
+      ],
+      "visual_review": "Native login/signed-in dark layouts inspected at enlarged text. Final OTP dark and disabled-phone light screenshots inspected on both platforms. OTP keyboard/cancel checks passed separately in ar/ku/en. All auth writes are fixture-only.",
+      "live_guest": {
+        "android": "Passed: /tmp/motriiq-account-live-android.txt",
+        "ios": "Passed: /tmp/motriiq-account-live-ios.txt",
+        "scope": "Real public-service guest journeys in ar/ku/en: navigation, listings/detail, filter apply/cancel/reset, settings/support/theme and refresh. No production account creation, SMS, upload, offers, payments or moderation."
+      },
+      "normal_builds": "Normal debug APK and iOS simulator app built successfully, preserved, installed and launched after final guest tests. Logs: /tmp/motriiq-account-android-normal.txt and /tmp/motriiq-account-ios-normal.txt."
+    },
+    "chat_pass": {
+      "unit_widget_suite": "573 passed: /tmp/motriiq-chat-verified-suite.txt",
+      "native_android": "12 passed: /tmp/motriiq-chat-native-android.txt",
+      "native_ios": "12 passed: /tmp/motriiq-chat-native-ios.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/offer_chat_dark_android.png",
+        "tool/ui_review_artifacts/offer_chat_dark_ios.png"
+      ],
+      "scope_limit": "All reads and sends intercepted by local fixtures. No messages were sent to real users. Real staging permissions, accepted-offer navigation, timestamps and history beyond 200 remain pending.",
+      "normal_builds": "Normal debug APK and iOS simulator app built, installed and launched successfully after native tests. Logs: /tmp/motriiq-chat-android-normal.txt and /tmp/motriiq-chat-ios-normal.txt"
+    },
+    "activity_pass": {
+      "unit_widget_suite": "590 passed: /tmp/motriiq-activity-verified-suite.txt",
+      "native_android": "17 passed: /tmp/motriiq-activity-native-android-final.txt",
+      "native_ios": "17 passed: /tmp/motriiq-activity-native-ios-final.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/activity_dark_android.png",
+        "tool/ui_review_artifacts/activity_dark_ios.png",
+        "tool/ui_review_artifacts/sent_offers_dark_android.png",
+        "tool/ui_review_artifacts/sent_offers_dark_ios.png"
+      ],
+      "scope_limit": "Isolated fixture reads and mark-read patches only. No production account activity changed or messages sent. Actual staging authorization, new-offer profile navigation, long-history pagination and other authenticated workflows remain pending.",
+      "normal_builds": "Normal debug APK and iOS simulator app built successfully, installed and launched after native tests. Logs: /tmp/motriiq-activity-android-normal.txt and /tmp/motriiq-activity-ios-normal.txt"
+    },
+    "admin_ads_pass": {
+      "unit_widget_suite": "602 passed: /tmp/motriiq-admin-manager-suite.txt",
+      "native_android": "12 passed: /tmp/motriiq-admin-manager-native-android.txt",
+      "native_ios": "12 passed: /tmp/motriiq-admin-manager-native-ios.txt",
+      "scope_limit": "All requests including delete RPC intercepted in local fixtures. No production ads deleted. Real admin authorization, backend migration availability and large result pagination remain unverified.",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/admin_ads_manager_dark_android.png",
+        "tool/ui_review_artifacts/admin_ads_manager_dark_ios.png"
+      ],
+      "visual_review": "Both populated dark screenshots inspected at 1.6 text scale; long titles and metadata wrap.",
+      "normal_builds": "Normal debug Android APK and iOS simulator app built successfully, installed and launched after native tests. Logs: /tmp/motriiq-admin-manager-android-normal.txt and /tmp/motriiq-admin-manager-ios-normal.txt"
+    },
+    "seller_activity_pass": {
+      "unit_widget_suite": "620 passed: /tmp/motriiq-seller-activity-suite.txt",
+      "native_android": "18 passed: /tmp/motriiq-seller-activity-native-android.txt",
+      "native_ios": "18 passed: /tmp/motriiq-seller-activity-native-ios.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/my_reviews_dark_android.png",
+        "tool/ui_review_artifacts/my_reviews_dark_ios.png",
+        "tool/ui_review_artifacts/my_messages_dark_android.png",
+        "tool/ui_review_artifacts/my_messages_dark_ios.png"
+      ],
+      "visual_review": "All four populated screenshots inspected at enlarged text; long seller names and review ratings remain separated, conversation previews and amounts wrap.",
+      "scope_limit": "Local fixture Supabase client only; no real-user messages, reviews or account changes. Embedded query contract uses the existing offer/message FK, but actual authenticated PostgREST response/RLS requires staging. Parent list pagination beyond 50 conversations or 100 reviews remains pending.",
+      "normal_builds": "Normal debug APK and iOS simulator app built, installed and launched successfully after native tests. Logs: /tmp/motriiq-seller-activity-android-normal.txt and /tmp/motriiq-seller-activity-ios-normal.txt"
+    },
+    "support_legal_pass": {
+      "unit_widget_suite": "652 passed: /tmp/motriiq-support-verified-suite2.txt",
+      "native_android": "32 passed: /tmp/motriiq-support-native-android-final.txt",
+      "native_ios": "32 passed: /tmp/motriiq-support-native-ios-final.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/support_polish_dark_android.png",
+        "tool/ui_review_artifacts/support_polish_dark_ios.png",
+        "tool/ui_review_artifacts/about_polish_dark_android.png",
+        "tool/ui_review_artifacts/about_polish_dark_ios.png",
+        "tool/ui_review_artifacts/privacy_polish_dark_android.png",
+        "tool/ui_review_artifacts/privacy_polish_dark_ios.png",
+        "tool/ui_review_artifacts/terms_polish_dark_android.png",
+        "tool/ui_review_artifacts/terms_polish_dark_ios.png"
+      ],
+      "visual_review": "All eight dark screenshots inspected. Final support screenshots replace low-contrast help icons and duplicate heading. All captures use enlarged text.",
+      "scope_limit": "Support share channel is intercepted; no report sent to another person. Actual external phone/WhatsApp apps and platform share-sheet completion remain unverified. Existing legal text was preserved; this pass changes presentation and localized date labels only.",
+      "normal_builds": "Normal debug Android APK and iOS simulator app built, installed and launched successfully after native tests. Logs: /tmp/motriiq-support-android-normal.txt and /tmp/motriiq-support-ios-normal.txt"
+    },
+    "wallet_payment_pass": {
+      "unit_widget_suite": "672 passed: /tmp/motriiq-wallet-payment-verified-suite-final.txt",
+      "native_android": "20 passed: /tmp/motriiq-wallet-payment-native-android-verified.txt",
+      "native_ios": "20 passed: /tmp/motriiq-wallet-payment-native-ios-verified.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/wallet_topup_dark_android.png",
+        "tool/ui_review_artifacts/wallet_topup_dark_ios.png",
+        "tool/ui_review_artifacts/manual_payment_dark_android.png",
+        "tool/ui_review_artifacts/manual_payment_dark_ios.png"
+      ],
+      "scope_limit": "Fixture Supabase client intercepts all storage upload/transaction writes; receipt picker supplies local in-memory image. Screenshots show fixture account details, not production payment configuration. No production receipts, balances, transactions or payment settings changed. Native picker, real storage/RLS permissions, ledger accounting/admin confirmation and settlement require staging; prepared wallet hardening migration remains unapplied.",
+      "visual_review": "All four final dark screenshots inspected at enlarged text after explicit currency-direction fix. Payment displays separate USD/IQD lines, wallet choices use IQD codes and instruction contrast matches the theme.",
+      "normal_builds": "Normal debug APK and iOS simulator app built, installed and launched after final native tests. Logs: /tmp/motriiq-wallet-payment-android-normal.txt and /tmp/motriiq-wallet-payment-ios-normal.txt"
+    },
+    "currency_pass": {
+      "unit_widget_suite": "684 passed: /tmp/motriiq-currency-verified-suite.txt",
+      "native_android": "12 passed: /tmp/motriiq-currency-native-android.txt",
+      "native_ios": "12 passed: /tmp/motriiq-currency-native-ios.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/shared_currency_dark_android.png",
+        "tool/ui_review_artifacts/shared_currency_dark_ios.png"
+      ],
+      "visual_review": "Both final dark review samples inspected at 1.6 text scale; explicit currency codes remain attached to correct numeric values in listing/package/wallet samples. Focused rerun logs: /tmp/motriiq-currency-visual-android.txt and /tmp/motriiq-currency-visual-ios.txt.",
+      "scope_limit": "Read-only fixture client and shared-price review harness with actual CarCard, BusinessAdPackage.priceText and wallet label sample. This is not proof of every populated wallet/admin/detail state or real server accounting. Existing conversion rate and rounding preserved.",
+      "normal_builds": "Normal debug APK and iOS simulator app built, preserved through live tests, then installed/launched. Logs: /tmp/motriiq-currency-android-normal.txt and /tmp/motriiq-currency-ios-normal.txt",
+      "live_guest": {
+        "android": "Passed: /tmp/motriiq-currency-live-android.txt",
+        "ios": "Passed: /tmp/motriiq-currency-live-ios.txt",
+        "scope": "Real public-service guest journeys in ar/ku/en: listings/detail, navigation, filter apply/cancel/reset, settings/theme/support and refresh. No production signup, SMS, uploads, messages, offers, payments or moderation."
+      }
+    },
+    "wallet_review_pass": {
+      "unit_widget_suite": "701 passed: /tmp/motriiq-wallet-review-verified-suite.txt",
+      "native_android": "17 passed: /tmp/motriiq-wallet-review-native-android.txt",
+      "native_ios": "17 passed: /tmp/motriiq-wallet-review-native-ios.txt",
+      "scope_limit": "All requests including admin_wallet_decide and receipt signing are local fixture responses. No real requests were approved/rejected and no production balance changed. Real admin/RLS, receipt access, concurrent server decisions and accounting require staging checks; no backend migration applied.",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/wallet_admin_dark_android.png",
+        "tool/ui_review_artifacts/wallet_admin_dark_ios.png"
+      ],
+      "visual_review": "Both final dark screenshots inspected at 1.6 text scale after fallback/method label refinements. Focused final visual case passed on each platform: /tmp/motriiq-wallet-review-visual-android.txt and /tmp/motriiq-wallet-review-visual-ios.txt.",
+      "normal_builds": "Normal debug APK and iOS simulator app built successfully, installed and launched after final native checks. Logs: /tmp/motriiq-wallet-review-android-normal.txt and /tmp/motriiq-wallet-review-ios-normal.txt"
+    },
+    "settings_history_pass": {
+      "unit_widget_suite": "726 passed: /tmp/motriiq-settings-history-verified-suite.txt",
+      "native_android": "25 passed: /tmp/motriiq-settings-history-native-android.txt",
+      "native_ios": "25 passed: /tmp/motriiq-settings-history-native-ios.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/settings_dark_android.png",
+        "tool/ui_review_artifacts/settings_dark_ios.png",
+        "tool/ui_review_artifacts/history_dark_android.png",
+        "tool/ui_review_artifacts/history_dark_ios.png",
+        "tool/ui_review_artifacts/fines_dark_android.png",
+        "tool/ui_review_artifacts/fines_dark_ios.png"
+      ],
+      "scope_limit": "Fixture Supabase/auth/capability client and local preference store. Fines launcher is intercepted; no external browser launched or fine/account/payment data submitted. Notification choices remain local; no delivery-provider integration exists in the repository.",
+      "portal_read_check": "Read-only web check reached configured https://www.fineskrg.com/; https://traffic.moi.gov.iq/ returned 403 to the web fetcher. This does not establish device-browser availability or an outage; configured URLs remain unchanged.",
+      "visual_review": "All six dark Android/iOS screenshots inspected at enlarged text size; settings, history and fines labels wrap without overflow.",
+      "final_fines_native": "7 checks passed on each platform after final Kurdish subtitle correction: /tmp/motriiq-fines-native-android-final.txt and /tmp/motriiq-fines-native-ios-final.txt",
+      "normal_builds": "Normal Android debug APK and iOS simulator app built successfully, preserved through live tests, then installed and launched. Logs: /tmp/motriiq-settings-history-android-normal.txt and /tmp/motriiq-settings-history-ios-normal.txt",
+      "live_guest": {
+        "android": "Passed all three locales: /tmp/motriiq-settings-history-live-android.txt",
+        "ios": "Passed all three locales: /tmp/motriiq-settings-history-live-ios.txt",
+        "scope": "Real-service public guest navigation, listing/detail, filters, settings/theme/support and refresh. No authenticated production mutations."
+      }
+    },
+    "follows_pass": {
+      "unit_widget_suite": "735 passed: /tmp/motriiq-follows-full-suite.txt",
+      "native_android": "9 passed: /tmp/motriiq-follows-native-android-final.txt. Initial visual hold captured valid UI but lost its Activity; interrupted only after confirming launcher resumed, then all cases rerun without hold.",
+      "native_ios": "9 passed: /tmp/motriiq-follows-native-ios.txt",
+      "scope_limit": "Authenticated read/navigation fixture only; no production follow records changed. Public profile lookup is optional; real RLS/profile visibility needs staging checks.",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/follows_dark_android.png",
+        "tool/ui_review_artifacts/follows_dark_ios.png"
+      ],
+      "visual_review": "Both native dark screenshots inspected at 1.6 text scale; long seller name and localized date wrap, disclosure remains aligned.",
+      "normal_builds": "Normal Android debug APK and iOS simulator app built, installed and launched after native tests. Logs: /tmp/motriiq-follows-android-normal.txt and /tmp/motriiq-follows-ios-normal.txt"
+    },
+    "alerts_pass": {
+      "scope_limit": "All authenticated alert reads, read-status updates and listing navigation use intercepted local fixtures. No production read status changed. Real alert/RLS and public listing visibility require staging checks.",
+      "native_android": "12 passed: /tmp/motriiq-alerts-native-android.txt",
+      "native_ios": "12 passed: /tmp/motriiq-alerts-native-ios.txt",
+      "unit_widget_suite": "747 passed: /tmp/motriiq-alerts-full-suite.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/alerts_dark_android.png",
+        "tool/ui_review_artifacts/alerts_dark_ios.png"
+      ],
+      "visual_review": "Both dark native screenshots inspected at enlarged text size: long model/location and USD/IQD price wrap without overlap; unread label and directional disclosure visible.",
+      "normal_builds": "Normal Android debug APK and iOS simulator app built successfully, installed and launched after native tests. Logs: /tmp/motriiq-alerts-android-normal.txt and /tmp/motriiq-alerts-ios-normal.txt"
+    },
+    "business_admin_pass": {
+      "focused_suite": "30 passed including locale wiring: /tmp/motriiq-business-admin-tests-final.txt",
+      "analysis": "No issues: /tmp/motriiq-business-admin-final-analysis.txt",
+      "native_android": "18 passed: /tmp/motriiq-business-admin-native-android.txt",
+      "native_ios": "18 passed: /tmp/motriiq-business-admin-native-ios.txt",
+      "scope_limit": "All admin access checks, ad reads, package reads and moderation/payment updates intercepted locally. No real ads or payment statuses changed. Actual admin/RLS and concurrent server behavior require staging; no migration deployed. Approval retains the existing payment-confirmation behavior, now explicit in the confirmation. Ads without a package receive a 30-day fallback period; referenced packages require a valid duration.",
+      "unit_widget_suite": "765 passed: /tmp/motriiq-business-admin-full-suite.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/business_admin_dark_android.png",
+        "tool/ui_review_artifacts/business_admin_dark_ios.png"
+      ],
+      "visual_review": "Both native dark screenshots inspected at enlarged text size: full-width filter and long card fields/actions wrap without overlap.",
+      "normal_builds": "Normal Android debug APK and iOS simulator app built successfully, installed and launched after native tests. Logs: /tmp/motriiq-business-admin-android-normal.txt and /tmp/motriiq-business-admin-ios-normal.txt"
+    },
+    "reports_pass": {
+      "focused_suite": "33 passed including locale wiring before final fixture request-metadata cleanup: /tmp/motriiq-reports-tests-final.txt",
+      "analysis": "No issues: /tmp/motriiq-reports-final-analysis.txt",
+      "native_android": "21 passed: /tmp/motriiq-reports-native-android.txt",
+      "native_ios": "21 passed: /tmp/motriiq-reports-native-ios.txt",
+      "scope_limit": "All access checks, report reads/decisions, verification inserts and listing reads intercepted locally. No production reports or seller badges changed. Actual admin/RLS and concurrent server behavior require staging checks. Reported listings deliberately retain admin cars access rather than public-only listing access.",
+      "unit_widget_suite": "786 passed: /tmp/motriiq-reports-verified-suite.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/reports_dark_android.png",
+        "tool/ui_review_artifacts/reports_dark_ios.png"
+      ],
+      "final_visual": "Both final dark screenshots inspected with localized date and local clock time, enlarged text and long ID/reason; no overlap.",
+      "final_layout_checks": "6 layout cases passed on each platform after preserving clock time: /tmp/motriiq-reports-final-android.txt and /tmp/motriiq-reports-final-ios.txt",
+      "normal_builds": "Normal Android debug APK and iOS simulator app built successfully, installed and launched after native tests. Logs: /tmp/motriiq-reports-android-normal.txt and /tmp/motriiq-reports-ios-normal.txt"
+    },
+    "car_requests_pass": {
+      "focused_suite": "45 passed including locale wiring before final ID/range display refinement: /tmp/motriiq-requests-tests-final.txt",
+      "analysis": "No issues: /tmp/motriiq-requests-final-analysis.txt",
+      "native_android": "33 passed: /tmp/motriiq-requests-native-android.txt",
+      "native_ios": "33 passed: /tmp/motriiq-requests-native-ios.txt",
+      "scope_limit": "All reads, publishing, offers, decisions and guest auth use intercepted local fixtures. No real requests or offers created/changed. Nested offer visibility, authenticated RLS and simultaneous request-close/offer-decision behavior require staging checks; client guards do not establish server atomicity. Existing SQL year range 1950–2100 preserved.",
+      "unit_widget_suite": "819 passed: /tmp/motriiq-requests-final-suite.txt",
+      "final_forms_android": "12 passed after external wrapping labels: /tmp/motriiq-requests-forms-final-android.txt",
+      "final_forms_ios": "13 passed (12 final form layouts plus duplicate offer): /tmp/motriiq-requests-forms-final-ios.txt",
+      "duplicate_refresh_widget": "Passed final stronger duplicate-after-cancel refresh assertion: /tmp/motriiq-requests-duplicate-final.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/requests_cards_dark_android.png",
+        "tool/ui_review_artifacts/requests_cards_dark_ios.png",
+        "tool/ui_review_artifacts/requests_request_dark_android.png",
+        "tool/ui_review_artifacts/requests_request_dark_ios.png",
+        "tool/ui_review_artifacts/requests_offer_dark_android.png",
+        "tool/ui_review_artifacts/requests_offer_dark_ios.png"
+      ],
+      "duplicate_refresh_android": "Passed final duplicate-after-cancel refresh assertion: /tmp/motriiq-requests-duplicate-native-android.txt",
+      "visual_review": "All six final screenshots inspected: both cards, request and offer forms on Android/iOS, enlarged text; external labels fully readable, long content wraps, long forms scroll with reachable actions.",
+      "duplicate_refresh_ios": "Passed final stronger duplicate-after-cancel refresh assertion: /tmp/motriiq-requests-duplicate-native-ios.txt",
+      "normal_builds": "Normal Android debug APK and iOS simulator app built successfully, installed and launched after final native checks. Logs: /tmp/motriiq-requests-android-normal.txt and /tmp/motriiq-requests-ios-normal.txt"
+    },
+    "comparison_pass": {
+      "focused_suite": "37 passed including locale wiring: /tmp/motriiq-comparison-tests.txt",
+      "native_android": "24 passed, 1 synthetic wide-viewport case skipped: /tmp/motriiq-comparison-native-android.txt",
+      "native_ios": "24 passed, 1 synthetic wide-viewport case skipped: /tmp/motriiq-comparison-native-ios.txt",
+      "scope_limit": "Comparison reads the existing local selection snapshot; no new comparison network loading/error states are invented. Fixtures use empty image arrays and intercepted listing-detail reads, so real loaded image/network behavior and refreshed listing availability remain part of the shared-media/live-detail review. Wide 1024px layout verified in host widget test; phone native cases intentionally skip that synthetic viewport.",
+      "unit_widget_suite": "844 passed: /tmp/motriiq-comparison-verified-suite.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/comparison_headers_dark_android.png",
+        "tool/ui_review_artifacts/comparison_headers_dark_ios.png",
+        "tool/ui_review_artifacts/comparison_specs_dark_android.png",
+        "tool/ui_review_artifacts/comparison_specs_dark_ios.png"
+      ],
+      "final_visual": "Focused final case passed once on each platform after currency/amount nonbreaking-space refinement: /tmp/motriiq-comparison-final-android.txt and /tmp/motriiq-comparison-final-ios.txt. All four final header/spec dark screenshots inspected at enlarged text size; names, actions and spec values wrap, currency stays with amount.",
+      "normal_builds": "Normal Android debug APK and iOS simulator app built successfully, installed and launched after final native checks. Logs: /tmp/motriiq-comparison-android-normal.txt and /tmp/motriiq-comparison-ios-normal.txt"
+    },
+    "share_currency_pass": {
+      "focused_suite": "94 passed: /tmp/motriiq-share-currency-tests3.txt",
+      "analysis": "No issues: /tmp/motriiq-share-currency-final-analysis.txt",
+      "native_android": "23 passed: /tmp/motriiq-share-price-native-android.txt",
+      "native_ios": "23 passed: /tmp/motriiq-share-price-native-ios.txt",
+      "scope_limit": "Share platform method channel and all Supabase traffic are intercepted. No native share sheet opened, no recipient selected and no real message sent. Preview screenshots render the actual message builders in a test-only harness, not a new product preview flow. Business ad price is the advertising package fee (CreateBusinessAdPage assigns pkg.price); omitted from public share text. Car prices follow the existing USD form contract. Existing conversion rate/whole-number rounding preserved; no billing/ledger mutation.",
+      "unit_widget_suite": "869 passed: /tmp/motriiq-share-currency-full-suite.txt",
+      "currency_android": "14 passed: /tmp/motriiq-currency-wrapping-native-android.txt",
+      "currency_ios": "14 passed: /tmp/motriiq-currency-wrapping-native-ios.txt",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/share_price_preview_dark_android.png",
+        "tool/ui_review_artifacts/share_price_preview_dark_ios.png",
+        "tool/ui_review_artifacts/shared_currency_wrapping_dark_android.png",
+        "tool/ui_review_artifacts/shared_currency_wrapping_dark_ios.png"
+      ],
+      "visual_review": "All four screenshots inspected: both test-only message previews and actual shared price surfaces (CarCard, package price and wallet-label sample), dark at enlarged text. Units remain attached to amounts, readable wrapping, business package fee absent from share preview. Actual images and OS share chooser remain outside this fixture review.",
+      "normal_builds": "Normal Android debug APK and iOS simulator app built successfully, preserved through live checks, then installed and launched. Logs: /tmp/motriiq-share-currency-android-normal.txt and /tmp/motriiq-share-currency-ios-normal.txt",
+      "live_guest": {
+        "android": "Passed ar/ku/en: /tmp/motriiq-share-currency-live-android.txt",
+        "ios": "Passed ar/ku/en: /tmp/motriiq-share-currency-live-ios.txt",
+        "scope": "Real public-service guest navigation, listing/detail, filters, settings/theme/support and refresh. Sharing remained intercepted in its dedicated suites; no authenticated production changes."
+      }
+    },
+    "visible_home_2026_10_22": {
+      "unit_widget_suite": "884 passed: /tmp/motriiq-home-visible-full-suite2.txt",
+      "analysis": "Clean: /tmp/motriiq-home-visible-final-analysis2.txt",
+      "builds": "Normal Android debug and iOS simulator builds passed; both installed and Home screenshots visually inspected.",
+      "screenshots": [
+        "tool/ui_review_artifacts/home_before_visible_polish_android.png",
+        "tool/ui_review_artifacts/home_after_visible_polish_android.png",
+        "tool/ui_review_artifacts/home_after_visible_polish_ios.png"
+      ],
+      "live_guest": "Passed ar/ku/en on Android and iOS: /tmp/motriiq-home-visible-live-android.txt and /tmp/motriiq-home-visible-live-ios.txt. Normal builds restored and launched after testing.",
+      "limits": "Full-app polish remains active. Home changes are visible; Search retained its existing controls. Business stale response races/native populated feed and production/staging checks remain pending."
+    },
+    "search_discovery_2026_10_22": {
+      "suite": "895 passed: /tmp/motriiq-search-discovery-full-suite.txt",
+      "analysis": "Clean: /tmp/motriiq-search-discovery-final-analysis2.txt",
+      "native_android": "11 passed: /tmp/motriiq-search-discovery-native-android.txt",
+      "native_ios": "11 passed: /tmp/motriiq-search-discovery-native-ios.txt",
+      "builds": "Normal Android debug and iOS simulator builds passed and preserved for restoration.",
+      "visuals": "Four controlled fixture screenshots inspected; original fixture omitted SafeArea, host corrected and 11 host checks passed again. Real app-shell screenshots search_live_android.png and search_live_ios.png inspected: correct system bar spacing. Visual direction subsequently rejected by user as insufficiently reference-led; functional checks are not visual approval.",
+      "scope": "Isolated read fixtures only for failures, cursor and stale-response checks. No saved-search/account/financial writes against production.",
+      "live_guest": "Passed all three locales on Android/iOS; normal builds restored and launched. Logs: /tmp/motriiq-search-discovery-live-android.txt and /tmp/motriiq-search-discovery-live-ios.txt"
+    },
+    "reference_discovery_2026_10_22": {
+      "implementation": "Reference-led Home/Search/regular-card set plus bundled consistent multilingual typography. Small versus full-card views outside these paths still need reconciliation.",
+      "suite_before_final_submit_refinement": "900 passed: /tmp/motriiq-reference-final-suite2.txt",
+      "targeted_after_submit_refinement": "47 passed: /tmp/motriiq-reference-final-focus-tests.txt",
+      "final_suite": "900 passed: /tmp/motriiq-reference-review-full-suite.txt",
+      "analysis": "Clean: /tmp/motriiq-reference-installed-analysis.txt",
+      "normal_builds": "Passed: /tmp/motriiq-reference-installed-android-build.txt and /tmp/motriiq-reference-installed-ios-build.txt. Normal artifacts restored after tests.",
+      "native": "Final six locale/theme cases per platform running, with loaded-photo decode required and four screenshot checkpoints per platform.",
+      "scope": "Public seeded vehicle photos read from production CDN; backend fixtures sanitize vehicle-only fields. No live authenticated mutations. Saved-search writes use isolated fake auth and HTTP only.",
+      "limits": "Backend alert schema supports make/location/body/year/price; model/fuel/transmission/mileage not saved silently. Global font change requires continued native review across remaining screens.",
+      "final_color_followup": "24 focused checks passed, including locale wiring and submit-icon contrast >=3 in all locale/theme cases: /tmp/motriiq-reference-installed-focused.txt",
+      "native_full_before_color_followup": "Six locale/theme cases passed on each platform: /tmp/motriiq-reference-review-native2-android.txt and /tmp/motriiq-reference-review-native2-ios.txt. Follow-up Kurdish dark case passed each after first contrast change. Current final visual run includes all final colors and matching fixture query.",
+      "final_native_visual": "Six locale/theme cases passed per platform: /tmp/motriiq-reference-final-visual-android.txt and /tmp/motriiq-reference-final-visual-ios.txt. Loaded photo decoding required. Four final screenshots per platform inspected.",
+      "visual_findings_fixed": [
+        "Overallocated heading action width",
+        "Equal-weight dual currency price",
+        "Fixture missing canonical image_url field",
+        "Keyboard/suggestions covering submitted results",
+        "Low dark-mode category and submit-icon contrast",
+        "Ambiguous native tooltip finder (test only)"
+      ],
+      "artifacts": [
+        "tool/ui_review_artifacts/reference_home_ar_android.png",
+        "tool/ui_review_artifacts/reference_search_ar_android.png",
+        "tool/ui_review_artifacts/reference_home_ku_dark_android.png",
+        "tool/ui_review_artifacts/reference_search_ku_dark_android.png",
+        "tool/ui_review_artifacts/reference_home_ar_ios.png",
+        "tool/ui_review_artifacts/reference_search_ar_ios.png",
+        "tool/ui_review_artifacts/reference_home_ku_dark_ios.png",
+        "tool/ui_review_artifacts/reference_search_ku_dark_ios.png"
+      ],
+      "documentation": "Arabic README replaced obsolete local-auth instructions with actual Supabase marketplace setup, commands, typography and release limits.",
+      "final_live_guest": "Passed ar/ku/en on Android and iOS: /tmp/motriiq-reference-live-android.txt and /tmp/motriiq-reference-live-ios.txt. Includes real public reads, listing/detail, locale/filter navigation and theme/settings/support. No authenticated production writes.",
+      "artifact_integrity": "Preserved Android/iOS normal kernel bundles checked: neither includes reference_discovery_layout_test.dart. Normal apps restored after tests.",
+      "visual_review": "Final Arabic light and Kurdish dark Home/Search screenshots inspected on both platforms: decoded photos, useful inventory early, clear primary/secondary currencies, matching search criteria, no keyboard/suggestion overlay after submit, readable icon contrast. Large-text seller/admin/global-font coverage remains a separate open audit.",
+      "normal_installed_review": {
+        "status": "Both normal apps installed, launched on Home and screenshots inspected with real public inventory after live tests.",
+        "screenshots": [
+          "tool/ui_review_artifacts/reference_installed_home_android.png",
+          "tool/ui_review_artifacts/reference_installed_home_ios.png"
+        ]
+      }
+    },
+    "compact_grid_2026_10_22": {
+      "suite": "920 passed: /tmp/motriiq-compact-reviewed-suite.txt",
+      "analysis": "Clean: /tmp/motriiq-compact-reviewed-analysis.txt",
+      "normal_builds": "Android/iOS passed: /tmp/motriiq-compact-reviewed-{android,ios}-build.txt; normal apps preserved before native runs.",
+      "native_actions": "20 passed on each platform: /tmp/motriiq-compact-final-actions-{android,ios}.txt",
+      "native_visual": "12 passed per platform: /tmp/motriiq-compact-visual-{android,ios}.txt; loaded public photos, 4:3 crop, all locales/themes and 1.0/1.6 text scales.",
+      "visual_artifacts": [
+        "tool/ui_review_artifacts/reference_grid_ar_android.png",
+        "tool/ui_review_artifacts/reference_grid_ar_large_android.png",
+        "tool/ui_review_artifacts/reference_grid_ku_dark_android.png",
+        "tool/ui_review_artifacts/reference_grid_ku_dark_large_android.png",
+        "tool/ui_review_artifacts/reference_grid_ar_ios.png",
+        "tool/ui_review_artifacts/reference_grid_ar_large_ios.png",
+        "tool/ui_review_artifacts/reference_grid_ku_dark_ios.png",
+        "tool/ui_review_artifacts/reference_grid_ku_dark_large_ios.png"
+      ],
+      "scope": "Only public CDN photos read live; all Favorite writes, admin checks and pagination/error races use isolated HTTP/auth fixtures.",
+      "audit": "tool/ui_completion_audit.json; imported detail route and startup/overlay surfaces added to scope, not excluded.",
+      "live_guest": "Passed ar/ku/en on both platforms: /tmp/motriiq-compact-live-android.txt and /tmp/motriiq-compact-live-ios.txt",
+      "visual_review": "All eight screenshots inspected: actual loaded photos, consistent 4:3 image frame, readable primary/secondary prices and icon targets, two columns at ordinary size and one column at 1.6 text scale; no observed clipping in Arabic light or Kurdish dark.",
+      "normal_restore": "Both normal apps restored and launched. Android opened on Cars; actual installed screenshot inspected at tool/ui_review_artifacts/compact_installed_cars_android.png. iOS left running on Home."
+    },
+    "visual_refinement_2026_10_22": {
+      "changes": [
+        "Cars tab hides duplicate floating Add button; standalone Cars and Market retain contextual creation.",
+        "Photo controls now show 32px surfaces inside at least 44px tap targets.",
+        "Compact grids and Home recommendation rails use a reduced shared vertical allowance; responsive columns and 4:3 photos retained."
+      ],
+      "host": "921 full tests passed; 33 focused tests including locale wiring passed",
+      "analysis": "/tmp/motriiq-refinement-analysis.txt: No issues found",
+      "native_logs": [
+        "/tmp/motriiq-refinement-android.txt",
+        "/tmp/motriiq-refinement-ios.txt"
+      ],
+      "status": "current_pass_verified_whole_goal_active",
+      "full_suite_log": "/tmp/motriiq-refinement-suite.txt",
+      "native": "12 loaded-photo cases passed per platform across ar/ku/en, light/dark and scale 1/1.6; all 8 checkpoint images visually inspected.",
+      "normal_builds": [
+        "/tmp/motriiq-refinement-normal-android-build.txt",
+        "/tmp/motriiq-refinement-normal-ios-build.txt"
+      ],
+      "normal_restore": "Both normal debug builds installed and launched after native test completion; Android Cars tab opened for actual shell review."
+    },
+    "market_details_2026_10_22": {
+      "status": "current_market_pass_verified_whole_goal_active",
+      "host": "944 full tests passed, including locale wiring; 23 dedicated Market checks.",
+      "analysis": "/tmp/motriiq-market-complete-analysis.txt",
+      "native_logs": [
+        "/tmp/motriiq-market-final-native-android.txt",
+        "/tmp/motriiq-market-final-native-ios.txt"
+      ],
+      "limits": [
+        "All auth/database mutations use isolated HTTP fixtures.",
+        "No production contact, admin deletion or upload executed.",
+        "OS picker handoff and staging permissions still open."
+      ],
+      "native": "22 multilingual/layout/gallery/editor/admin checks plus 1 owner cover-refresh check passed on each platform. All 10 final Market detail/editor screenshots inspected.",
+      "screenshots": [
+        "tool/ui_review_artifacts/reference_market_ar_android.png",
+        "tool/ui_review_artifacts/reference_market_ar_large_android.png",
+        "tool/ui_review_artifacts/reference_market_ku_android.png",
+        "tool/ui_review_artifacts/reference_market_ku_large_android.png",
+        "tool/ui_review_artifacts/reference_market_editor_android.png",
+        "tool/ui_review_artifacts/reference_market_ar_ios.png",
+        "tool/ui_review_artifacts/reference_market_ar_large_ios.png",
+        "tool/ui_review_artifacts/reference_market_ku_ios.png",
+        "tool/ui_review_artifacts/reference_market_ku_large_ios.png",
+        "tool/ui_review_artifacts/reference_market_editor_ios.png"
+      ],
+      "owner_refresh": [
+        "/tmp/motriiq-market-owner-native-android.txt",
+        "/tmp/motriiq-market-owner-native-ios.txt"
+      ],
+      "full_suite_log": "/tmp/motriiq-market-complete-suite.txt",
+      "normal_builds": [
+        "/tmp/motriiq-market-normal-android-build.txt",
+        "/tmp/motriiq-market-normal-ios-build.txt"
+      ],
+      "normal_restore": "Normal builds installed/launched on emulator-5554 and iOS Device Hub after all tests completed. Android APK preserved at /tmp/motriiq-market-normal.apk; normal iOS app copied to workspace build/ios/iphonesimulator/Runner.app."
+    },
+    "generic_creation_2026_10_22": {
+      "status": "current_form_scope_verified_whole_goal_active",
+      "analysis": "/tmp/motriiq-create-reviewed-analysis.txt",
+      "host": "973 full tests passed; 12 locale wiring checks repeated after submission copy change.",
+      "native_logs": [
+        "/tmp/motriiq-create-native-android.txt",
+        "/tmp/motriiq-create-native-ios.txt"
+      ],
+      "limits": [
+        "All writes use isolated auth/HTTP fixtures; no production listing created.",
+        "Native OS picker and actual storage/RLS permissions still unverified.",
+        "An uncertain insert retains its ID; duplicate primary-key rejection does not create a second listing, and UI directs the user to inspect their listings before retrying."
+      ],
+      "full_suite_log": "/tmp/motriiq-create-suite.txt",
+      "locale": "/tmp/motriiq-create-final-locale.txt",
+      "native": "29 form/layout/action cases passed per platform: all locales, both themes and ordinary/enlarged text. All 8 held screenshots inspected.",
+      "screenshots": [
+        "tool/ui_review_artifacts/reference_create_market_ar_android.png",
+        "tool/ui_review_artifacts/reference_create_job_ar_android.png",
+        "tool/ui_review_artifacts/reference_create_market_ku_android.png",
+        "tool/ui_review_artifacts/reference_create_job_ku_android.png",
+        "tool/ui_review_artifacts/reference_create_market_ar_ios.png",
+        "tool/ui_review_artifacts/reference_create_job_ar_ios.png",
+        "tool/ui_review_artifacts/reference_create_market_ku_ios.png",
+        "tool/ui_review_artifacts/reference_create_job_ku_ios.png"
+      ],
+      "normal_builds": [
+        "/tmp/motriiq-create-normal-android-build.txt",
+        "/tmp/motriiq-create-normal-ios-build.txt"
+      ],
+      "normal_restore": "Both normal builds restored, installed and launched after tests. APK preserved at /tmp/motriiq-create-normal.apk; iOS app copied to workspace build/ios/iphonesimulator/Runner.app."
+    },
+    "home_favorites_2026_10_22": {
+      "status": "current_scope_verified_whole_goal_active",
+      "host_races": "/tmp/motriiq-favorite-reviewed-races.txt: 26 cases passed (23 Section + 3 isolated cache timing tests)",
+      "home_host": "/tmp/motriiq-home-recovery-host.txt: 8 cases passed",
+      "brand": "/tmp/motriiq-brand-accessibility-final.txt: large RTL artwork and reduced-motion regression passed",
+      "analysis": "/tmp/motriiq-home-favorites-reviewed-analysis.txt",
+      "native_home": [
+        "/tmp/motriiq-home-recovery-final-android.txt",
+        "/tmp/motriiq-home-recovery-final-ios.txt"
+      ],
+      "limits": [
+        "Ads deliberately unavailable in the recovery fixture; no consent or ad interaction performed.",
+        "Auth/database writes are isolated fixtures; production favorites remain unchanged."
+      ],
+      "native_home_result": "8 final cases passed per platform; all 8 enlarged-text Arabic/light and Kurdish/dark screenshots visually inspected. Brand artwork no longer clips and reduced-motion host regression passed.",
+      "native_favorites": [
+        "/tmp/motriiq-favorite-native-android.txt",
+        "/tmp/motriiq-favorite-native-ios.txt"
+      ],
+      "full_suite": "/tmp/motriiq-home-favorites-final-suite.txt",
+      "host": "987 full tests passed, including locale wiring.",
+      "native_favorite_result": "23 card/layout/action cases passed on each platform, including duplicate synchronization, pending write exclusion, ID rebinding and async disposal.",
+      "screenshots": [
+        "tool/ui_review_artifacts/reference_home_error_ar_cars_android.png",
+        "tool/ui_review_artifacts/reference_home_error_ar_market_android.png",
+        "tool/ui_review_artifacts/reference_home_error_ku_cars_android.png",
+        "tool/ui_review_artifacts/reference_home_error_ku_market_android.png",
+        "tool/ui_review_artifacts/reference_home_error_ar_cars_ios.png",
+        "tool/ui_review_artifacts/reference_home_error_ar_market_ios.png",
+        "tool/ui_review_artifacts/reference_home_error_ku_cars_ios.png",
+        "tool/ui_review_artifacts/reference_home_error_ku_market_ios.png"
+      ],
+      "normal_builds": [
+        "/tmp/motriiq-home-favorites-normal-android-build.txt",
+        "/tmp/motriiq-home-favorites-normal-ios-build.txt"
+      ],
+      "normal_restore": "Both normal builds installed/launched after all native tests. APK preserved at /tmp/motriiq-home-favorites-normal.apk, iOS app copied to workspace build/ios/iphonesimulator/Runner.app."
+    },
+    "business_and_core_theme_2026_10_22": {
+      "business_changes": "Photo-first bounded detail with readable pinned toolbar, shared gallery, content direction, shared contact icons and corrected click/map analytics attribution. Blank media does not reserve space.",
+      "business_full_native": [
+        "/tmp/motriiq-business-native-android.txt",
+        "/tmp/motriiq-business-native-ios.txt"
+      ],
+      "business_full_native_result": "11 cases passed per platform before the numeric-hours follow-up; all eight Business captures inspected. Auth/analytics/links isolated.",
+      "core_theme_reports": [
+        "tool/ui_review_artifacts/current_theme_android.json",
+        "tool/ui_review_artifacts/current_theme_ios.json"
+      ],
+      "core_theme_result": "Account 48, creation forms 26, support/legal 32 and settings/history/fines 25 passed per platform. All 28 screenshots reviewed as contact sheets; key Account/form/settings captures also reviewed individually. Visual review found oversized Account actions and a wrong WhatsApp field icon; test counts do not imply whole-app design acceptance.",
+      "followup": "Six Account signed-in cases and four Business photo-detail cases passed per platform. All 10 revision captures individually inspected: compact actions, readable contacts, correct 09:00 – 18:00 order in RTL. Exact baselines and logs: tool/ui_review_artifacts/account_hours_revision_{android,ios}.json.",
+      "host_suite": "/tmp/motriiq-account-hours-full-suite.txt: 998 passed, including locale wiring",
+      "analysis": "/tmp/motriiq-account-hours-analysis.txt: No issues found",
+      "inventory": [
+        "tool/ui_surface_inventory.json",
+        "tool/ui_modal_audit.json"
+      ],
+      "scope_limit": "All-screen completion remains unproven. Populated owned-vehicle editor/delete, vehicle offer/submission recovery, remaining modal state reconciliation and staging media/RLS still require work.",
+      "normal_restore": {
+        "android": "Built, installed and launched. Preserved APK /tmp/motriiq-account-hours-normal.apk.",
+        "ios": "Built, installed and launched in Device Hub. Copied Runner.app to build/ios/iphonesimulator/Runner.app.",
+        "logs": [
+          "/tmp/motriiq-account-hours-normal-android-build.txt",
+          "/tmp/motriiq-account-hours-normal-ios-build.txt"
+        ]
+      }
+    },
+    "owned_vehicle_2026_10_22": {
+      "changes": "MyAds bounded management cards with wrapping titles, explicit edit/delete labels, compact offers app-bar action and pull-to-refresh. Route-owned OwnedVehicleDialog with stacked scalable fields, locale direction and finite localized year/price validation, preserved legacy selector values, draft retention, pending/back guard, owner/session checks and exactly matching scoped acknowledgement for save/delete.",
+      "host": "/tmp/motriiq-owned-host.txt: 18 dedicated cases passed",
+      "full_suite": "/tmp/motriiq-owned-full-suite.txt: 1016 passed including locale wiring",
+      "analysis": "/tmp/motriiq-owned-analysis.txt: No issues found",
+      "native_reports": [
+        "tool/ui_review_artifacts/owned_vehicle_android.json",
+        "tool/ui_review_artifacts/owned_vehicle_ios.json"
+      ],
+      "native_status": "Scoped verification passed: 17 cases in each full native run plus the previously failing numeric case passed in a targeted follow-up after focusing the input. All 12 captures individually reviewed. Production source remained unchanged across these runs.",
+      "limits": "Isolated auth/HTTP; no real seller listing was modified/deleted. Production RLS and acknowledged delete permissions need staging verification.",
+      "final_focused_host": "/tmp/motriiq-owned-final-host.txt: 30 passed (18 owned-vehicle plus locale wiring)",
+      "normal_restore": {
+        "status": "Built, installed and launched normal apps on Android emulator and iOS Device Hub after tests.",
+        "apk": "/tmp/motriiq-owned-normal.apk",
+        "ios_app": "build/ios/iphonesimulator/Runner.app",
+        "build_logs": [
+          "/tmp/motriiq-owned-normal-android-build.txt",
+          "/tmp/motriiq-owned-normal-ios-build.txt"
+        ]
+      }
+    },
+    "vehicle_offer_2026_10_22": {
+      "implementation": "Route-owned VehicleOfferDialog; labeled scalable fields and RTL/LTR, localized finite positive amounts, fixed feedback/actions, session/self-offer guards, pending/back/disposal guards, matching acknowledged UUID and stable retry ID. Failed/uncertain writes retain the draft and guide user to inspect existing offers.",
+      "schema_evidence": "supabase/migrations/20260927_car_offers.sql permits explicit UUID primary key, buyer inserts and buyer/seller reads. Deployment/RLS remains unverified.",
+      "host": "/tmp/motriiq-offer-final-focused.txt: 40 passed (14 offer + 26 forms)",
+      "full_suite": "/tmp/motriiq-offer-full-suite.txt: 1030 passed including locale wiring",
+      "analysis": "/tmp/motriiq-offer-analysis.txt: No issues found",
+      "native_reports": [
+        "tool/ui_review_artifacts/vehicle_offer_android.json",
+        "tool/ui_review_artifacts/vehicle_offer_ios.json"
+      ],
+      "status": "14 final native cases passed per platform; all eight final screenshots individually inspected after footer refinement.",
+      "limits": "No production offers/messages/notifications created; isolated HTTP/auth. Real schema/RLS, triggers and delivery require staging.",
+      "initial_native": "13 cases passed per platform before footer refinement; original logs/reports retained as vehicle_offer_initial_{platform}.json and /tmp/motriiq-offer-initial-native-{platform}.txt.",
+      "footer_revision": "Feedback is independent of the adaptive button Wrap; normal text regression checks short actions share a row when space exists. Narrow enlarged layouts remain free to wrap.",
+      "normal_restore": {
+        "status": "Normal apps built, installed and launched after native tests on Android emulator and iOS Device Hub.",
+        "apk": "/tmp/motriiq-offer-normal.apk",
+        "ios": "build/ios/iphonesimulator/Runner.app",
+        "logs": [
+          "/tmp/motriiq-offer-normal-android-build.txt",
+          "/tmp/motriiq-offer-normal-ios-build.txt"
+        ]
+      }
+    },
+    "add_car_submission_2026_10_22": {
+      "implementation": "Atomic readable/decodable media selection, guarded picker and 15-photo limit, 44px removal target, snapshot submission, stable listing/photo UUIDs, cached upload/plate metadata, session guards, matching acknowledged row and retained localized errors. Bounded 760px form and pending controls; successful reset clears fields and starts a fresh ID.",
+      "validation_hardening": "Lazy Form fields can be unmounted at submit. Full controller-level draft validation now prevents missing/invalid values before upload; attempted fields validate when remounted. Failure/validation feedback scrolls with the publish action into view.",
+      "schema_evidence": "Read-only sample from cars_public confirmed a UUID-shaped string ID, not the full private table schema. Repository car storage policy scopes the first path folder to the user; nested draft/photo paths preserve that owner folder. Real insert/select acknowledgement and deployed RLS require staging.",
+      "initial_native_reports": [
+        "tool/ui_review_artifacts/add_car_submission_android.json",
+        "tool/ui_review_artifacts/add_car_submission_ios.json"
+      ],
+      "initial_native_result": "18 native recovery/media cases passed per platform before final feedback/contrast/full-draft validation refinements. All eight initial captures inspected.",
+      "final_native_reports": [
+        "tool/ui_review_artifacts/add_car_submission_revision_android.json",
+        "tool/ui_review_artifacts/add_car_submission_revision_ios.json"
+      ],
+      "final_status": "Four final source-revision cases passed per platform after complete-draft validation fix: Arabic/light and Kurdish/dark error/photo views, normal-text consecutive success IDs, required/invalid-field rejection. All ten final captures individually inspected.",
+      "host": "/tmp/motriiq-addcar-full-suite.txt: 1050 passed including 20 dedicated Add Car cases and locale wiring.",
+      "analysis": "/tmp/motriiq-addcar-analysis.txt: No issues found.",
+      "limits": "Photo bytes are fetched read-only from an existing public seed image in native tests; every Storage/DB write and sign-in is mocked. Real OS picker handoff, storage/RLS/approval and release publication remain unverified.",
+      "normal_restore": {
+        "status": "Normal apps built, installed and launched on Android emulator and iOS Device Hub after all tests.",
+        "apk": "/tmp/motriiq-addcar-normal.apk",
+        "ios_app": "build/ios/iphonesimulator/Runner.app",
+        "logs": [
+          "/tmp/motriiq-addcar-normal-android-build.txt",
+          "/tmp/motriiq-addcar-normal-ios-build.txt"
+        ]
+      }
+    },
+    "business_submission_host_2026_10_22": {
+      "status": "implemented_host_verified_native_pending",
+      "changes": [
+        "Owned vehicle edit preserves or clears optional year/price as null.",
+        "Business submission validates decoded media and offscreen inputs, confirms package pricing, retains stable request IDs and resumes partial ad/order writes.",
+        "WhatsApp field uses chat icon; bounded form and photo controls use current theme."
+      ],
+      "analysis": "No issues found: /tmp/motriiq-business-submit-analysis.txt",
+      "focused_tests": "45 passed including locale wiring, 13 submission-service cases and 20 owned-vehicle cases: /tmp/motriiq-business-focused.txt",
+      "screen_tests": "15 Business screen cases passed in full run; final session-loss case passed targeted after exposing lazy footer in fixture: /tmp/motriiq-business-session-host.txt",
+      "native_review": "Pending for this source revision; no new Android/iOS visual acceptance claimed.",
+      "superseded_by": "business_submission_and_startup_2026_10_22"
+    },
+    "business_submission_and_startup_2026_10_22": {
+      "status": "verified_local_scope",
+      "full_suite": "1089 passed: /tmp/motriiq-business-startup-final-suite.txt",
+      "analysis": "No issues: /tmp/motriiq-business-startup-final-analysis.txt",
+      "native": "Per platform: 18 Business +6 startup cases passed; one final confirmation-copy case passed separately. All 24 original/follow-up captures inspected; copy report supersedes the original confirmation wording.",
+      "optional_edit": "Two optional preserve/clear cases passed per platform in optional_business_submission_pre_visual_fix_{android,ios}.json, optional suite; both captures inspected.",
+      "recovery": "13 service cases cover stable paths/IDs, lost acknowledgement reconciliation, ad/order partial failure, session/disposal/concurrency/timeout guards; all writes isolated.",
+      "startup": "Removed extra 2.5-second route and overlapping animation; direct initialized Home, OS-appearance launch background.",
+      "source_note": "After the native baseline was frozen, one description validator received lint-only braces and confirmation body copy was corrected; separate copy follow-up preserves its own baseline.",
+      "production_limit": "Real deployed schema/select acknowledgement rights, Storage upsert/RLS, approval and payment behavior require staging. No production listing/order/payment writes.",
+      "native_launch_resource_sha256": {
+        "android/app/src/main/res/drawable/launch_background.xml": "db6df1815a65e1671ed3b17c0b6f49c7ce0d45ccd29dfa5a2cacde3606f1c6da",
+        "android/app/src/main/res/drawable-v21/launch_background.xml": "db6df1815a65e1671ed3b17c0b6f49c7ce0d45ccd29dfa5a2cacde3606f1c6da",
+        "android/app/src/main/res/values/colors.xml": "da493bb92c2d4accf7e754d08f78264c19d14460a27b6decc5e2e0a2847b4702",
+        "android/app/src/main/res/values-night/colors.xml": "b523931f8674b6e711a950d5df212ee2f06e239f33b87598fab8f2558fdad800",
+        "ios/Runner/Base.lproj/LaunchScreen.storyboard": "2c5f08369402a0ede1d17750e7f070c37430dd8cc06b85619eef1bf817080f56",
+        "ios/Runner/Assets.xcassets/LaunchBackground.colorset/Contents.json": "a3d9a197442788e1928d51d20e8d9ceb5b992a37b0c15fa7f456c459a011c363"
+      },
+      "normal_restore": {
+        "android": "Built, installed and launched; /tmp/motriiq-business-submit-android-normal.txt",
+        "ios": "Built, installed and launched; /tmp/motriiq-business-submit-ios-normal.txt",
+        "after_picker": "Both returned to normal Home; business_normal_restored_{android,ios}.png inspected."
+      },
+      "local_picker_review": "tool/ui_review_artifacts/native_picker_local_review.json"
+    }
+  },
+  "next_actions": [
+    "Review remaining current-font seller/admin/detail/Favorites layouts and reconcile their state/action evidence against the 38-screen, 11-overlay and 26-modal inventory.",
+    "Verify additional native picker entry points with isolated local fixtures where needed; AddCar selection/cancellation/removal is now verified on both platforms.",
+    "Document deployed Storage/RLS/approval/payment limits precisely and rebuild final Android release/iOS artifacts after the remaining UI audit."
+  ],
+  "design_direction_revision": {
+    "trigger": "User explicitly rejected the visual quality and identified designing before taking inspiration.",
+    "reviewed_on": "2026-10-22",
+    "references_visually_inspected": [
+      {
+        "source": "AutoScout24 official Italian app page",
+        "url": "https://www.autoscout24.it/promo-lp/app/",
+        "image": "https://cms-assets.autoscout24.com/uaddx06iwzdz/7xtQzLtJM501r77H3tTc21/667bd0cb179de5009e8170f31f22ce14/IT_search.png?fm=webp",
+        "observed": "Grouped filter rows with consistent icon alignment; separate filtering surface; bottom primary results action."
+      },
+      {
+        "source": "Cars.com delivery partner case study",
+        "url": "https://8thlight.com/case-studies/driving-whats-next",
+        "image": "https://assets.8thlight.com/images/case-studies/Cars_screen_flow.jpg",
+        "observed": "Distinct criteria/results/detail stages; compact sort/filter toolbar, vehicle image hierarchy and persistent contact actions. Historical reference, not asserted as latest app."
+      },
+      {
+        "source": "AutoScout24 App Store screenshot hosted by Apple",
+        "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/1e/34/cb1e341d-c4ee-0eb3-287c-644e2690e22b/ios_EN_5.png/471x1024.jpeg",
+        "observed": "Results and active filter chips at top; large car image, concise title, strong price, structured specs, secondary seller/location."
+      }
+    ],
+    "current_design_failures": [
+      "Oversized decorative Home/Search panels reduce useful first-screen inventory.",
+      "Search duplicates criteria controls between inline form and filter sheet.",
+      "Visual changes were applied per screen before a coherent discovery flow was established.",
+      "Passing overflow and functional tests does not establish visual design quality."
+    ],
+    "implementation_direction": [
+      "Develop Home, Search/results and listing card as one coherent reference-led set before broad rollout.",
+      "Compact brand and search areas; inventory should be visible early at ordinary text sizes.",
+      "One consolidated filter surface, with compact active summaries and sort/filter toolbar on results.",
+      "Photo-led listings: model/year, primary price, secondary currency, key specs, location/seller and save action in a consistent hierarchy.",
+      "Reserve burgundy for primary actions/selected states; neutral surfaces and controlled 8/16/24 spacing.",
+      "Use one restrained rounded icon family; mirror directional disclosure/navigation with RTL.",
+      "Review actual Arabic/Kurdish/English populated, empty, loading and error renders before considering visual direction established."
+    ],
+    "status": "First reference-led Home/Search/regular-card set implemented, built, visually reviewed and exercised on Android/iOS, with all locales and both themes. Continue compact-grid/remaining-screen typography audit; no whole-app completion claimed.",
+    "typography": {
+      "family": "MotriSans: bundled static Noto Sans Arabic weights 400/500/600/700/800",
+      "source": "https://github.com/google/fonts/tree/main/ofl/notosansarabic",
+      "license": "assets/fonts/OFL-NotoSansArabic.txt (SIL OFL, also bundled in app assets)",
+      "generation": "FontTools instancer wght=400/500/600/700/800, wdth=100 from Google Fonts variable source; temporary tooling only, no runtime download.",
+      "source_sha256": "63111b5b2e074dd48cc67692e0a2726d86ee94c1c37fe8598257b7b4e87e869e",
+      "glyph_check": "Arabic, Sorani and Latin/numeric sample glyphs present in font cmap; broad native text review remains required."
+    }
+  },
+  "overlays": [
+    {
+      "surface": "SearchFiltersSheet",
+      "source": "lib/ui/search_filters_sheet.dart",
+      "status": "reconcile_existing_evidence"
+    },
+    {
+      "surface": "LanguagePickerSheet",
+      "source": "lib/ui/language_picker_sheet.dart",
+      "status": "reconcile_existing_evidence"
+    },
+    {
+      "surface": "OtpVerificationDialog",
+      "source": "lib/ui/otp_verification_dialog.dart",
+      "status": "reconcile_existing_evidence"
+    },
+    {
+      "surface": "CarRequestEditorDialog",
+      "source": "lib/ui/car_request_editor_dialog.dart",
+      "status": "reconcile_existing_evidence"
+    },
+    {
+      "surface": "SellerRatingDialog",
+      "source": "lib/ui/seller_rating_dialog.dart",
+      "status": "reconcile_existing_evidence"
+    },
+    {
+      "surface": "PhotoGallery",
+      "source": "lib/ui/photo_gallery.dart",
+      "status": "reconcile_existing_evidence"
+    },
+    {
+      "surface": "MarketItemGallery",
+      "source": "lib/market_images.dart",
+      "status": "native_fixture_scope_verified_production_media_unverified",
+      "evidence": [
+        "test/market_details_polish_test.dart",
+        "integration_test/market_details_layout_test.dart"
+      ]
+    },
+    {
+      "surface": "EditMarketImagesDialog",
+      "source": "lib/market_images.dart",
+      "status": "native_fixture_scope_verified_production_media_unverified",
+      "evidence": [
+        "test/market_details_polish_test.dart",
+        "integration_test/market_details_layout_test.dart"
+      ]
+    },
+    {
+      "surface": "GenericAdEditorDialog",
+      "source": "lib/ui/generic_ad_editor_dialog.dart",
+      "status": "native_fixture_scope_verified_production_media_unverified",
+      "evidence": [
+        "test/generic_ad_editor_test.dart",
+        "integration_test/generic_ad_editor_layout_test.dart"
+      ],
+      "states": [
+        "Market/job ordinary and enlarged text in ar/ku/en, both themes",
+        "Validation and localized finite nonnegative amounts; optional blank product price; required job salary/location/shift",
+        "Canonical job shift across locale changes",
+        "Scoped/session-checked insert acknowledgement, stable per-draft UUID on retry, retained draft and uploaded URLs",
+        "Pending inputs/photo controls disabled; route-owned controllers and pending disposal; guest rejection"
+      ]
+    },
+    {
+      "name": "OwnedVehicleDialog",
+      "source": "lib/ui/owned_vehicle_dialog.dart",
+      "status": "native_fixture_scope_verified_staging_rls_unverified",
+      "evidence": "test/owned_vehicle_polish_test.dart"
+    },
+    {
+      "name": "VehicleOfferDialog",
+      "source": "lib/ui/vehicle_offer_dialog.dart",
+      "status": "native_fixture_scope_verified_staging_rls_unverified",
+      "evidence": "test/vehicle_offer_polish_test.dart"
+    }
+  ],
+  "user_reference_direction": {
+    "date": "2026-10-22",
+    "primary": {
+      "name": "Carivo by Iqbal Ansyori",
+      "url": "https://ui8.net/iqbalansyori/products/carivo--car-classified-marketplace--mobile-apps-ui-kit",
+      "visual_evidence": "Public promotional preview inspected from creator Dribbble CDN; search panel and vehicle detail screen.",
+      "preview_url": "https://cdn.dribbble.com/userupload/47406282/file/0ef37fae1a0c8e39cfa7c3b5517642e6.png",
+      "apply": [
+        "Focused search panel with one primary action",
+        "Photo-first cards and detail gallery",
+        "One dominant asking price with secondary currency",
+        "Quiet specification tiles and clear seller contact actions"
+      ]
+    },
+    "secondary": {
+      "name": "Drivo by Design Lagi",
+      "url": "https://ui8.net/design-lagi/products/drivo---rental--vehicles-app-ui-kit",
+      "visual_evidence": "Actual user Chrome tab inspected: product gallery, light/dark screen collage and style guide. HTTP fetch returned 403; browser page was accessible.",
+      "apply": [
+        "Grouped service shortcuts",
+        "Consistent light/dark component treatment",
+        "Compact search and separated content sections"
+      ]
+    },
+    "motri_adaptation": [
+      "Preserve burgundy; use neutral surfaces and reduce decorative borders/shadows",
+      "Keep bundled Arabic/Kurdish-capable font; adapt spacing for script metrics",
+      "Use one icon family and automatic directional mirroring",
+      "Remove empty section shells; keep useful empty/error actions",
+      "Review Home, search, cards and detail together before propagating the visual language"
+    ],
+    "status": "first_reference_revision_implemented_and_device_reviewed_entire_app_incomplete",
+    "limits": "Public previews only; paid Figma source files not purchased or downloaded.",
+    "implemented_revision": {
+      "changes": [
+        "Home focused burgundy search panel",
+        "Quieter compact card borders and rounded corners",
+        "Primary USD and secondary IQD with dark theme contrast",
+        "Content-aware chat direction",
+        "Single-line report toolbar title"
+      ],
+      "checks": "1123 host tests passed; clean analysis; 30 + 12 device cases per platform; final Home/price/chat/report captures reviewed",
+      "normal_apps": "Rebuilt, installed and launched on Android emulator and iOS Device Hub; loaded Home screenshots inspected",
+      "remaining": "Whole-app source/state reconciliation, media retry recovery, showroom save feedback, remaining detail visual polish and production gates remain active."
+    }
+  },
+  "vehicle_detail_reference_revision": {
+    "status": "detail_layout_revision_verified",
+    "changes": [
+      "Replaced dense inline specification chips with icon/label/value tiles",
+      "Two columns on normal phones, one for enlarged phone text, three on wide layouts",
+      "Removed nested specification outlines and shadows",
+      "Reduced detail title weight and made user title/description direction content-aware",
+      "Used theme accent for specification, estimate and seller icons",
+      "Corrected quantity label to Mileage"
+    ],
+    "host_evidence": {
+      "focused_detail_actions": "61 passed",
+      "full_suite": "1123 passed before final Mileage copy-only correction",
+      "wide_detail": "12 passed at 800px and enlarged text",
+      "final_copy_and_locale": "31 passed",
+      "analysis": "clean before final copy correction",
+      "final_rows": "31 regular-phone+locale, 12 wide and 19 enlarged cases passed; analysis clean"
+    },
+    "remaining": "Complete current native screenshots and restore normal apps; continue filter integer validation, showroom lifecycle/save recovery and media retry fixes.",
+    "native_evidence": [
+      "tool/ui_review_artifacts/detail_specs_android.json",
+      "tool/ui_review_artifacts/detail_specs_ios.json",
+      "tool/ui_review_artifacts/detail_specs_rows_android.json",
+      "tool/ui_review_artifacts/detail_specs_rows_ios.json"
+    ],
+    "normal_apps": "Both normal debug apps rebuilt, installed and launched after all fixture checks; broader app audit remains active."
+  },
+  "font_carousel_revision": {
+    "date": "2026-10-22",
+    "status": "implemented_final_checks_passed_normal_home_accepted_both_platforms",
+    "fonts": {
+      "ar": "Cairo",
+      "en": "Inter",
+      "ku": "Noto Sans Arabic retained for full Sorani glyph coverage"
+    },
+    "font_source_evidence": "tool/ui_review_artifacts/font_cairo_inter_sources.json",
+    "carousel": "Home photo-based carousel with previous/next, swipe, indicators and reduced-motion/accessibility safeguards",
+    "remaining": "Whole-app final font review, showroom/media recovery, remaining state reconciliation and production gates remain active."
+  },
+  "bottom_navigation_revision": {
+    "date": "2026-10-22",
+    "status": "implemented_final_host_native_normal_home_visually_accepted",
+    "changes": [
+      "Extracted shared six-destination navigation with consistent 32px icon slots",
+      "Native burgundy-tinted selection indicator, quieter rounded surface and Add action",
+      "Readable 11px narrow-phone label floor; 12px on wider bars",
+      "Maximum 640px destination row width on tablets; native safe areas and semantics",
+      "Reduced-motion animation respected; all labels and tooltips localized",
+      "Concise Kurdish destinations and English Profile label prevent wrapping at narrow widths; real-font tests assert one-line text stays inside each slot"
+    ],
+    "host": "Final full suite: 1194 passed. Final 35 navigation/shell/locale checks passed with actual bundled fonts; analysis clean. Dedicated checks assert one-line label geometry inside every slot, 48px minimum targets, selected semantics, locale direction, tablet width and bottom inset.",
+    "native": "Final six locale/theme cases per platform passed. Four final Arabic-light/Kurdish-dark captures reviewed and accepted. Earlier captures document wrapping and are superseded.",
+    "limits": "This revises bottom navigation; remaining whole-app font/state and production review remain active.",
+    "normal_apps": "Final normal debug Android and iOS apps installed and launched; both Home screenshots visually reviewed. Icon/label alignment, rounded surface, selection and safe areas accepted.",
+    "evidence": [
+      "test/bottom_navigation_polish_test.dart",
+      "test/nav6_probe_test.dart",
+      "test/locale_wiring_test.dart",
+      "tool/ui_review_artifacts/bottom_navigation_labels_android.json",
+      "tool/ui_review_artifacts/bottom_navigation_labels_ios.json"
+    ],
+    "normal_app_captures": [
+      "tool/ui_review_artifacts/bottom_navigation_normal_android.png",
+      "tool/ui_review_artifacts/bottom_navigation_normal_ios.png"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+Initial Google Play release. Browse cars and local listings, search and compare vehicles, and use Arabic, Kurdish or English. Includes light/dark appearance and an account-deletion request entry in Settings.

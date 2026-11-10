@@ -1,0 +1,16 @@
+{
+  "url": "https://motri-iq.me-0eca.chatgpt.site/privacy/",
+  "project_id": "appgprj_6add25a9f9c48191b681ee0c2c2d6351",
+  "version_id": "appgprj_6add25a9f9c48191b681ee0c2c2d6351~appgver_fd0415bda76081918f0af06f060cd4fc",
+  "deployment_id": "appgdep_6adde84ef0ec81919648567183840514",
+  "commit_sha": "73b5a585763852ff44f462d5921539a463eeaab8",
+  "status": "succeeded",
+  "operator": "MOTRI IQ",
+  "languages": [
+    "en",
+    "ar"
+  ],
+  "public_browser_verification": "passed; full app policy loaded without sign-in",
+  "remaining_operator_work": "Record-specific retention, deletion completion times and verified backend deletion remain unresolved; publication is not Play readiness.",
+  "ad_free_release": "1.0.1+5"
+}

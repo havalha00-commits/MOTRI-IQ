@@ -1,0 +1,569 @@
+nav_home	Home
+nav_search	Search
+nav_add	Add
+nav_account	My account
+nav_jobs	Jobs
+nav_market	Market
+nav_cars	Cars
+home_sections	Sections
+home_pick_section	Choose the section you want
+home_cars_sub	Buy and sell cars
+home_market_sub	Products and ads
+home_jobs_sub	Job vacancies
+home_latest_market	Latest market ads
+home_latest_market_sub	Products for sale on the live market
+home_latest_cars	Latest car ads
+home_sell_ads	Paid ads
+home_all_business_ads	All business ads
+home_tagline	Your market and community in one place
+home_search_hint	Search for a car or ad…
+home_everything	Everything you need in one place
+home_welcome	Welcome
+home_most_requested	Most requested
+home_most_liked	Most liked
+home_latest_suggestions	Latest suggestions
+home_recent_ads	Recent ads
+home_saved_with_you	Saved by you
+section_cars	Cars
+section_market	Market
+section_jobs	Jobs
+section_requests	Requests
+compare_title	Car comparison
+compare_two_only	You can compare only two cars
+compare_add_hint	Add two cars from the ads to compare
+compare_add_second	Pick a second car from the ads to complete the comparison
+compare_clear	Clear comparison
+compare_see_all	See all
+compare_loading	Could not load the comparison, check your connection and try again
+compare_need_3	We need at least 3 similar ads to compare
+compare_need_more	We need more similar ads to show the market price
+compare_price_loading	Could not load the price comparison. Check your connection and try again.
+compare_price_input	Enter the make, model and year so we can compare the price
+compare_market_price	Its price in the Iraqi market
+compare_median	Approximate median price
+compare_based_on	Based on similar ads
+compare_price_higher	Your price is higher than similar ads
+compare_price_lower	Your price is lower than similar ads
+compare_price_similar	Your price is close to similar ads
+compare_higher_ads	Higher than similar ads
+compare_lower_ads	Lower than similar ads
+compare_close_ads	Close to similar ads
+compare_comparing	Comparing prices of similar cars
+compare_price_unknown	Price not set
+search_all	All
+search	Search
+search_hint	Search for a car by make, model or city
+search_hint_example	For example: Toyota, Camry, Baghdad...
+search_results	Results
+search_order	Sort results
+search_newest	Newest
+search_price_desc	Price: highest first
+search_price_asc	Price: lowest first
+search_price_high	Highest price
+search_price_low	Lowest price
+search_no_results	No results found
+search_try_other	Try a different make or model name.
+search_failed	Search failed
+alerts	Alert
+alerts_update	Update alerts
+alerts_empty	You have no new alerts
+alerts_empty_now	You have no new alerts right now
+alerts_save	Save alert
+alerts_saved	Search saved, matching ads will appear in alerts
+alerts_save_failed	Could not save the alert
+alerts_need_filter	Pick at least one filter to save the alert
+alerts_login_first	Log in to save the alert
+alerts_load_failed	Could not load alerts
+alerts_open_failed	Could not open the alert
+alerts_new_match	A new car matches your search
+account_title	Profile
+account_quick_actions	Quick actions
+account_options	Options
+account_more_options	More options
+account_language	Language
+account_sell_car	Sell a car
+account_watch	Watching
+account_favorites	Saved
+account_chat	Chat
+account_support_center	Support center
+account_settings	Settings
+account_wallet_topup	Top up wallet
+account_fines	Fines
+account_search_history	Search history
+account_username_login	Username for login
+account_seller_profile	Profile
+account_user_profile	User profile
+account_showroom_setup	Set up showroom page
+account_my_ads	My ads
+account_received_offers	Received offers
+account_my_car_offers	My offers on cars
+account_car_alerts	Car alerts
+account_advertise_with_us	Advertise with us
+account_business_ads	Business ads
+account_admin_panel	Admin panel
+admin_ads_manage	Manage ads
+admin_delete_ad	Delete ad
+admin_delete_ad_confirm	Are you sure you want to delete this ad?
+admin_delete_ad_done	Ad deleted successfully
+admin_delete_ad_failed	Could not delete the ad
+admin_ads_none	No ads
+admin_only_notice	This action is for admins only
+account_sign_out	Sign out
+account_ads	Ads
+account_reviews	My reviews
+account_messages	My messages
+account_follows	Following
+account_not_following	You are not following any accounts or ads yet
+account_requests_cars	Car requests
+account_requests_market	Market requests
+account_requests_empty	You have no car requests yet
+account_requests_none	You have no car requests right now
+account_no_saved_ads	You have no saved ads right now
+account_no_published_ads	You have no published ads right now
+account_no_reviews	You have not rated any seller yet
+account_no_reviews_now	You have no reviews right now
+account_no_chats	You have no chats yet
+account_no_sent_offers	You have not made any offers on cars yet
+account_no_received_offers	You have no received offers right now
+account_login_to_see_favs	Log in to see your saved items
+account_edit_ads	Edit ad
+account_publish	Publish
+account_seller_badges	Seller ads
+account_business_ads_all	Business ads
+account_buy_requests	Your request is published, sellers can send you offers
+account_request_waits	Waiting for sellers' offers
+account_cannot_offer	You cannot make an offer on your own request
+account_waiting_reply	Waiting for your reply
+login_title	Log in
+register_title	Create account
+login_subtitle	Sign in to your account and keep using MOTRI IQ
+register_subtitle	Create your account and start posting
+login_display_name	Display name
+login_username_hint	Username (letters, numbers, or _)
+login_email_or_username	Email or username
+login_email	Email
+login_password	Password
+login_username	Username
+login_have_account	Already have an account? Log in
+login_no_account	No account? Create one
+login_fill_required	Fill in the required information
+login_wrong_credentials	Wrong username or password
+login_username_too_short	Username must be 3-24 letters, numbers, or _
+login_username_rule	Use 3-24 letters, numbers, or _
+login_password_too_short	Password must be 6 characters or more
+login_username_example	Example: motri_user
+login_success	Logged in successfully
+login_username_failed	Could not log in with the username
+login_otp_title	Verify phone number
+login_otp_prompt	Enter your phone number
+login_otp_hint	Enter a valid Iraqi number, e.g. 07701234567
+login_otp_sent	We sent a verification code to your phone
+login_otp_code	Enter the verification code
+login_otp_send	Send verification code
+login_otp_required	Enter the code first
+login_otp_invalid	Invalid code
+login_otp_sent_ok	Code sent successfully
+login_otp_send_failed	Could not send the verification code
+login_otp_verify_failed	Could not verify the code
+login_phone_label	Phone number
+login_phone_hint	Enter phone number: 
+login_cancel	Cancel
+login_verify	Verify
+login_account_created	Account created successfully
+login_account_created_mail	Account created. Check your email if you are asked to.
+login_not_logged_in	You are not logged in. Try again.
+login_required_first	You must log in first
+login_required_action	You must log in before continuing
+login_or	Or
+login_question	M
+settings_title	Settings
+settings_push_notifications	Push notifications
+settings_email_notifications	Email notifications
+settings_dark_mode	Dark mode
+settings_about	About the app
+settings_location	Set my location
+settings_location_desc	Enable location to show ads near you
+settings_locating	Locating you... allow location in the browser.
+settings_location_denied	Could not detect the city. Make sure location is allowed.
+settings_location_picked	City detected
+settings_call_us	Call us
+settings_call	Call
+settings_map	Map
+settings_show_on_map	Show on map
+support_center_title	Support center
+support_get_help	How to get help
+support_help_intro	Everything that helps you solve the problem yourself, or reach support directly.
+support_contact	Contact support
+support_contact_desc	Pick the issue type, write the details, then send it from your device.
+support_faq	Frequently asked questions
+support_q_publish	How do I post a car?
+support_a_publish	From the Add tab in the bottom bar, or from "Sell a car" on the profile page. Fill in the car details, add photos, then publish.
+support_q_save	How do I save a car?
+support_a_save	Tap the save icon on the car card so it appears under "Saved" on the profile page.
+support_q_contact	How do I contact the seller?
+support_a_contact	Open the car page and use the WhatsApp or call button with the seller's number, or send an offer from the ad page. To contact the seller: open the car page and use the WhatsApp or call button.
+support_q_report	How do I report a violating ad?
+support_a_report	Open the car page and tap "Report ad" at the bottom, then pick a reason. To report an ad: open the car page then "Report ad".
+support_q_missing	My car has not appeared after publishing?
+support_a_missing	The ad needs review before it appears. Track your ads from "My ads". To follow up and edit your ads: open "My ads" from the profile page.
+support_q_account_help	For an issue with your account or the app: use "Report a problem" or "Contact support" below.
+support_q_my_ads	Where do I find my ads?
+support_a_my_ads	On the profile page pick "My ads" to see everything you posted, then edit or delete it.
+support_q_messages	How do I send a message?
+support_a_messages	Open your messages inside the app to talk directly.
+support_q_account	Account problem
+support_q_account_q	I have a problem with my account or the app
+support_q_app	App problem
+support_issue_type	Issue type
+support_issue_details	Issue details
+support_issue_details_hint	Write the issue details here
+support_report_problem	Report a problem
+support_whatsapp	Contact the showroom on WhatsApp
+support_issue_ad	Problem with my ad
+support_issue_account	Account problem
+support_issue_seller	Problem with a car offer
+support_issue_login	Login or personal details
+support_issue_content	The information or photo does not display correctly
+support_issue_scam	Scam or suspicious content
+support_issue_suggestion	Suggestion to improve
+support_issue_idea	A feature idea I would like to suggest
+support_issue_other	Another reason
+chat_hub	Chat
+chat_hub_desc	Offer and message alerts
+chat_messages	Messages
+chat_messages_title	Messages
+chat_empty	You have no chats yet
+chat_start	The chat has started, write your first message
+chat_input_hint	Write your message...
+chat_send	Send
+chat_open	Open chat
+chat_offer_chat	Offer chat
+chat_send_failed	Could not send the message
+chat_load_failed	Could not load the chat
+chat_load_offers_failed	Could not load your offers
+chat_refresh	Refresh chat
+lang_arabic	Arabic
+lang_kurdish	Kurdish
+lang_english	English
+common_cancel	Cancel
+common_save	Save
+common_delete	Delete
+common_close	Close
+common_send	Send
+common_submit	Submit
+common_stop	Stop
+common_optional	Optional
+common_required	Required
+common_all	All
+common_other	Other
+common_retry	Retry
+common_details	Description
+common_images	Photos
+common_quantity	Quantity
+common_main_image	Main photo
+common_user	User
+common_unspecified	Not specified
+common_unavailable	Not available
+common_disabled_version	Not enabled in this version
+common_loading	Load error
+common_error	An error occurred
+common_loading_dots	Saving...
+field_price	Price
+field_year	Year
+field_province	Province
+field_city	City
+field_body_type	Body type
+field_fuel	Fuel
+field_transmission	Transmission
+field_mileage	Mileage
+field_color	Color
+field_brand	Make
+field_model	Model
+field_type	Type
+field_category	Category
+field_area	Area/neighbourhood
+field_province_area	Province/area
+field_title	Title
+field_title_detail	Detailed title
+field_short_desc	Short description
+field_desc	Description
+field_phone	Phone number
+field_phone_or_wa	Phone number or WhatsApp
+field_iraqi_phone	Iraqi phone number
+field_location	Location
+field_address	Address
+field_hours	Opening hours
+field_about	About the showroom
+field_establishment	About the business
+field_logo	Business logo
+field_add_logo	Add business logo
+field_add_logo_first	Add the business logo first
+field_logo_first	Add the business logo first
+field_business_name	Business name
+field_showroom_name	Showroom name
+field_write_showroom_name	Enter the showroom name
+field_showroom_about	Introduce buyers to your showroom, cars and contact details
+field_job_title	Job title
+field_product_name	Product name
+field_write_job_title	Enter the job title
+field_write_product_name	Enter the product name
+field_salary	Salary
+field_write_salary	Enter the salary
+field_write_location	Enter the location
+field_write_brand_model	Enter make and model
+field_invalid_number	Invalid number
+field_invalid_url	Enter a valid link
+field_name_too_short	Name is too short
+field_desc_too_long	Description is too long (max 2000 characters)
+field_link_facebook	Facebook link
+field_link_maps	Google Maps link
+field_link_instagram	Instagram link
+field_optional_comment	Comment (optional)
+field_optional_seller_msg	Message to the seller (optional)
+field_optional_buyer_msg	Message to the buyer (optional)
+field_extra_details	Extra details (optional)
+field_province_optional	Province (optional)
+field_model_optional	Model (optional)
+field_province_prefix	Province: 
+field_wallet_balance	Wallet balance
+req_car_available	The car available to you *
+req_brand_wanted	Wanted make *
+req_model_optional	Model (optional)
+req_from_year	From year
+req_to_year	To year
+req_year_range_hint	The start year must be before the end year
+req_budget_usd	Price in USD *
+req_max_budget	Maximum budget in USD *
+req_write_brand_budget	Enter the make and a valid budget
+req_publish	Publish request
+req_send_offer	Send offer
+req_type_and_price	Enter the car type and the correct price
+req_price_positive	Enter a valid price greater than zero
+req_login_publish	Log in to post a car request
+req_login_offer	Log in to send an offer
+req_login_price	Log in to submit a price
+req_cannot_offer	You cannot make an offer on your own request
+req_cannot_price	You cannot submit a price on your own ad
+req_cannot_report	You cannot report your own ad
+req_sent	Your request is published, sellers can send you offers
+req_publish_failed	Could not publish the request
+req_seller_offers	Seller offers
+req_offer_sent_to_you	Your offer reached the request owner
+req_offer_sent_to_seller	Your offer reached the seller
+req_send_your_offer	Send your offer
+req_offer_sent	You sent your offer
+req_offer_for_your_car	Make an offer for your car
+req_cannot_rate_own	You cannot rate your own account
+req_close_request	Close request
+req_close_failed	Could not close the request
+req_loading_failed	Could not load requests
+req_seller_offers_waits	Waiting for sellers' offers
+req_price_in_usd	Price in USD
+ad_new	New
+ad_status_sold	Sold
+ad_status_sold_check	✓ Sold
+ad_status_yes_sold	Yes, sold
+ad_status_closed	Closed
+ad_status_pending	Under review
+ad_status_approved	Approved
+ad_status_rejected	Rejected
+ad_status_active	Active
+ad_status_expired	Expired
+ad_status_stopped	Stopped
+ad_status_reviewed	Reviewed
+ad_status_updated	Ad status updated
+ad_confirm_sale	Confirm sale
+ad_ask_sold	Has this car been sold?
+ad_reopen	Reopen
+ad_share	Share ad
+ad_details	Ad details
+ad_view	View ad
+ad_paid	Paid ad
+ad_saved_deal	Favourites
+ad_login_to_fav	Log in to add to favourites
+ad_no_id	This ad has no ID
+ad_not_found	Ad not found
+ad_unavailable	This ad is no longer available
+ad_cannot_seller	Could not identify the seller or ad
+ad_copy_error_title	Ad save error details
+ad_compare	Compare
+ad_compare_button	Add to compare
+ad_buy_now	Buy now
+ad_contact_seller	Contact the seller
+car_title	Car
+car_word	Car
+car_type	Car type
+car_details	Car details
+car_specs	Car specifications
+car_add	Add a car
+car_images	Car photos
+car_add_images	Add car photos
+car_min_image	Add at least one photo for the car
+car_add_1_15	Add 1 to 15 photos • the first is the main one
+car_pick_15	Pick up to 15 photos
+car_swipe	Swipe right or left to browse the photos
+car_delete_image	Tap × to delete a photo before publishing
+car_no_ads	There are no car ads right now
+car_sold	Sold
+car_need_5_images	At least 5 photos are required for the ad
+car_reorder_images	Drag photos to reorder them • tap a photo to make it the main one
+market_no_ads	There are no market ads right now
+market_add_product	Add a product
+market_product_images	Product photos
+market_add_images	Add photos
+market_pick_images	Tap here to pick photos
+market_reached_max	You reached the maximum
+market_no_images_selected	No photos selected
+market_no_images_ad	There are no photos for this ad
+market_images_saved	Photos saved successfully
+market_images_error	An error occurred while saving
+market_edit_images	Edit ad photos
+market_edit_images_2	Edit ad photos
+market_login_to_save	Log in first to save
+market_min_images	Minimum photos • the first photo is the main one
+market_images_optional	Optional • up to photos
+market_job_images	Job photos
+market_image_added	Photo added — tap "Publish" to save
+market_gallery_error	Could not open the photo gallery
+market_ad_word	Ad
+iqd_label	 Iraqi dinar
+tier_gold	Gold
+tier_silver	Silver
+tier_bronze	Bronze
+seller_verified	Verified seller
+seller_verify	Verify seller
+seller_verified_ok	Seller verified
+seller_already_verified	This seller is already verified
+default_seller_name	MOTRI IQ seller
+default_member_name	MOTRI IQ member
+report_body_prefix	Report from the MOTRI IQ app\n
+report_no_details	No additional details
+job_add	Add a job
+job_shift_type	Shift type
+job_pick_shift	Choose the shift type
+job_shift_full	Full time
+job_shift_part	Part time
+job_freelance	Freelance
+job_remote	Remote
+my_requests	My requests
+wanted	Wanted
+svc_car	Car services
+svc_maintenance	Maintenance
+svc_mechanic	Repair and mechanic
+svc_parts	Spare parts
+svc_oils	Oils
+svc_oils_filters	Oils and filters
+svc_tires	Tyres
+svc_batteries	Batteries
+svc_accessories	Accessories
+svc_insurance	Insurance
+svc_wash_polish	Wash and polish
+svc_towing	Towing services
+svc_showrooms	Car showrooms
+svc_dealers	Car companies and dealers
+report_ad	Report ad
+report_submit	Send report
+report_duplicate	Duplicate ad
+report_bad_info	Incorrect information
+report_already	You already reported this ad
+report_received	Your report arrived, thank you for helping
+report_send_failed	Could not send the report
+report_login_first	Log in to report the ad
+report_no_reports	There are no reports right now
+report_load_failed	Could not load reports
+report_status	Report time
+report_reason	Reason
+offer_word	Offer
+offer_your_price	Submit your price
+offer_price_cta	Submit price
+offer_usd	Your offer in USD
+offer_your_offer	Your offer
+offer_buyer_offer	Buyer offer
+offer_accept	Accept
+offer_reject	Reject
+offer_accepted	Accepted
+offer_rejected	Rejected
+offer_send_failed	Could not send the offer
+offer_update_failed	Could not update the offer
+offer_status	Status
+review_add	Add your review
+rate_seller	Rate the seller
+buyer_reviews	Buyer reviews
+review_save_failed	Could not save the review
+review_load_failed	Could not load the reviews
+reputation_rate	Reputation score
+reviews_count	Review
+pkg_word	Package
+pkg_pick	Choose a package
+pkg_pick_plain	Choose an ad package
+pkg_pick_first	Choose an ad package first
+pkg_none_available	No ad packages are available
+pkg_unavailable	The selected package is not available
+pkg_placements	Placements
+payment	Payment
+payment_confirm	Confirm payment
+payment_instructions	Payment instructions
+payment_update_failed	Could not update the payment status
+biz_pick_category	Choose the category
+confirm_submit	Confirm sending
+confirm_review	Send the ad for review
+confirm_review_body	Do you want to send the ad for review? Once approved you will be taken to the payment page.
+req_sent_for_review	Your request was sent for review. We will contact you soon.
+ad_request_title	Request details
+ad_request_number	Ad number
+duration	Duration
+ad_publish_failed	Failed to create the ad
+img_pick	Tap here to pick photos
+img_reached_max	You reached the maximum
+img_reached_max_15	You reached the maximum: 15 photos
+img_only_15_added	Only 15 photos were added
+img_ad_max5	Ad photos (max 5)
+img_upload_failed	Failed to upload the photos
+img_uploading	Uploading photos...
+img_pick_error	Could not pick the photos
+img_avatar_updated	Profile photo updated
+img_avatar_failed	Could not save the profile photo
+misc_username_rule	3-24 letters, numbers, or _
+misc_name_very_short	The name is too short
+misc_default_ad	Ad
+misc_section_table	Make sure this section's table is set up in Supabase.
+misc_section_load_failed	Could not load the section
+misc_ads_load_failed	Could not load the ads
+misc_fav_load_failed	Could not load the saved items
+misc_call_app_failed	Could not open the phone app
+misc_whatsapp_failed	Could not open WhatsApp
+misc_req_load_failed	Could not load requests: 
+misc_admin_verified	The account was verified by the admin
+misc_published_ok	Published successfully ✅
+misc_publish_failed	Publishing failed
+misc_send_ad	Sending the ad...
+misc_username_saved	Username saved
+misc_showroom_saved	Showroom page saved
+misc_save_showroom	Save showroom page
+misc_showroom_load_failed	Could not load the showroom data
+misc_showroom_save_failed	Could not save the showroom data
+misc_seller_verify_failed	Could not verify the seller
+misc_profile_load_failed	Could not load the profile
+misc_profile_view_desc	View the profile, ads and reviews
+misc_delete_ad_confirm	Delete the ad?
+misc_deleted_gone	Your ad will not appear after deletion.
+misc_status_to_sold	Ad status updated to: Sold
+misc_use_add_button	Use the add button to post your first ad.
+misc_cars_hub_empty	Any car ad you add will appear here.
+misc_no_ads_now	There are no ads right now
+misc_no_ads_status	There are no ads with this status
+misc_no_business_ads	There are no business ads available right now
+misc_follow	Follow
+misc_search_action	Search
+misc_publish_ad	Publish ad
+misc_request_cta	Request a car
+misc_login_first_publish	Log in first to post
+misc_login_to_rate	Log in to rate the seller
+misc_ad_support_note	My ad does not show or needs editing
+misc_publish_ads_all	Use the add button to post your first ad.
+support_step_contact	To contact the seller: open the car page and use the WhatsApp or call button.
+support_step_report	To report an ad: open the car page then "Report ad".
+support_step_myads	To follow up and edit your ads: open "My ads" from the profile page.
+support_tip_contact	Open the car page and use the WhatsApp or call button with the seller's number, or send an offer from the ad page.
+support_tip_report	Open the car page and tap "Report ad" at the bottom, then pick a reason.
+support_tip_missing	The ad needs review before it appears. Track your ads from "My ads".

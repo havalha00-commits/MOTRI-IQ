@@ -1,0 +1,187 @@
+﻿CREATE FUNCTION public.check_activation_code(p_code text) RETURNS boolean
+    LANGUAGE plpgsql SECURITY DEFINER
+    SET search_path TO 'public'
+    AS $$
+begin
+  return exists (
+    select 1
+    from public.activation_codes
+    where code = trim(p_code)
+      and used = false
+      and (expires_at is null or expires_at > now())
+  );
+end;
+$$;
+
+----------------------------------------
+
+CREATE FUNCTION public.create_activation_code(p_days integer DEFAULT 30) RETURNS text
+    LANGUAGE plpgsql SECURITY DEFINER
+    SET search_path TO 'public'
+    AS $$
+declare
+  v_is_admin boolean;
+  v_code text;
+begin
+  select is_admin
+  into v_is_admin
+  from public.profiles
+  where id = auth.uid();
+
+  if coalesce(v_is_admin, false) = false then
+    raise exception 'ط؛ظٹط± ظ…ط³ظ…ظˆط­: ظ‡ط°ط§ ط§ظ„ط­ط³ط§ط¨ ظ„ظٹط³ ط£ط¯ظ…ظ†';
+  end if;
+
+  v_code := 'MOTRI-' ||
+            upper(substr(md5(random()::text || clock_timestamp()::text), 1, 4)) ||
+            '-' ||
+            upper(substr(md5(random()::text || clock_timestamp()::text), 1, 4));
+
+  insert into public.activation_codes (code, expires_at)
+  values (
+    v_code,
+    now() + make_interval(days => greatest(p_days, 1))
+  );
+
+  return v_code;
+end;
+$$;
+
+----------------------------------------
+
+CREATE FUNCTION public.handle_new_user() RETURNS trigger
+    LANGUAGE plpgsql SECURITY DEFINER
+    SET search_path TO 'public'
+    AS $$
+BEGIN
+  INSERT INTO public.profiles (
+    id,
+    full_name,
+    username,
+    activation_code
+  )
+  VALUES (
+    NEW.id,
+    COALESCE(NEW.raw_user_meta_data->>'full_name', ''),
+    COALESCE(
+      NULLIF(NEW.raw_user_meta_data->>'username', ''),
+      split_part(COALESCE(NEW.email, 'user'), '@', 1)
+    ),
+    COALESCE(
+      NULLIF(NEW.raw_user_meta_data->>'activation_code', ''),
+      'PENDING'
+    )
+  )
+  ON CONFLICT (id) DO NOTHING;
+
+  RETURN NEW;
+END;
+$$;
+
+----------------------------------------
+
+CREATE FUNCTION public.notify_car_offer_activity() RETURNS trigger
+    LANGUAGE plpgsql SECURITY DEFINER
+    SET search_path TO 'public'
+    AS $$
+BEGIN
+  IF TG_OP = 'INSERT' THEN
+    INSERT INTO public.activity_notifications
+      (user_id, notification_type, offer_id, title, body)
+    VALUES
+      (
+        NEW.seller_id,
+        'new_offer',
+        NEW.id,
+        'ط¹ط±ط¶ ط³ط¹ط± ط¬ط¯ظٹط¯',
+        'ظˆطµظ„ظƒ ط¹ط±ط¶ ط¹ظ„ظ‰ ' || NEW.car_title ||
+          ' ط¨ط³ط¹ط± ' || NEW.offer_price || ' ط¯ظˆظ„ط§ط±'
+      );
+  ELSIF TG_OP = 'UPDATE'
+      AND OLD.status IS DISTINCT FROM NEW.status
+      AND NEW.status = 'accepted' THEN
+    INSERT INTO public.activity_notifications
+      (user_id, notification_type, offer_id, title, body)
+    VALUES
+      (
+        NEW.buyer_id,
+        'offer_accepted',
+        NEW.id,
+        'طھظ… ظ‚ط¨ظˆظ„ ط¹ط±ط¶ظƒ',
+        'ظˆط§ظپظ‚ ط§ظ„ط¨ط§ط¦ط¹ ط¹ظ„ظ‰ ط¹ط±ط¶ظƒ ظ„ط³ظٹط§ط±ط© ' || NEW.car_title
+      );
+  END IF;
+
+  RETURN NEW;
+END;
+$$;
+
+----------------------------------------
+
+CREATE FUNCTION public.notify_offer_message_activity() RETURNS trigger
+    LANGUAGE plpgsql SECURITY DEFINER
+    SET search_path TO 'public'
+    AS $$
+DECLARE
+  buyer_user_id uuid;
+  seller_user_id uuid;
+  recipient_id uuid;
+  offer_title text;
+BEGIN
+  SELECT buyer_id, seller_id, car_title
+    INTO STRICT buyer_user_id, seller_user_id, offer_title
+    FROM public.car_offers
+    WHERE id = NEW.offer_id;
+
+  IF NEW.sender_id = buyer_user_id THEN
+    recipient_id := seller_user_id;
+  ELSE
+    recipient_id := buyer_user_id;
+  END IF;
+
+  INSERT INTO public.activity_notifications
+    (user_id, notification_type, offer_id, title, body)
+  VALUES
+    (
+      recipient_id,
+      'new_message',
+      NEW.offer_id,
+      'ط±ط³ط§ظ„ط© ط¬ط¯ظٹط¯ط©',
+      'ظˆطµظ„طھظƒ ط±ط³ط§ظ„ط© ط¨ط®طµظˆطµ ' || offer_title
+    );
+
+  RETURN NEW;
+END;
+$$;
+
+----------------------------------------
+
+CREATE FUNCTION public.use_activation_code(p_code text, p_user_id uuid) RETURNS boolean
+    LANGUAGE plpgsql SECURITY DEFINER
+    SET search_path TO 'public'
+    AS $$
+declare
+  v_id uuid;
+begin
+  select id
+  into v_id
+  from public.activation_codes
+  where code = p_code
+    and used = false
+    and (expires_at is null or expires_at > now())
+  for update;
+
+  if v_id is null then
+    return false;
+  end if;
+
+  update public.activation_codes
+  set used = true,
+      used_by = p_user_id
+  where id = v_id;
+
+  return true;
+end;
+$$;
+
+----------------------------------------

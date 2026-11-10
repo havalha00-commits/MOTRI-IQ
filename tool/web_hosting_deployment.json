@@ -1,0 +1,12 @@
+{
+  "url": "https://motri-iq-app.me-0eca.chatgpt.site/",
+  "project_id": "appgprj_6add1c4d9cec81918636b9b3946e32ed",
+  "version_id": "appgprj_6add1c4d9cec81918636b9b3946e32ed~appgver_8a0e57c78dcc819181770b9e59b11b61",
+  "deployment_id": "appgdep_6add1ccc312c8191af861a75ebbead39",
+  "commit_sha": "836f423b1439be78d2ca722042850bd2c6ddc37a",
+  "status": "succeeded",
+  "access": "public",
+  "build": "flutter build web --release",
+  "browser_review": "Live public home visually verified with loaded listing photos and navigation",
+  "billing_changes": "none"
+}

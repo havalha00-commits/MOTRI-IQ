@@ -1,0 +1,35 @@
+{
+    "name": "MOTRI IQ",
+    "short_name": "MOTRI IQ",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0B0B0D",
+    "theme_color": "#0B0B0D",
+    "description": "Cars, marketplace listings and local businesses in Iraq.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

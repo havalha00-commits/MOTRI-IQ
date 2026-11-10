@@ -1,0 +1,27 @@
+{
+  "name": "motri-iq-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test",
+    "start:local-test": "node ./scripts/start-local-test-runtime.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.450.0",
+    "@aws-sdk/s3-request-presigner": "^3.450.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jose": "^6.1.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "s3rver": "^3.7.1"
+  }
+}

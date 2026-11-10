@@ -1,0 +1,137 @@
+-- =====================================================================
+-- MOTRI IQ — 30 إعلان سيارة تجريبية للمعارض
+-- الملف: supabase/seed_30_demo_cars.sql
+-- مولَّد: 2026-10-03 09:19:10
+--
+-- المخطط المستخدَم (22 عموداً، مُتحقَّق منه بـ select=* على القاعدة):
+--   id, user_id, title, brand, model, year, price, governorate, fuel,
+--   transmission, mileage, description, phone, images, is_approved,
+--   created_at, city, image_url, province, body_type, seller_phone, status
+--
+-- لا يوجد عمود hp أو engine أو specs في الجدول، لذلك المحرك والقوة
+-- والمواصفات مدموجة داخل نص description. لم تُضَف أعمدة جديدة.
+--
+-- ملاحظات:
+--   * user_id = حساب الأدمن 14f652d6… (حسب طلبك)
+--   * governorate = city = province = بغداد
+--   * status = active ، is_approved = true ، mileage = 0 (جديدة)
+--   * images و image_url = NULL: لم ترفع صور بعد، ولن نضع روابط وهمية.
+--     بعد الإدراج يمكن رفعها من التطبيق لتظهر في الإعلان.
+--   * الأسعار تقديرية لسوق عراقي 2025/2026 وليست عروضاً رسمية.
+--   * لا يحذف ولا يعدّل أي صف موجود.
+-- =====================================================================
+
+BEGIN;
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('160d684a-28ed-4e1d-85be-2e289f8e6020', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Toyota Land Cruiser 250 2025', 'Toyota', 'Land Cruiser 250', 2025, 73000, 'بغداد', 'بنزين', 'أوتوماتيك 8 سرعات', 0, 'معروض في معرض بغداد. Toyota Land Cruiser 250 موديل 2025، هيكل SUV، محرك 2.8 لتر بنزين تيربو 4 أسطوانة بقوة 300 حصان، ناقل حركة أوتوماتيك 8 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: دفع رباعي، هيكل معدني، فتحة سقف بانورامية، مقاعد جلد، كاميرات 360 درجة. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 95,630,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('7132efa8-fa4d-4e5a-85b4-fc077cb2129d', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Toyota Hilux Adventure 2025', 'Toyota', 'Hilux Adventure', 2025, 38000, 'بغداد', 'ديزل', 'أوتوماتيك 6 سرعات', 0, 'معروض في معرض بغداد. Toyota Hilux Adventure موديل 2025، هيكل بيك أب، محرك 2.8 لتر ديزل تيربو 4 أسطوانة بقوة 204 حصان، ناقل حركة أوتوماتيك 6 سرعات، وقود ديزل. الكيلومترات 0 (جديدة). التجهيزات: دفع رباعي، حوض خلفي، شاشة 8 بوصة، قفل مركزي. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 49,780,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'بيك أب', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('dfd31448-40fe-4c6f-ad87-35ec5f8e248c', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Toyota Fortuner 2026', 'Toyota', 'Fortuner', 2026, 47000, 'بغداد', 'ديزل', 'أوتوماتيك 6 سرعات', 0, 'معروض في معرض بغداد. Toyota Fortuner موديل 2026، هيكل SUV، محرك 2.8 لتر ديزل تيربو 4 أسطوانة بقوة 204 حصان، ناقل حركة أوتوماتيك 6 سرعات، وقود ديزل. الكيلومترات 0 (جديدة). التجهيزات: سبعة مقاعد، فتحة سقف بانورامية، نظام Stability Control. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 61,570,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('2279c3af-fd70-4cdc-b99d-401c0ca9f460', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Toyota Camry Hybrid 2025', 'Toyota', 'Camry Hybrid', 2025, 36000, 'بغداد', 'هجين', 'أوتوماتيك', 0, 'معروض في معرض بغداد. Toyota Camry Hybrid موديل 2025، هيكل سيدان، محرك 2.5 لتر هجين بقوة 218 حصان، ناقل حركة أوتوماتيك، وقود هجين. الكيلومترات 0 (جديدة). التجهيزات: نظام HEV، مقاعد جلد، فتحة بانورامية، مثبت سرعة. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 47,160,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'سيدان', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('6c76f6cc-9d7a-4730-a6e3-c9d07e6bd1a9', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Toyota Corolla 2026', 'Toyota', 'Corolla', 2026, 24000, 'بغداد', 'بنزين', 'أوتوماتيك 4 سرعات', 0, 'معروض في معرض بغداد. Toyota Corolla موديل 2026، هيكل سيدان، محرك 1.8 لتر بنزين 4 أسطوانة بقوة 132 حصان، ناقل حركة أوتوماتيك 4 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: كاميرا خلفية، شاشة لمس، بلوتوث. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 31,440,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'سيدان', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('136810d3-d3d7-4a3f-b72d-7fdfb0871455', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Kia Sportage 2025', 'Kia', 'Sportage', 2025, 30000, 'بغداد', 'هجين', 'أوتوماتيك 6 سرعات', 0, 'معروض في معرض بغداد. Kia Sportage موديل 2025، هيكل SUV، محرك 1.6 لتر تيربو هجين بقوة 226 حصان، ناقل حركة أوتوماتيك 6 سرعات، وقود هجين. الكيلومترات 0 (جديدة). التجهيزات: فتحة بانورامية، جلد، شاشة Heads-Up. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 39,300,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('4dd6ec01-4bba-4a55-bef3-2ba798580297', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Kia Sorento 7-Seater 2026', 'Kia', 'Sorento 7-Seater', 2026, 35000, 'بغداد', 'ديزل', 'أوتوماتيك 8 سرعات', 0, 'معروض في معرض بغداد. Kia Sorento 7-Seater موديل 2026، هيكل SUV، محرك 2.2 لتر ديزل 4 أسطوانة بقوة 200 حصان، ناقل حركة أوتوماتيك 8 سرعات، وقود ديزل. الكيلومترات 0 (جديدة). التجهيزات: سبعة مقاعد، فتحة بانورامية، تحكم بالثبات. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 45,850,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('77bbd0bf-80fb-496e-85a1-943faabb8f8c', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Kia Pegas 2025', 'Kia', 'Pegas', 2025, 18500, 'بغداد', 'بنزين', 'أوتوماتيك 4 سرعات', 0, 'معروض في معرض بغداد. Kia Pegas موديل 2025، هيكل سيدان، محرك 1.5 لتر بنزين 4 أسطوانة بقوة 113 حصان، ناقل حركة أوتوماتيك 4 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: نظام ECON، شاشة، تكييف. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 24,235,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'سيدان', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('dea5f04a-b087-4e44-a362-5b56b0e85e47', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Hyundai Tucson 2026', 'Hyundai', 'Tucson', 2026, 32000, 'بغداد', 'بنزين', 'أوتوماتيك 6 سرعات', 0, 'معروض في معرض بغداد. Hyundai Tucson موديل 2026، هيكل SUV، محرك 2.0 لتر تيربو 4 أسطوانة بقوة 180 حصان، ناقل حركة أوتوماتيك 6 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: فتحة بانورامية، جلد، تحكم بالثبات. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 41,920,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('5aed4a96-2d0d-4d30-a132-48f07e053974', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Hyundai Accent 2025', 'Hyundai', 'Accent', 2025, 19500, 'بغداد', 'بنزين', 'أوتوماتيك 4 سرعات', 0, 'معروض في معرض بغداد. Hyundai Accent موديل 2025، هيكل سيدان، محرك 1.5 لتر بنزين 4 أسطوانة بقوة 113 حصان، ناقل حركة أوتوماتيك 4 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: نظام ECON، تكييف، بلوتوث. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 25,545,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'سيدان', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('c95caf81-015f-483a-a7df-abd8d0ddf0c7', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Hyundai Elantra 2026', 'Hyundai', 'Elantra', 2026, 23000, 'بغداد', 'هجين', 'أوتوماتيك', 0, 'معروض في معرض بغداد. Hyundai Elantra موديل 2026، هيكل سيدان، محرك 1.6 لتر هجين 4 أسطوانة بقوة 128 حصان، ناقل حركة أوتوماتيك، وقود هجين. الكيلومترات 0 (جديدة). التجهيزات: نظام هجين، شاشة 8 بوصة، كاميرا خلفية. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 30,130,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'سيدان', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('b055beae-f3c4-4ddf-87aa-dac81b19b25b', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Chery Tiggo 7 Pro 2025', 'Chery', 'Tiggo 7 Pro', 2025, 26000, 'بغداد', 'بنزين', 'أوتوماتيك 7 سرعات', 0, 'معروض في معرض بغداد. Chery Tiggo 7 Pro موديل 2025، هيكل SUV، محرك 1.6 لتر تيربو 4 أسطوانة بقوة 145 حصان، ناقل حركة أوتوماتيك 7 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: فتحة بانورامية، جلد، تحكم بالثبات. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 34,060,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('191eadec-dae3-4851-a7af-de362f506cd8', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Chery Tiggo 8 Pro 2026', 'Chery', 'Tiggo 8 Pro', 2026, 34000, 'بغداد', 'بنزين', 'أوتوماتيك 7 سرعات', 0, 'معروض في معرض بغداد. Chery Tiggo 8 Pro موديل 2026، هيكل SUV، محرك 2.0 لتر تيربو 4 أسطوانة بقوة 187 حصان، ناقل حركة أوتوماتيك 7 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: سبعة مقاعد، فتحة بانورامية، جلد. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 44,540,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('a81335f7-6f30-4839-9d68-73b981ccd500', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Chery Arrizo 5 2025', 'Chery', 'Arrizo 5', 2025, 20000, 'بغداد', 'بنزين', 'أوتوماتيك', 0, 'معروض في معرض بغداد. Chery Arrizo 5 موديل 2025، هيكل سيدان، محرك 1.5 لتر تيربو 4 أسطوانة بقوة 147 حصان، ناقل حركة أوتوماتيك، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: فتحة بانورامية، جلد، شاشة. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 26,200,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'سيدان', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('8f557c95-2431-43f8-b3df-d1d2cb7ef122', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Jetour Dashing 2025', 'Jetour', 'Dashing', 2025, 31000, 'بغداد', 'بنزين', 'أوتوماتيك 7 سرعات', 0, 'معروض في معرض بغداد. Jetour Dashing موديل 2025، هيكل SUV، محرك 2.0 لتر تيربو 4 أسطوانة بقوة 187 حصان، ناقل حركة أوتوماتيك 7 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: فتحة بانورامية، جلد، تحكم بالثبات. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 40,610,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('8c814acc-4d86-4522-8cff-20a56cc8785c', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Jetour X70 Plus 2026', 'Jetour', 'X70 Plus', 2026, 27000, 'بغداد', 'بنزين', 'أوتوماتيك 7 سرعات', 0, 'معروض في معرض بغداد. Jetour X70 Plus موديل 2026، هيكل SUV، محرك 1.6 لتر تيربو 4 أسطوانة بقوة 147 حصان، ناقل حركة أوتوماتيك 7 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: فتحة بانورامية، شاشة 10 بوصة. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 35,370,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('44fb91eb-53fe-4ba8-beec-b6a86970e371', '14f652d6-e797-4c38-980c-e535c10d36b2', 'BYD Song Plus 2026', 'BYD', 'Song Plus', 2026, 29500, 'بغداد', 'كهربائية', 'أوتوماتيك', 0, 'معروض في معرض بغداد. BYD Song Plus موديل 2026، هيكل SUV، محرك محرك كهربائي 100 كيلوواط بقوة 218 حصان، ناقل حركة أوتوماتيك، وقود كهربائية. الكيلومترات 0 (جديدة). التجهيزات: بطارية 80 كيلوواط ساعة، شحن سريع، مدى 500 كم. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 38,645,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('33d255ca-17f3-4eb9-a9cc-fa61609dd3a0', '14f652d6-e797-4c38-980c-e535c10d36b2', 'BYD F3 2025', 'BYD', 'F3', 2025, 16500, 'بغداد', 'بنزين', 'أوتوماتيك', 0, 'معروض في معرض بغداد. BYD F3 موديل 2025، هيكل سيدان، محرك 1.5 لتر بنزين 4 أسطوانة بقوة 113 حصان، ناقل حركة أوتوماتيك، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: نظام ECON، تكييف، بلوتوث. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 21,615,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'سيدان', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('666c1047-947b-46ec-baf4-38de59b42ec6', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Haval Jolion Pro 2025', 'Haval', 'Jolion Pro', 2025, 22500, 'بغداد', 'بنزين', 'أوتوماتيك 7 سرعات', 0, 'معروض في معرض بغداد. Haval Jolion Pro موديل 2025، هيكل SUV، محرك 1.5 لتر تيربو 4 أسطوانة بقوة 150 حصان، ناقل حركة أوتوماتيك 7 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: فتحة بانورامية، جلد، تحكم بالثبات. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 29,475,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('dc8b9d5e-c0dc-4ab6-b3ae-4ec8f237e730', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Haval H6 HEV 2026', 'Haval', 'H6 HEV', 2026, 28000, 'بغداد', 'هجين', 'أوتوماتيك', 0, 'معروض في معرض بغداد. Haval H6 HEV موديل 2026، هيكل SUV، محرك 1.5 لتر تيربو هجين 4 أسطوانة بقوة 218 حصان، ناقل حركة أوتوماتيك، وقود هجين. الكيلومترات 0 (جديدة). التجهيزات: نظام HEV، فتحة بانورامية، جلد. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 36,680,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('47854b5a-411a-4fd8-9ac2-395b0ee34f1d', '14f652d6-e797-4c38-980c-e535c10d36b2', 'MG ZS 2025', 'MG', 'ZS', 2025, 25000, 'بغداد', 'بنزين', 'أوتوماتيك 6 سرعات', 0, 'معروض في معرض بغداد. MG ZS موديل 2025، هيكل SUV، محرك 1.5 لتر تيربو 4 أسطوانة بقوة 168 حصان، ناقل حركة أوتوماتيك 6 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: فتحة بانورامية، جلد، شاشة. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 32,750,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('3ff44b85-d1d6-4d41-b874-c7bc79170b76', '14f652d6-e797-4c38-980c-e535c10d36b2', 'MG 5 2026', 'MG', '5', 2026, 21000, 'بغداد', 'بنزين', 'أوتوماتيك 8 سرعات', 0, 'معروض في معرض بغداد. MG 5 موديل 2026، هيكل سيدان، محرك 1.5 لتر تيربو 4 أسطوانة بقوة 184 حصان، ناقل حركة أوتوماتيك 8 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: فتحة بانورامية، شاشة، مقاعد رياضية. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 27,510,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'سيدان', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('e2edb044-9a68-4e40-bf81-ceb5c472177b', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Geely Coolray 2025', 'Geely', 'Coolray', 2025, 25500, 'بغداد', 'بنزين', 'أوتوماتيك 7 سرعات', 0, 'معروض في معرض بغداد. Geely Coolray موديل 2025، هيكل SUV، محرك 1.5 لتر تيربو 4 أسطوانة بقوة 177 حصان، ناقل حركة أوتوماتيك 7 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: فتحة بانورامية، جلد، تحكم بالثبات. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 33,405,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('4d43c406-03d7-4044-9ed5-0d1e11bc9e53', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Geely Monjaro 2026', 'Geely', 'Monjaro', 2026, 31500, 'بغداد', 'هجين', 'أوتوماتيك 7 سرعات', 0, 'معروض في معرض بغداد. Geely Monjaro موديل 2026، هيكل SUV، محرك 2.0 لتر تيربو هجين 4 أسطوانة بقوة 238 حصان، ناقل حركة أوتوماتيك 7 سرعات، وقود هجين. الكيلومترات 0 (جديدة). التجهيزات: فتحة بانورامية، جلد، مقاعد رياضية. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 41,265,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('d0a5045d-5e59-40f7-be61-0a902ef8e548', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Nissan Patrol Platinum 2026', 'Nissan', 'Patrol Platinum', 2026, 68000, 'بغداد', 'بنزين', 'أوتوماتيك 7 سرعات', 0, 'معروض في معرض بغداد. Nissan Patrol Platinum موديل 2026، هيكل SUV، محرك 5.6 لتر V8 بنزين بقوة 400 حصان، ناقل حركة أوتوماتيك 7 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: فئة بلاتينيوم، جلد أبيض، تشطيب خشب، مقاعد كهربائية. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 89,080,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('8466d960-6343-4907-8991-eed360b461f2', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Nissan Sunbird 2025', 'Nissan', 'Sunbird', 2025, 17000, 'بغداد', 'بنزين', 'أوتوماتيك 4 سرعات', 0, 'معروض في معرض بغداد. Nissan Sunbird موديل 2025، هيكل سيدان، محرك 1.6 لتر بنزين 4 أسطوانة بقوة 122 حصان، ناقل حركة أوتوماتيك 4 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: تكييف، بلوتوث، كاميرا خلفية. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 22,270,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'سيدان', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('45677f75-eb05-48b8-86f7-b24d41a0612b', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Nissan X-Trail 2025', 'Nissan', 'X-Trail', 2025, 28500, 'بغداد', 'هجين', 'أوتوماتيك', 0, 'معروض في معرض بغداد. Nissan X-Trail موديل 2025، هيكل SUV، محرك 1.5 لتر هجين e-POWER بقوة 213 حصان، ناقل حركة أوتوماتيك، وقود هجين. الكيلومترات 0 (جديدة). التجهيزات: نظام e-POWER، فتحة بانورامية، تكييف. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 37,335,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('61439d02-20a3-47f3-bb31-cd5126dc80c4', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Ford Everest 2026', 'Ford', 'Everest', 2026, 55000, 'بغداد', 'ديزل', 'أوتوماتيك 10 سرعات', 0, 'معروض في معرض بغداد. Ford Everest موديل 2026، هيكل SUV، محرك 3.0 لتر ديزل تيربو V6 بقوة 246 حصان، ناقل حركة أوتوماتيك 10 سرعات، وقود ديزل. الكيلومترات 0 (جديدة). التجهيزات: سبعة مقاعد، جلد، فتحة بانورامية. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 72,050,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('1cbecfd8-54ca-4028-9b93-c985493c21ce', '14f652d6-e797-4c38-980c-e535c10d36b2', 'Ford Ranger Wildtrak 2025', 'Ford', 'Ranger Wildtrak', 2025, 42000, 'بغداد', 'ديزل', 'أوتوماتيك 10 سرعات', 0, 'معروض في معرض بغداد. Ford Ranger Wildtrak موديل 2025، هيكل بيك أب، محرك 2.0 لتر EcoBlue ديزل 4 أسطوانة بقوة 170 حصان، ناقل حركة أوتوماتيك 10 سرعات، وقود ديزل. الكيلومترات 0 (جديدة). التجهيزات: فئة Wildtrak، حوض خلفي، دفع رباعي. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 55,020,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'بيك أب', '0770 000 0000', 'active');
+
+INSERT INTO public.cars (id, user_id, title, brand, model, year, price, governorate, fuel, transmission, mileage, description, phone, images, is_approved, created_at, city, image_url, province, body_type, seller_phone, status)
+VALUES ('f82bc992-5f96-4fff-8369-3dede10eb795', '14f652d6-e797-4c38-980c-e535c10d36b2', 'GAC GS8 2026', 'GAC', 'GS8', 2026, 45000, 'بغداد', 'بنزين', 'أوتوماتيك 8 سرعات', 0, 'معروض في معرض بغداد. GAC GS8 موديل 2026، هيكل SUV، محرك 2.0 لتر تيربو 4 أسطوانة بقوة 252 حصان، ناقل حركة أوتوماتيك 8 سرعات، وقود بنزين. الكيلومترات 0 (جديدة). التجهيزات: سبعة مقاعد، فتحة بانورامية، جلد. الحالة: جديدة غير مستعملة، ضمن الضمان. السعر 58,950,000 دينار عراقي. للمعاينة والحجز تواصل معنا خلال أوقات الدوام.', '0770 000 0000', NULL, true, now(), 'بغداد', NULL, 'بغداد', 'SUV', '0770 000 0000', 'active');
+
+COMMIT;
+
+-- =====================================================================
+-- التحقق بعد الإدراج
+-- =====================================================================
+SELECT count(*) AS total_ads FROM public.cars;                        -- 30
+SELECT status, count(*) FROM public.cars GROUP BY status;            -- active = 30
+SELECT is_approved, count(*) FROM public.cars GROUP BY is_approved;-- true = 30
+SELECT body_type, count(*) FROM public.cars GROUP BY body_type ORDER BY 2 DESC;
+SELECT brand, count(*) FROM public.cars GROUP BY brand ORDER BY 1;
+SELECT min(price) AS min_price, max(price) AS max_price FROM public.cars;
+
+-- عيّنة: أول 3 إعلانات للتحقق من النص العربي
+SELECT title, body_type, year, price, fuel, description
+FROM public.cars ORDER BY created_at DESC LIMIT 3;
+
+-- تأكيد أن الجداول الأخرى لم تُمس
+SELECT 'market_items' AS t, count(*) FROM public.market_items
+UNION ALL SELECT 'jobs', count(*) FROM public.jobs
+UNION ALL SELECT 'seller_reviews', count(*) FROM public.seller_reviews
+UNION ALL SELECT 'app_admins', count(*) FROM public.app_admins;
+SELECT count(*) AS auth_users FROM auth.users;

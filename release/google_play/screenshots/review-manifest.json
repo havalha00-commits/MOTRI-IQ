@@ -1,0 +1,158 @@
+{
+  "count": 24,
+  "languages": {
+    "ar": 8,
+    "en": 8,
+    "ku": 8
+  },
+  "images": [
+    {
+      "file": "ar/01-home.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "9fd22a4cb8c495afc28f281818d3a09aafafd620b6549d30744b7e5c6011732d"
+    },
+    {
+      "file": "ar/02-cars.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "6fe66c5eddfca6a1d2c09293243b5527b028e9d5b161e9684a2e38cd5e83e3f2"
+    },
+    {
+      "file": "ar/03-compare.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "426808fd3894f7c315b57afd9b2cd61788f56c745239cf09dca77b2dd6268baf"
+    },
+    {
+      "file": "ar/04-search.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "3f62201ce94a6bf323c6caa79f12e120f6635b814b7caa7408675f54ca026003"
+    },
+    {
+      "file": "ar/05-support.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "178ae0a02e426d5cc344f7aae0fd944e6ca52e0cfc1530c7ef4913b29728a7a2"
+    },
+    {
+      "file": "ar/06-about.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "514a7652353170bb4dcd2ea7a18b3ca1e17951422973047be876db0a55997b45"
+    },
+    {
+      "file": "ar/07-settings.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "c3318724fd1a14023220fcd60617eb4aaa707e66d9609dcac91728877ee05bf5"
+    },
+    {
+      "file": "ar/08-account-deletion.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "bc301cd81737f5560f6d9d570d04b3ea1196614c3833e068cd9f1dbb421126ec"
+    },
+    {
+      "file": "en/01-home.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "943f87c744e9b7764c0ed0b67e45e1e5f55b29895ec90634d897934a0e66415a"
+    },
+    {
+      "file": "en/02-cars.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "1422e0c2f2bc48a0ebe70fb4cb272d5f88ca44af2ad61bfc6da0cfae94c0131b"
+    },
+    {
+      "file": "en/03-compare.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "21b84ebcec6884d84cea5893e3b480e5679c1ca78071f9b6bb47d4af840f4acd"
+    },
+    {
+      "file": "en/04-search.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "3d90fe5fb8ab7fce1c25976793bcd9a62c3a9c16770733d4475f5a8783dddbca"
+    },
+    {
+      "file": "en/05-support.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "725645b2e772ef3be0af5e0f87ec4befe854df864e71b163e256d322fa0ba348"
+    },
+    {
+      "file": "en/06-about.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "bc45a58894ecef6d3f82b251010b67ef40b77d6f56e2186cd54430177466dd36"
+    },
+    {
+      "file": "en/07-settings.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "88ef28e1fb4413b63f79e6278f2ca7c83a9469cec364ce64fa3ce4d9ab280a18"
+    },
+    {
+      "file": "en/08-account-deletion.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "125fd9dc14fc14bbd702ac2353dfd6bdc90a66c787d53d493cb9b00ae9c2db52"
+    },
+    {
+      "file": "ku/01-home.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "6dab5693813f532cd4065a0d89e17684f56117ccadd78e6ac7cbf7ef24ce9c9d"
+    },
+    {
+      "file": "ku/02-cars.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "c7533ef7de4d011e77618525fb8ba876a905a62790c1eb35a7e926a01860ec0e"
+    },
+    {
+      "file": "ku/03-compare.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "9fbedac216a2ac7d67c731beba61dd450903e336ade226e5339873f2f157bc97"
+    },
+    {
+      "file": "ku/04-search.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "6cfd79efc15085601234b2c02ce7410380f83423e6ce6c97ba091bdb942d5aaf"
+    },
+    {
+      "file": "ku/05-support.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "f8d4560ec2113ed69db516f2ac09443dd60c5e45d9f632b5feeffd106ff3e047"
+    },
+    {
+      "file": "ku/06-about.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "a2af6d9ca1c422a3e1b6ddbc5debe30708a842c6e70123d753da911d9853cd92"
+    },
+    {
+      "file": "ku/07-settings.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "41f8796514ffacb90f4506cc973c1e739894ef74525a4f0e35da13b0afa9ae9a"
+    },
+    {
+      "file": "ku/08-account-deletion.png",
+      "width": 1080,
+      "height": 1920,
+      "sha256": "69fcab459bed2868dfbedbe1a69dc957e7949111eced7652177b2f009339794f"
+    }
+  ],
+  "visually_reviewed": true,
+  "source_version": "1.0.1+5",
+  "advertising": "removed",
+  "capture_test": "passed: 24 full pages, eight per language"
+}

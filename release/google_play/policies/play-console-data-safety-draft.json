@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-25",
+  "application_id": "com.motriiq.app",
+  "target_build": "1.0.1+5",
+  "console_url": "https://play.google.com/console/u/0/developers/5942550039456500286/app/4975059975241187490/app-content/data-privacy-security?source=dashboard",
+  "state": "Saved using Save as draft; UI confirmed Change saved. Send for review in Publishing overview.",
+  "sent_for_review": false,
+  "account_creation": [
+    "Username and password"
+  ],
+  "encrypted_in_transit": true,
+  "account_deletion_url": "https://motri-iq-account-deletion.me-0eca.chatgpt.site/",
+  "partial_data_deletion_without_account_deletion": false,
+  "data_types": {
+    "Name": {
+      "collected": true,
+      "shared": false,
+      "ephemeral": false,
+      "optional": true,
+      "purposes": [
+        "App functionality",
+        "Account management"
+      ]
+    },
+    "Email address": {
+      "collected": true,
+      "shared": false,
+      "ephemeral": false,
+      "optional": true,
+      "purposes": [
+        "App functionality",
+        "Account management"
+      ]
+    },
+    "User IDs": {
+      "collected": true,
+      "shared": false,
+      "ephemeral": false,
+      "optional": true,
+      "purposes": [
+        "App functionality",
+        "Account management"
+      ]
+    },
+    "Phone number": {
+      "collected": true,
+      "shared": false,
+      "ephemeral": false,
+      "optional": true,
+      "purposes": [
+        "App functionality",
+        "Account management"
+      ]
+    },
+    "Approximate location": {
+      "collected": true,
+      "shared": false,
+      "ephemeral": false,
+      "optional": true,
+      "purposes": [
+        "App functionality"
+      ]
+    },
+    "Precise location": {
+      "collected": true,
+      "shared": true,
+      "ephemeral": false,
+      "optional": true,
+      "purposes": [
+        "App functionality"
+      ]
+    },
+    "Other in-app messages": {
+      "collected": true,
+      "shared": false,
+      "ephemeral": false,
+      "optional": true,
+      "purposes": [
+        "App functionality"
+      ]
+    },
+    "Photos": {
+      "collected": true,
+      "shared": false,
+      "ephemeral": false,
+      "optional": true,
+      "purposes": [
+        "App functionality",
+        "Account management"
+      ]
+    },
+    "App interactions": {
+      "collected": true,
+      "shared": false,
+      "ephemeral": false,
+      "optional": true,
+      "purposes": [
+        "App functionality",
+        "Analytics"
+      ]
+    },
+    "In-app search history": {
+      "collected": true,
+      "shared": false,
+      "ephemeral": false,
+      "optional": true,
+      "purposes": [
+        "App functionality"
+      ]
+    },
+    "Other user-generated content": {
+      "collected": true,
+      "shared": false,
+      "ephemeral": false,
+      "optional": true,
+      "purposes": [
+        "App functionality",
+        "Fraud prevention, security, and compliance"
+      ]
+    },
+    "Other actions": {
+      "collected": true,
+      "shared": false,
+      "ephemeral": false,
+      "optional": true,
+      "purposes": [
+        "App functionality",
+        "Personalization"
+      ]
+    }
+  },
+  "references": [
+    "https://support.google.com/googleplay/android-developer/answer/10787469?hl=en",
+    "https://osmfoundation.org/wiki/Privacy_Policy",
+    "https://osmfoundation.org/wiki/Services_and_tile_users_privacy_FAQ"
+  ],
+  "review_before_submission": [
+    "Confirm actual backend deletion execution, data-specific retention and processing periods",
+    "Explicitly disclose Nominatim reverse-geocoding transfer in published/in-app privacy notices",
+    "Publisher must confirm no additional data processing beyond reviewed source, including operational logs, staff/legacy financial workflows and external providers"
+  ],
+  "evidence": "artifacts/evidence/play-data-safety-saved-draft.jpg"
+}

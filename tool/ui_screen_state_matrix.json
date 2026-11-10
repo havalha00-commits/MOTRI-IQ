@@ -1,0 +1,2034 @@
+{
+  "date": "2026-10-23",
+  "status": "all_38_screens_and_applicable_page_states_have_direct_assertion_locators; broader_visual_acceptance_separate",
+  "scope": "Active source closure only; every page-level state distinguished from inline, modal, media, role and submission states. No new product behavior in this pass.",
+  "screens": [
+    {
+      "screen": "HomePage",
+      "source": "lib/main.dart",
+      "source_line": 1687,
+      "component_sha256": "3b14aaa618de190dd2e1d99ca1a62e917048dfaa98078dddef1c958a54c6219b",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "not_page_level",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Navigation shell; asynchronous discovery belongs to HomeTab and each destination.",
+      "revision_evidence": [
+        "unique_bottom_destinations_revision",
+        "navigation_burgundy_revision",
+        "discovery_completion_revision"
+      ],
+      "test_locators": [
+        "test/home_empty_sections_test.dart",
+        "test/startup_handoff_test.dart",
+        "test/locale_filter_regression_test.dart",
+        "test/ui_polish_test.dart",
+        "test/home_search_box_test.dart",
+        "test/nav6_probe_test.dart",
+        "test/settings_history_polish_test.dart",
+        "test/market_tab_test.dart"
+      ],
+      "acceptance_status": "current_discovery_named_states_and_layout_scope_reconciled; whole_app_completion_unproven",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/startup_handoff_test.dart",
+          "test_locator": "Startup opens Home immediately",
+          "assertions": "Home and navigation immediately usable; direction,1.8 text scaling and disabled animations preserved.",
+          "result_log": "tool/ui_review_artifacts/remaining_state_proof.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "HomeTab",
+      "source": "lib/main.dart",
+      "source_line": 1924,
+      "component_sha256": "f41d1a789c677da0f054f7f54b8d61ef7ec4d9e476a4791be8f4e20521dadc15",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Required car feed and selected market feed; optional empty sections collapse. Each feed has independent state.",
+      "revision_evidence": [
+        "discovery_completion_revision"
+      ],
+      "test_locators": [
+        "test/arabic_text_integrity_test.dart",
+        "test/home_empty_sections_test.dart",
+        "test/home_feed_recovery_test.dart",
+        "test/home_visible_polish_test.dart",
+        "test/dark_mode_test.dart",
+        "test/home_carousel_font_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/market_tab_test.dart"
+      ],
+      "acceptance_status": "current_discovery_named_states_and_layout_scope_reconciled; whole_app_completion_unproven",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "error": {
+          "source_test": "test/home_feed_recovery_test.dart",
+          "test": "Home feed recovery ${locale.code} dark=$dark enlarged",
+          "assertions": "Required cars/selected-market error panels remain distinct from empty text; private diagnostics absent.",
+          "scope": "ar/ku/en,both themes",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Inspected existing discovery fixtures unchanged since the full1506-test pass; subsequent additions affect other fixtures only."
+        },
+        "empty": {
+          "source_test": "test/home_feed_recovery_test.dart",
+          "test": "cars failure retries to real empty without false optional empty sections",
+          "assertions": "Retry removes error, shows car_no_ads and collapses unavailable most-requested section.",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Inspected existing discovery fixtures unchanged since the full1506-test pass; subsequent additions affect other fixtures only."
+        },
+        "loading": {
+          "source_test": "test/home_feed_recovery_test.dart",
+          "test": "Home delayed feeds ${locale.code} dark=$dark enlarged",
+          "assertions": "Car skeleton has localized live-region loading label; no false car empty/error while blocked; selected market has progress without empty text; completion removes skeleton and shows market empty.",
+          "scope": "ar/ku/en,light/dark at1.6; native current revision",
+          "native_revision": "discovery_loading_current_revision"
+        },
+        "populated": {
+          "source_test": "test/home_carousel_font_test.dart",
+          "test_locator": "carousel ${locale.code} dark=$dark scale=$scale",
+          "assertions": "Featured carousel exists; next/previous changes page0/1; native variant requires decoded public photo before review.",
+          "scope": "ar/ku/en,both themes,scale1/1.5; native image assertion applies only native runs.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt"
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "CarRequestsPage",
+      "source": "lib/main.dart",
+      "source_line": 2487,
+      "component_sha256": "e3ae4193c83300ddedca1e1bca65b2d801d8ab0943f66e7bd4b1038812891674",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/car_requests_polish_test.dart"
+      ],
+      "acceptance_status": "current_fonts_and_local_fixture_states_reviewed_staging_unverified",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/car_requests_polish_test.dart",
+          "test_locator": "requests cards",
+          "assertions": "Request/offer card, editor and decision routes render without layout exceptions; mutations separately guarded.",
+          "result_log": "tool/ui_review_artifacts/remaining_state_proof.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "error": {
+          "source_test": "test/car_requests_polish_test.dart",
+          "test_locator": "read retry and mine filter preserve error privacy",
+          "assertions": "Private diagnostic absent; retry/My requests preserve expected buyer filter. This locator alone does not prove visible error wording.",
+          "result_log": "tool/ui_review_artifacts/remaining_state_proof.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "loading": {
+          "source_test": "test/car_requests_polish_test.dart",
+          "test_locator": "state gap requests delayed loading then empty",
+          "assertions": "Blocked read displays progress and no empty request message.",
+          "scope": "Arabic/light controlled fixture; broader locale/theme matrices remain separate.",
+          "result_log": "tool/ui_review_artifacts/eight_state_full.txt",
+          "native_revision": "eight_state_current_revision"
+        },
+        "empty": {
+          "source_test": "test/car_requests_polish_test.dart",
+          "test_locator": "state gap requests delayed loading then empty",
+          "assertions": "Completed empty response displays account_requests_none with refresh; no writes.",
+          "scope": "Arabic/light controlled fixture; broader locale/theme matrices remain separate.",
+          "result_log": "tool/ui_review_artifacts/eight_state_full.txt",
+          "native_revision": "eight_state_current_revision"
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "CompareCarsPage",
+      "source": "lib/main.dart",
+      "source_line": 3559,
+      "component_sha256": "1058e5e053d05a07a01a2b856a2e4bc9dee525e9a58c8b2443a8b9a2e17b02d5",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "applicable",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Synchronous comparison snapshot; empty, one and two selected vehicles. No asynchronous page loader or query-error state.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/comparison_polish_test.dart"
+      ],
+      "acceptance_status": "current_fonts_comparison_empty_one_two_missing_values_actions_locale_reviewed",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "empty": {
+          "source_test": "test/comparison_polish_test.dart",
+          "test": "$locale comparison0 cars dark=$dark large text",
+          "assertions": "Empty local snapshot shows compare_add_hint.",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Existing1506-test full pass; inspected fixture unchanged in subsequent profile/history additions. Native visual acceptance remains revision-scoped."
+        },
+        "populated": {
+          "source_test": "test/comparison_polish_test.dart",
+          "test": "$locale comparison$count cars dark=$dark large text",
+          "assertions": "One selection displays vehicle and add-second prompt; two selections display headers and USD price specs; color section reachable without exceptions.",
+          "scope": "0/1/2 selections;ar/ku/en;light/dark; suite large-text viewport",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Existing1506-test full pass; inspected fixture unchanged in subsequent profile/history additions. Native visual acceptance remains revision-scoped."
+        }
+      },
+      "unreconciled_page_states": [],
+      "current_native_visual_revision": "completion_visual_refresh_revision; exact revised capture boundaries apply"
+    },
+    {
+      "screen": "CarDetailsPage",
+      "source": "lib/main.dart",
+      "source_line": 3851,
+      "component_sha256": "80bd4b08ca585bd1c7d1caa3cb03800a97bddee5615351bea47d97551d22ed3e",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "not_page_level",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Receives car data from the caller. Optional market estimate, seller reputation, image loading/error and admin checks are independent; their failures must not replace the listing.",
+      "revision_evidence": [
+        "car_detail_session_revision",
+        "detail_action_revision",
+        "decoded_car_gallery_revision"
+      ],
+      "test_locators": [
+        "test/share_price_polish_test.dart",
+        "test/admin_ads_polish_test.dart",
+        "test/dark_mode_test.dart",
+        "test/vehicle_decisions_polish_test.dart",
+        "test/reports_polish_test.dart",
+        "test/detail_polish_test.dart",
+        "test/owned_vehicle_polish_test.dart",
+        "test/form_polish_test.dart",
+        "test/car_details_contact_test.dart",
+        "test/ui_polish_test.dart",
+        "test/car_gallery_polish_test.dart",
+        "test/comparison_polish_test.dart",
+        "test/alerts_polish_test.dart",
+        "test/seller_verified_tick_test.dart",
+        "test/ui_probe_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance_status": "revision_scoped_current_font_and_mocked_state_evidence_recorded; staging_and_full_state_reconciliation_open",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/detail_polish_test.dart",
+          "test_locator": "car details sold=",
+          "assertions": "Active/sold listing; USD/IQD price direction, contrast>=4.5, CTA colors and>=16px spacing.",
+          "result_log": "tool/ui_review_artifacts/remaining_state_proof.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "SectionPage",
+      "source": "lib/main.dart",
+      "source_line": 5003,
+      "component_sha256": "c10be3af576146c034fdfd03df313f2d8facfc4db80013b78606f52f36eec3c8",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "discovery_completion_revision"
+      ],
+      "test_locators": [
+        "test/section_grid_polish_test.dart",
+        "test/home_empty_sections_test.dart",
+        "test/locale_wiring_test.dart",
+        "test/account_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/market_tab_test.dart"
+      ],
+      "acceptance_status": "current_discovery_named_states_and_layout_scope_reconciled; whole_app_completion_unproven",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/section_grid_polish_test.dart",
+          "test": "market states ${locale.code} dark=$dark large text",
+          "assertions": "Blocked market read displays AppLoadingView.",
+          "scope": "Market variant; ar/ku/en,both themes,320px at1.6. Separate car grid matrix and car error-to-empty test supplement this.",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Inspected existing discovery fixtures unchanged since the full1506-test pass; subsequent additions affect other fixtures only."
+        },
+        "empty": {
+          "source_test": "test/section_grid_polish_test.dart",
+          "test": "market states ${locale.code} dark=$dark large text",
+          "assertions": "Completed empty read displays market_no_ads.",
+          "scope": "Market variant; ar/ku/en,both themes,320px at1.6. Separate car grid matrix and car error-to-empty test supplement this.",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Inspected existing discovery fixtures unchanged since the full1506-test pass; subsequent additions affect other fixtures only."
+        },
+        "error": {
+          "source_test": "test/section_grid_polish_test.dart",
+          "test": "market states ${locale.code} dark=$dark large text",
+          "assertions": "Failed refresh displays load error and masks private diagnostics.",
+          "scope": "Market variant; ar/ku/en,both themes,320px at1.6. Separate car grid matrix and car error-to-empty test supplement this.",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Inspected existing discovery fixtures unchanged since the full1506-test pass; subsequent additions affect other fixtures only."
+        },
+        "populated": {
+          "source_test": "test/section_grid_polish_test.dart",
+          "test": "market states ${locale.code} dark=$dark large text",
+          "assertions": "Retry loads English/Arabic cards with content direction and formatted price assertions.",
+          "scope": "Market variant; ar/ku/en,both themes,320px at1.6. Separate car grid matrix and car error-to-empty test supplement this.",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Inspected existing discovery fixtures unchanged since the full1506-test pass; subsequent additions affect other fixtures only."
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "FavoritesPage",
+      "source": "lib/main.dart",
+      "source_line": 5387,
+      "component_sha256": "edf3bed52a8418b084e5f82b27d2dcdc4962fa0c218f4b161923f4eee2a74c46",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/arabic_text_integrity_test.dart",
+        "test/seller_profile_polish_test.dart",
+        "test/dark_mode_test.dart",
+        "test/account_polish_test.dart",
+        "test/comparison_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance_status": "current_fonts_car_market_grid_recovery_and_session_cases_reviewed_staging_unverified",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/comparison_polish_test.dart",
+          "test_locator": "favorites populated",
+          "assertions": "Saved car card visible at enlarged text; no layout exceptions.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "empty": {
+          "source_test": "test/comparison_polish_test.dart",
+          "test_locator": "favorites $mode",
+          "assertions": "No car card and one recovery button; action after fixture recovery restores saved car. Does not itself assert distinct wording.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "error": {
+          "source_test": "test/comparison_polish_test.dart",
+          "test_locator": "favorites $mode",
+          "assertions": "No car card and one recovery button; action after fixture recovery restores saved car. Does not itself assert distinct wording.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "loading": {
+          "source_test": "test/comparison_polish_test.dart",
+          "test_locator": "state gap favorites delayed loading",
+          "assertions": "Blocked read displays progress without car or recovery button; completed empty response removes progress and offers recovery.",
+          "scope": "Arabic/light controlled fixture; broader locale/theme matrices remain separate.",
+          "result_log": "tool/ui_review_artifacts/eight_state_full.txt",
+          "native_revision": "eight_state_current_revision"
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "SearchTab",
+      "source": "lib/main.dart",
+      "source_line": 5735,
+      "component_sha256": "d9fae757a215c8605b3d760739214a237ed3877f086da1c9907961374e055b9c",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "request_search_chip_revision",
+        "discovery_completion_revision"
+      ],
+      "test_locators": [
+        "test/arabic_text_integrity_test.dart",
+        "test/dark_mode_test.dart",
+        "test/locale_filter_regression_test.dart",
+        "test/ui_polish_test.dart",
+        "test/home_search_box_test.dart",
+        "test/settings_history_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/market_tab_test.dart",
+        "test/search_discovery_polish_test.dart",
+        "test/search_alert_save_polish_test.dart"
+      ],
+      "acceptance_status": "current_discovery_named_states_and_layout_scope_reconciled; whole_app_completion_unproven",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "error": {
+          "source_test": "test/search_discovery_polish_test.dart",
+          "test": "Search recovery ${locale.code} dark=$dark failed then empty",
+          "assertions": "searchFailed true; no false no-match text.",
+          "scope": "ar/ku/en,light/dark at1.6; source fixture progresses error-to-empty-to-result.",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Inspected existing discovery fixtures unchanged since the full1506-test pass; subsequent additions affect other fixtures only."
+        },
+        "empty": {
+          "source_test": "test/search_discovery_polish_test.dart",
+          "test": "Search recovery ${locale.code} dark=$dark failed then empty",
+          "assertions": "Retry removes failure and displays search_no_matches.",
+          "scope": "ar/ku/en,light/dark at1.6; source fixture progresses error-to-empty-to-result.",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Inspected existing discovery fixtures unchanged since the full1506-test pass; subsequent additions affect other fixtures only."
+        },
+        "populated": {
+          "source_test": "test/search_discovery_polish_test.dart",
+          "test": "Search recovery ${locale.code} dark=$dark failed then empty",
+          "assertions": "Subsequent query yields audit-result CarCard and no no-match text.",
+          "scope": "ar/ku/en,light/dark at1.6; source fixture progresses error-to-empty-to-result.",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Inspected existing discovery fixtures unchanged since the full1506-test pass; subsequent additions affect other fixtures only."
+        },
+        "loading": {
+          "source_test": "test/search_discovery_polish_test.dart",
+          "test": "Search delayed query ${locale.code} dark=$dark enlarged",
+          "assertions": "Pending query shows spinner, no empty/error; completed empty response removes spinner and shows no matches.",
+          "scope": "ar/ku/en,light/dark at1.6",
+          "native_revision": "discovery_loading_current_revision"
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "AddCarTab",
+      "source": "lib/main.dart",
+      "source_line": 6341,
+      "component_sha256": "061d1a80037f0a6b8bae168ee284d0c36eb65636035f1463b14339e7cf3019d3",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "not_page_level",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Immediately usable local draft form. Empty photos, validation, location lookup, picker/preview, upload/publish pending/failure/success and optional price estimates are independent inline/action states.",
+      "revision_evidence": [
+        "add_car_current_revision"
+      ],
+      "test_locators": [
+        "test/form_polish_test.dart",
+        "test/add_car_submission_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/market_tab_test.dart"
+      ],
+      "acceptance_status": "revision_scoped_current_fonts_and_mocked_states_reviewed; broad_state_and_staging_reconciliation_open",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/add_car_submission_polish_test.dart",
+          "test_locator": "enlarged failed submission and retained photo",
+          "assertions": "Entered-script direction preserves editing value; failed submission retains draft/photo.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "MyAdsPage",
+      "source": "lib/main.dart",
+      "source_line": 7501,
+      "component_sha256": "de87ad86c3107e308b8059fcaf0de92016449fa70bbe9b53c47564a8707f0523",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "my_ads_session_revision",
+        "owned_editor_direction_revision",
+        "list_loading_current_revision"
+      ],
+      "test_locators": [
+        "test/state_polish_test.dart",
+        "test/vehicle_decisions_polish_test.dart",
+        "test/owned_vehicle_polish_test.dart",
+        "test/kurdish_full_ui_test.dart"
+      ],
+      "acceptance_status": "list_recovery_and_private_routes_reviewed; owned_editor_direction_density_and_keyboard_followup_resolved",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MyAdsPage: delayed read shows loading before empty",
+          "assertions": "Blocked read shows progress with no false empty/error; completion replaces progress with empty feedback.",
+          "native_revision": "list_loading_current_revision",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "error": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MyAdsPage: failure retry becomes successful empty state",
+          "assertions": "Failed table read gives localized error without internal diagnostics; retry performs a new read and removes error.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "empty": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MyAdsPage: failure retry becomes successful empty state",
+          "assertions": "Successful empty response shows this route-specific empty message.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "populated": {
+          "source_test": "test/owned_vehicle_polish_test.dart",
+          "test": "owned vehicles ${locale.code} dark=$dark enlarged populated and editor",
+          "assertions": "Land Cruiser listing and grouped amounts; opens editor",
+          "scope": "All3 locales/both themes at each suite enlarged-text viewport; direct content/layout assertions, not a claim of live deployed data.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        }
+      },
+      "native_populated_evidence_checks": [
+        {
+          "screen": "MyAdsPage",
+          "report": "tool/ui_review_artifacts/my_ads_current_android.json",
+          "accepted_suite_only": "owned",
+          "component_matches": true,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        },
+        {
+          "screen": "MyAdsPage",
+          "report": "tool/ui_review_artifacts/my_ads_current_ios.json",
+          "accepted_suite_only": "owned",
+          "component_matches": true,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        }
+      ],
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "ManageShowroomPage",
+      "source": "lib/main.dart",
+      "source_line": 7746,
+      "component_sha256": "82aa72bf842749ae49744ed904cc799cb3504c36a2485ef72f26cedf9cd78b52",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "not_page_level",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Editor loads an existing or new showroom draft. Missing row means a usable blank form; save validation/pending/error/success are action states.",
+      "revision_evidence": [
+        "showroom_recovery_revision",
+        "showroom_compact_current_revision"
+      ],
+      "test_locators": [
+        "test/form_polish_test.dart",
+        "test/showroom_recovery_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart"
+      ],
+      "acceptance_status": "compact_form_direction_and_recovery_host_native_reviewed; deployed_save_unverified",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/showroom_recovery_test.dart",
+          "test_locator": "showroom recovery layout",
+          "assertions": "Failed save acknowledgement retains city draft and visible save error in compact form.",
+          "result_log": "tool/ui_review_artifacts/remaining_state_proof.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "error": {
+          "source_test": "test/showroom_recovery_test.dart",
+          "test_locator": "failed load blocks editing and retries",
+          "assertions": "Load error hides inputs/private diagnostics; retry restores five inputs.",
+          "result_log": "tool/ui_review_artifacts/remaining_state_proof.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "loading": {
+          "source_test": "test/showroom_recovery_test.dart",
+          "test_locator": "state gap showroom delayed loading",
+          "assertions": "Blocked read displays progress and no editable fields; completion restores five fields.",
+          "scope": "Arabic/light controlled fixture; broader locale/theme matrices remain separate.",
+          "result_log": "tool/ui_review_artifacts/eight_state_full.txt",
+          "native_revision": "eight_state_current_revision"
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "SellerProfilePage",
+      "source": "lib/main.dart",
+      "source_line": 8049,
+      "component_sha256": "90e78b40b71d48799ec1837c449c2b6a363084aad62c5c06d51a81de4d90d966",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "not_page_level",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Profile loads asynchronously; missing showroom, no cars, no offers and no reviews are independent empty subsections rather than a blank entire profile.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/arabic_text_integrity_test.dart",
+        "test/seller_profile_polish_test.dart",
+        "test/follows_polish_test.dart"
+      ],
+      "acceptance_status": "current_fonts_profile_owner_offers_rating_recovery_and_session_mocked_cases_reviewed",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/seller_profile_polish_test.dart",
+          "test": "initial delayed seller read shows loading before profile",
+          "assertions": "Spinner, no premature header/error; completion yields header.",
+          "result_log": "tool/ui_review_artifacts/initial_loading_host.txt",
+          "native_revision": "initial_loading_current_revision"
+        },
+        "error": {
+          "source_test": "test/seller_profile_polish_test.dart",
+          "test": "${locale.code} seller load failure retries into empty profile",
+          "assertions": "Load error masks private diagnostic; retry yields header and scrollable no-reviews subsection.",
+          "result_log": "tool/ui_review_artifacts/initial_loading_host.txt"
+        },
+        "populated": {
+          "source_test": "test/seller_profile_polish_test.dart",
+          "test_locator": "${locale.code} seller profile populated own=$own dark=$dark",
+          "assertions": "Header,verified state,Baghdad and one-listing label; owner offer title scrolls into hit-testable view.",
+          "scope": "Public/owner,ar/ku/en,both themes at1.6.",
+          "result_log": "tool/ui_review_artifacts/initial_loading_host.txt"
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "MySentOffersPage",
+      "source": "lib/main.dart",
+      "source_line": 8634,
+      "component_sha256": "44f79dfd91cba96d3c34cbf6ff899bef6c8a527b75e20d5d3638ef6927bd2771",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "list_loading_current_revision"
+      ],
+      "test_locators": [
+        "test/state_polish_test.dart",
+        "test/activity_polish_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance_status": "current_fonts_and_mocked_feed_session_states_reviewed_staging_unverified",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MySentOffersPage: delayed read shows loading before empty",
+          "assertions": "Blocked read shows progress with no false empty/error; completion replaces progress with empty feedback.",
+          "native_revision": "list_loading_current_revision",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "error": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MySentOffersPage: failure retry becomes successful empty state",
+          "assertions": "Failed table read gives localized error without internal diagnostics; retry performs a new read and removes error.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "empty": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MySentOffersPage: failure retry becomes successful empty state",
+          "assertions": "Successful empty response shows this route-specific empty message.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "populated": {
+          "source_test": "test/activity_polish_test.dart",
+          "test": "${locale.code} sent offers $brightness populated large text",
+          "assertions": "Grouped25000 amount and accepted status",
+          "scope": "All3 locales/both themes at each suite enlarged-text viewport; direct content/layout assertions, not a claim of live deployed data.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        }
+      },
+      "native_populated_evidence_checks": [
+        {
+          "screen": "MySentOffersPage",
+          "report": "tool/ui_review_artifacts/account_feeds_android.json",
+          "accepted_suite_only": "activity",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        },
+        {
+          "screen": "MySentOffersPage",
+          "report": "tool/ui_review_artifacts/account_feeds_ios.json",
+          "accepted_suite_only": "activity",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        }
+      ],
+      "native_populated_current_status": "feed_populated_current_revision: component/font identity verified and ar-light/ku-dark enlarged-text populated captures reviewed",
+      "current_populated_native_reports": [
+        "tool/ui_review_artifacts/feed_populated_current_android.json",
+        "tool/ui_review_artifacts/feed_populated_current_ios.json"
+      ],
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "CarOfferChatPage",
+      "source": "lib/main.dart",
+      "source_line": 8816,
+      "component_sha256": "450c90c5e5e3646082a2684f6ec77bddf44c30c0f158c53c9a73ae6a012836b0",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/seller_profile_polish_test.dart",
+        "test/seller_activity_polish_test.dart",
+        "test/activity_polish_test.dart",
+        "test/chat_polish_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance_status": "current_fonts_chat_native_keyboard_and_local_session_cases_reviewed_staging_unverified",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/chat_polish_test.dart",
+          "test": "initial delayed chat read shows loading before messages",
+          "assertions": "Spinner with no empty/error feedback; completion yields message and removes spinner.",
+          "result_log": "tool/ui_review_artifacts/initial_loading_host.txt",
+          "native_revision": "initial_loading_current_revision"
+        },
+        "error": {
+          "source_test": "test/chat_polish_test.dart",
+          "test": "chat error has localized retry and masks diagnostics",
+          "assertions": "chat_load_failed shown without Private; retry restores message.",
+          "result_log": "tool/ui_review_artifacts/initial_loading_host.txt"
+        },
+        "populated": {
+          "source_test": "test/chat_polish_test.dart",
+          "test": "${locale.code} chat populated $brightness narrow large text",
+          "assertions": "Existing message bubble/layout matrix; exact populated scope retains seller_chat_revision limits.",
+          "result_log": "tool/ui_review_artifacts/initial_loading_host.txt"
+        },
+        "empty": {
+          "source_test": "test/chat_polish_test.dart",
+          "test_locator": "state gap chat successful empty read",
+          "assertions": "Successful zero-message response shows chat_start without loading/error.",
+          "scope": "Arabic/light controlled fixture; broader locale/theme matrices remain separate.",
+          "result_log": "tool/ui_review_artifacts/eight_state_full.txt",
+          "native_revision": "eight_state_current_revision"
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "AdminAdsManagementPage",
+      "source": "lib/main.dart",
+      "source_line": 9308,
+      "component_sha256": "0ac5cd637515cfd4ec733838e970d5ef0a5bf8dbc4814724791fad9477ce164d",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/admin_ads_polish_test.dart"
+      ],
+      "acceptance_status": "current_fonts_and_local_fixture_states_reviewed_staging_unverified",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/admin_ads_polish_test.dart",
+          "test": "initial delayed admin access shows loading before listings",
+          "assertions": "Spinner before access completion; no false admin-only state or premature listing read; then target title.",
+          "result_log": "tool/ui_review_artifacts/initial_loading_host.txt",
+          "native_revision": "initial_loading_current_revision"
+        },
+        "error": {
+          "source_test": "test/admin_ads_polish_test.dart",
+          "test": "one failed table shows retry while successful sections remain",
+          "assertions": "Partial table failure retains successful sections with retry.",
+          "result_log": "tool/ui_review_artifacts/initial_loading_host.txt"
+        },
+        "populated": {
+          "source_test": "test/admin_ads_polish_test.dart",
+          "test": "${locale.code} admin ads populated $brightness large text",
+          "assertions": "Target listing title and delete dialog/cancel are available; no delete on cancel.",
+          "result_log": "tool/ui_review_artifacts/initial_loading_host.txt"
+        },
+        "empty": {
+          "source_test": "test/admin_ads_polish_test.dart",
+          "test_locator": "state gap admin successful empty tables",
+          "assertions": "All three tables read as empty; no delete controls, access-denial or read-error feedback.",
+          "scope": "Arabic/light controlled fixture; broader locale/theme matrices remain separate.",
+          "result_log": "tool/ui_review_artifacts/eight_state_full.txt",
+          "native_revision": "eight_state_current_revision"
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "AdminDashboardPage",
+      "source": "lib/main.dart",
+      "source_line": 9636,
+      "component_sha256": "a23ae0b7fe01f3a8f35c1603b81160f315cfb042d157a52b18cd43ea05f23f7c",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "reports_session_revision",
+        "business_moderation_session_revision",
+        "list_loading_current_revision"
+      ],
+      "test_locators": [
+        "test/state_polish_test.dart",
+        "test/reports_polish_test.dart"
+      ],
+      "acceptance_status": "revision_scoped_current_font_and_mocked_state_evidence_recorded; staging_and_full_state_reconciliation_open",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "AdminDashboardPage: delayed read shows loading before empty",
+          "assertions": "Blocked read shows progress with no false empty/error; completion replaces progress with empty feedback.",
+          "native_revision": "list_loading_current_revision",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "error": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "AdminDashboardPage: failure retry becomes successful empty state",
+          "assertions": "Failed table read gives localized error without internal diagnostics; retry performs a new read and removes error.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "empty": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "AdminDashboardPage: failure retry becomes successful empty state",
+          "assertions": "Successful empty response shows this route-specific empty message.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "populated": {
+          "source_test": "test/reports_polish_test.dart",
+          "test": "$locale reports dark=$dark large text",
+          "assertions": "Report title/reason and reviewed status; content direction and readable time",
+          "scope": "All3 locales/both themes at each suite enlarged-text viewport; direct content/layout assertions, not a claim of live deployed data.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        }
+      },
+      "native_populated_evidence_checks": [
+        {
+          "screen": "AdminDashboardPage",
+          "report": "tool/ui_review_artifacts/reports_session_android.json",
+          "accepted_suite_only": "reports",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        },
+        {
+          "screen": "AdminDashboardPage",
+          "report": "tool/ui_review_artifacts/reports_session_ios.json",
+          "accepted_suite_only": "reports",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        }
+      ],
+      "native_populated_current_status": "feed_populated_current_revision: component/font identity verified and ar-light/ku-dark enlarged-text populated captures reviewed",
+      "current_populated_native_reports": [
+        "tool/ui_review_artifacts/feed_populated_current_android.json",
+        "tool/ui_review_artifacts/feed_populated_current_ios.json"
+      ],
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "AdminBusinessAdsPage",
+      "source": "lib/main.dart",
+      "source_line": 10147,
+      "component_sha256": "450b29c33e90271d0428aca01d7a5c3d51d63fbb5616b8d2b96d6a0b3968126f",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "business_moderation_session_revision",
+        "list_loading_current_revision"
+      ],
+      "test_locators": [
+        "test/state_polish_test.dart",
+        "test/business_admin_polish_test.dart"
+      ],
+      "acceptance_status": "revision_scoped_current_font_and_mocked_state_evidence_recorded; staging_and_full_state_reconciliation_open",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "AdminBusinessAdsPage: delayed read shows loading before empty",
+          "assertions": "Blocked read shows progress with no false empty/error; completion replaces progress with empty feedback.",
+          "native_revision": "list_loading_current_revision",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "error": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "AdminBusinessAdsPage: failure retry becomes successful empty state",
+          "assertions": "Failed table read gives localized error without internal diagnostics; retry performs a new read and removes error.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "empty": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "AdminBusinessAdsPage: failure retry becomes successful empty state",
+          "assertions": "Successful empty response shows this route-specific empty message.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "populated": {
+          "source_test": "test/business_admin_polish_test.dart",
+          "test": "$locale business moderation dark=$dark large text",
+          "assertions": "Long business name follows content direction and approval actions remain reachable",
+          "scope": "All3 locales/both themes at each suite enlarged-text viewport; direct content/layout assertions, not a claim of live deployed data.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        }
+      },
+      "native_populated_evidence_checks": [
+        {
+          "screen": "AdminBusinessAdsPage",
+          "report": "tool/ui_review_artifacts/business_moderation_session_android.json",
+          "accepted_suite_only": "moderation",
+          "component_matches": true,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        },
+        {
+          "screen": "AdminBusinessAdsPage",
+          "report": "tool/ui_review_artifacts/business_moderation_session_ios.json",
+          "accepted_suite_only": "moderation",
+          "component_matches": true,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        }
+      ],
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "ActivityNotificationsPage",
+      "source": "lib/main.dart",
+      "source_line": 10618,
+      "component_sha256": "062d888f0aa719d5e41386e68847f4b625522eb7a16085d25b388a76046f0308",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "list_loading_current_revision"
+      ],
+      "test_locators": [
+        "test/state_polish_test.dart",
+        "test/account_polish_test.dart",
+        "test/activity_polish_test.dart",
+        "test/ui_probe_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance_status": "current_fonts_and_mocked_feed_session_states_reviewed_staging_unverified",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "ActivityNotificationsPage: delayed read shows loading before empty",
+          "assertions": "Blocked read shows progress with no false empty/error; completion replaces progress with empty feedback.",
+          "native_revision": "list_loading_current_revision",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "error": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "ActivityNotificationsPage: failure retry becomes successful empty state",
+          "assertions": "Failed table read gives localized error without internal diagnostics; retry performs a new read and removes error.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "empty": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "ActivityNotificationsPage: failure retry becomes successful empty state",
+          "assertions": "Successful empty response shows this route-specific empty message.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "populated": {
+          "source_test": "test/activity_polish_test.dart",
+          "test": "${locale.code} activity $brightness populated large text",
+          "assertions": "Unread notification and disclosure action",
+          "scope": "All3 locales/both themes at each suite enlarged-text viewport; direct content/layout assertions, not a claim of live deployed data.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        }
+      },
+      "native_populated_evidence_checks": [
+        {
+          "screen": "ActivityNotificationsPage",
+          "report": "tool/ui_review_artifacts/account_feeds_android.json",
+          "accepted_suite_only": "activity",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        },
+        {
+          "screen": "ActivityNotificationsPage",
+          "report": "tool/ui_review_artifacts/account_feeds_ios.json",
+          "accepted_suite_only": "activity",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        }
+      ],
+      "native_populated_current_status": "feed_populated_current_revision: component/font identity verified and ar-light/ku-dark enlarged-text populated captures reviewed",
+      "current_populated_native_reports": [
+        "tool/ui_review_artifacts/feed_populated_current_android.json",
+        "tool/ui_review_artifacts/feed_populated_current_ios.json"
+      ],
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "AlertsPage",
+      "source": "lib/main.dart",
+      "source_line": 10826,
+      "component_sha256": "bf651dee6b19e3c7782e9fe69a416122ea4c03371fa6311815ec30d640158020",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "list_loading_current_revision"
+      ],
+      "test_locators": [
+        "test/state_polish_test.dart",
+        "test/alerts_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance_status": "current_fonts_and_mocked_feed_session_states_reviewed_staging_unverified",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "AlertsPage: delayed read shows loading before empty",
+          "assertions": "Blocked read shows progress with no false empty/error; completion replaces progress with empty feedback.",
+          "native_revision": "list_loading_current_revision",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "error": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "AlertsPage: failure retry becomes successful empty state",
+          "assertions": "Failed table read gives localized error without internal diagnostics; retry performs a new read and removes error.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "empty": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "AlertsPage: failure retry becomes successful empty state",
+          "assertions": "Successful empty response shows this route-specific empty message.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "populated": {
+          "source_test": "test/alerts_polish_test.dart",
+          "test": "$locale alerts dark=$dark large text",
+          "assertions": "One notification tile, unread state and USD amount",
+          "scope": "All3 locales/both themes at each suite enlarged-text viewport; direct content/layout assertions, not a claim of live deployed data.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        }
+      },
+      "native_populated_evidence_checks": [
+        {
+          "screen": "AlertsPage",
+          "report": "tool/ui_review_artifacts/account_feeds_android.json",
+          "accepted_suite_only": "alerts",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        },
+        {
+          "screen": "AlertsPage",
+          "report": "tool/ui_review_artifacts/account_feeds_ios.json",
+          "accepted_suite_only": "alerts",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        }
+      ],
+      "native_populated_current_status": "feed_populated_current_revision: component/font identity verified and ar-light/ku-dark enlarged-text populated captures reviewed",
+      "current_populated_native_reports": [
+        "tool/ui_review_artifacts/feed_populated_current_android.json",
+        "tool/ui_review_artifacts/feed_populated_current_ios.json"
+      ],
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "UserProfilePage",
+      "source": "lib/main.dart",
+      "source_line": 11057,
+      "component_sha256": "9597650b5396d4c39b145a80e9691032b5bb2fa74a4dca72b03a317712bf6a64",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "not_page_level",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Authenticated profile read; no username row uses metadata/email/default-name fallback. Guest has a sign-in state, not an empty profile list.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/arabic_text_integrity_test.dart",
+        "test/account_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance_status": "current_fonts_native_static_matrix_and_host_recovery_reviewed_mocked_services",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/account_polish_test.dart",
+          "test": "Profile delayed read ${locale.code} dark=$dark",
+          "assertions": "Spinner visible; no profile greeting or load-error feedback while blocked; completes to greeting or error/retry.",
+          "scope": "ar/ku/en,light/dark; dark fixtures complete with error then retry.",
+          "result_log": "tool/ui_review_artifacts/profile_history_host.txt"
+        },
+        "error": {
+          "source_test": "test/account_polish_test.dart",
+          "test": "profile load retries and Favorites opens the saved-list screen",
+          "assertions": "Explicit error before retry, then saved-list navigation.",
+          "result_log": "tool/ui_review_artifacts/profile_history_host.txt"
+        },
+        "populated": {
+          "source_test": "test/account_polish_test.dart",
+          "test": "Profile delayed read ${locale.code} dark=$dark",
+          "assertions": "Localized greeting contains loaded username after completion/retry.",
+          "result_log": "tool/ui_review_artifacts/profile_history_host.txt"
+        }
+      },
+      "current_native_state_evidence": "profile_history_state_current_revision: all applicable page states except history cleared-empty (separate accepted confirmation evidence); transition assertion scope only",
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "MyFollowsPage",
+      "source": "lib/main.dart",
+      "source_line": 11280,
+      "component_sha256": "2bf46fa243e42e011300bfe799c9e639980d8522343560a5ea6620820dffd2aa",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "list_loading_current_revision"
+      ],
+      "test_locators": [
+        "test/state_polish_test.dart",
+        "test/follows_polish_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance_status": "current_fonts_and_mocked_feed_session_states_reviewed_staging_unverified",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MyFollowsPage: delayed read shows loading before empty",
+          "assertions": "Blocked read shows progress with no false empty/error; completion replaces progress with empty feedback.",
+          "native_revision": "list_loading_current_revision",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "error": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MyFollowsPage: failure retry becomes successful empty state",
+          "assertions": "Failed table read gives localized error without internal diagnostics; retry performs a new read and removes error.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "empty": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MyFollowsPage: failure retry becomes successful empty state",
+          "assertions": "Successful empty response shows this route-specific empty message.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "populated": {
+          "source_test": "test/follows_polish_test.dart",
+          "test": "$locale following dark=$dark large text",
+          "assertions": "Long showroom name wraps; missing name fallback; raw timestamp absent",
+          "scope": "All3 locales/both themes at each suite enlarged-text viewport; direct content/layout assertions, not a claim of live deployed data.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        }
+      },
+      "native_populated_evidence_checks": [
+        {
+          "screen": "MyFollowsPage",
+          "report": "tool/ui_review_artifacts/account_feeds_android.json",
+          "accepted_suite_only": "follows",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        },
+        {
+          "screen": "MyFollowsPage",
+          "report": "tool/ui_review_artifacts/account_feeds_ios.json",
+          "accepted_suite_only": "follows",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        }
+      ],
+      "native_populated_current_status": "feed_populated_current_revision: component/font identity verified and ar-light/ku-dark enlarged-text populated captures reviewed",
+      "current_populated_native_reports": [
+        "tool/ui_review_artifacts/feed_populated_current_android.json",
+        "tool/ui_review_artifacts/feed_populated_current_ios.json"
+      ],
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "MyMessagesPage",
+      "source": "lib/main.dart",
+      "source_line": 11491,
+      "component_sha256": "2b60110348d8df658f962e83fa1e27fd0f9b93a2d1da68674ce812f9f5e0f9a5",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "list_loading_current_revision"
+      ],
+      "test_locators": [
+        "test/state_polish_test.dart",
+        "test/account_polish_test.dart",
+        "test/seller_activity_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance_status": "current_fonts_and_mocked_feed_session_states_reviewed_staging_unverified",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MyMessagesPage: delayed read shows loading before empty",
+          "assertions": "Blocked read shows progress with no false empty/error; completion replaces progress with empty feedback.",
+          "native_revision": "list_loading_current_revision",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "error": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MyMessagesPage: failure retry becomes successful empty state",
+          "assertions": "Failed table read gives localized error without internal diagnostics; retry performs a new read and removes error.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "empty": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MyMessagesPage: failure retry becomes successful empty state",
+          "assertions": "Successful empty response shows this route-specific empty message.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "populated": {
+          "source_test": "test/seller_activity_polish_test.dart",
+          "test": "${locale.code} conversations $brightness populated large text",
+          "assertions": "Latest conversation message and grouped offer amount",
+          "scope": "All3 locales/both themes at each suite enlarged-text viewport; direct content/layout assertions, not a claim of live deployed data.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        }
+      },
+      "native_populated_evidence_checks": [
+        {
+          "screen": "MyMessagesPage",
+          "report": "tool/ui_review_artifacts/account_feeds_android.json",
+          "accepted_suite_only": "seller",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        },
+        {
+          "screen": "MyMessagesPage",
+          "report": "tool/ui_review_artifacts/account_feeds_ios.json",
+          "accepted_suite_only": "seller",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        }
+      ],
+      "native_populated_current_status": "feed_populated_current_revision: component/font identity verified and ar-light/ku-dark enlarged-text populated captures reviewed",
+      "current_populated_native_reports": [
+        "tool/ui_review_artifacts/feed_populated_current_android.json",
+        "tool/ui_review_artifacts/feed_populated_current_ios.json"
+      ],
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "MyReviewsPage",
+      "source": "lib/main.dart",
+      "source_line": 11645,
+      "component_sha256": "d02020f0e8a512f49deb1eb3cc1b554caec5080c47b7a7125aac1e1d8e85ff96",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "list_loading_current_revision"
+      ],
+      "test_locators": [
+        "test/state_polish_test.dart",
+        "test/seller_activity_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/account_feed_session_test.dart"
+      ],
+      "acceptance_status": "current_fonts_and_mocked_feed_session_states_reviewed_staging_unverified",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MyReviewsPage: delayed read shows loading before empty",
+          "assertions": "Blocked read shows progress with no false empty/error; completion replaces progress with empty feedback.",
+          "native_revision": "list_loading_current_revision",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "error": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MyReviewsPage: failure retry becomes successful empty state",
+          "assertions": "Failed table read gives localized error without internal diagnostics; retry performs a new read and removes error.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "empty": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "MyReviewsPage: failure retry becomes successful empty state",
+          "assertions": "Successful empty response shows this route-specific empty message.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "populated": {
+          "source_test": "test/seller_activity_polish_test.dart",
+          "test": "${locale.code} reviews $brightness populated large text",
+          "assertions": "Review aggregate4.0/5",
+          "scope": "All3 locales/both themes at each suite enlarged-text viewport; direct content/layout assertions, not a claim of live deployed data.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        }
+      },
+      "native_populated_evidence_checks": [
+        {
+          "screen": "MyReviewsPage",
+          "report": "tool/ui_review_artifacts/account_feeds_android.json",
+          "accepted_suite_only": "seller",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        },
+        {
+          "screen": "MyReviewsPage",
+          "report": "tool/ui_review_artifacts/account_feeds_ios.json",
+          "accepted_suite_only": "seller",
+          "component_matches": false,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        }
+      ],
+      "native_populated_current_status": "feed_populated_current_revision: component/font identity verified and ar-light/ku-dark enlarged-text populated captures reviewed",
+      "current_populated_native_reports": [
+        "tool/ui_review_artifacts/feed_populated_current_android.json",
+        "tool/ui_review_artifacts/feed_populated_current_ios.json"
+      ],
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "SettingsPage",
+      "source": "lib/main.dart",
+      "source_line": 11840,
+      "component_sha256": "b5a2cdec4c39613194e70d19892eebaf6f14c3b9ae4faa81e8845ea93bf0703a",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "not_page_level",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Preferences read is asynchronous; defaults represent missing values. Pending writes are per-switch action states; there is no empty-settings page.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/arabic_text_integrity_test.dart",
+        "test/about_page_test.dart",
+        "test/dark_mode_test.dart",
+        "test/ui_polish_test.dart",
+        "test/settings_history_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart"
+      ],
+      "acceptance_status": "current_fonts_native_static_matrix_and_host_recovery_reviewed_mocked_services",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/settings_history_polish_test.dart",
+          "test": "settings waits for stored preferences before allowing edits",
+          "assertions": "Linear progress; switches disabled before read resolves; stored email value applied; progress removed and switches enabled.",
+          "result_log": "tool/ui_review_artifacts/profile_history_host.txt"
+        },
+        "error": {
+          "source_test": "test/settings_history_polish_test.dart",
+          "test": "settings persistence and storage failures have feedback",
+          "assertions": "Read failure retries; failed write restores saved value and leaves action available; private diagnostics absent.",
+          "result_log": "tool/ui_review_artifacts/profile_history_host.txt"
+        },
+        "populated": {
+          "source_test": "test/settings_history_polish_test.dart",
+          "test": "settings persistence and storage failures have feedback",
+          "assertions": "Successful switch write persists false value.",
+          "result_log": "tool/ui_review_artifacts/profile_history_host.txt"
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "AboutPage",
+      "source": "lib/main.dart",
+      "source_line": 12063,
+      "component_sha256": "ff10ebf07347421c63d7a4eccab1ca18f3dcf43ae91e33498c70ef5176350ec0",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "not_page_level",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Static app information is immediately available. PackageInfo metadata loads independently; missing/failed metadata uses an explicit unavailable value.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/arabic_text_integrity_test.dart",
+        "test/about_page_test.dart",
+        "test/support_legal_polish_test.dart",
+        "test/ui_probe_test.dart"
+      ],
+      "acceptance_status": "current_fonts_native_static_matrix_and_host_recovery_reviewed_mocked_services",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/about_page_test.dart",
+          "test_locator": "يُقرآن من PackageInfo لا من نصّ مكتوب",
+          "assertions": "Version/build from supplied metadata; separate failure case asserts unavailable fallback.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        }
+      },
+      "unreconciled_page_states": [],
+      "current_native_visual_revision": "completion_visual_refresh_revision; exact revised capture boundaries apply"
+    },
+    {
+      "screen": "SupportCenterPage",
+      "source": "lib/main.dart",
+      "source_line": 12335,
+      "component_sha256": "d007453d04b2b32929747bfb49595097ecf34c1c0ca68b02e141d0b725d55dea",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "not_page_level",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Static localized FAQ and contact/report entry points. Contact sheet, report editor, share failure and external-app handoff belong to action states.",
+      "revision_evidence": [
+        "form_direction_revision"
+      ],
+      "test_locators": [
+        "test/about_page_test.dart",
+        "test/dark_mode_test.dart",
+        "test/account_polish_test.dart",
+        "test/support_legal_polish_test.dart",
+        "test/ui_polish_test.dart",
+        "test/wallet_payment_polish_test.dart",
+        "test/support_contact_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart"
+      ],
+      "acceptance_status": "current_labels_content_direction_and_keyboard_verified_on_isolated_ios_qa; original_ios_keyboard_environment_unresolved",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/support_legal_polish_test.dart",
+          "test_locator": "support $brightness large text",
+          "assertions": "Localized page mounts without exceptions; contact/report action coverage remains separately scoped.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "AccountTab",
+      "source": "lib/main.dart",
+      "source_line": 12803,
+      "component_sha256": "311b8c402b323f519adaf08512de9798c4c256d8801e580994c83f5abb623912",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "not_page_level",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Guest sign-in/signup and signed-in account are primary states. Auth-option preparation, verification, username editing, message counts and auth failures are inline/modal actions, not a page-level feed empty state.",
+      "revision_evidence": [
+        "form_direction_revision",
+        "username_editor_current_revision",
+        "message_hub_current_revision"
+      ],
+      "test_locators": [
+        "test/arabic_text_integrity_test.dart",
+        "test/dark_mode_test.dart",
+        "test/locale_wiring_test.dart",
+        "test/account_polish_test.dart",
+        "test/ui_polish_test.dart",
+        "test/settings_history_polish_test.dart",
+        "test/kurdish_full_ui_test.dart",
+        "test/ui_probe_test.dart",
+        "test/market_tab_test.dart"
+      ],
+      "acceptance_status": "current_labels_content_direction_and_keyboard_verified_on_isolated_ios_qa; original_ios_keyboard_environment_unresolved",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/account_polish_test.dart",
+          "test_locator": "account $mode dark=",
+          "assertions": "Sign-in/signup/signed-in/profile matrix; signup fields and scrolling checked; dedicated validation/retry/OTP cases separate.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        }
+      },
+      "unreconciled_page_states": [],
+      "current_native_visual_revision": "completion_visual_refresh_revision; exact revised capture boundaries apply",
+      "display_name_direction_test": {
+        "source_test": "test/account_polish_test.dart",
+        "test_locator": "account header direction ${locale.code} latin=$latin",
+        "assertions": "Long Latin and Arabic names follow their script in ar/ku/en interfaces.",
+        "native_reports": [
+          "tool/ui_review_artifacts/account_name_current_android.json",
+          "tool/ui_review_artifacts/account_name_current_ios.json"
+        ]
+      }
+    },
+    {
+      "screen": "FinesPage",
+      "source": "lib/main.dart",
+      "source_line": 14097,
+      "component_sha256": "99a9f7a5ab9fe3f49918c78329e19d995d37fbbc56d8ddb9b9bacf72a571aeea",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "not_page_level",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Static external-service choices. Link-launch failure is action feedback; the app does not load traffic-fine records.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/ui_polish_test.dart",
+        "test/settings_history_polish_test.dart"
+      ],
+      "acceptance_status": "current_fonts_native_static_matrix_and_host_recovery_reviewed_mocked_services",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/settings_history_polish_test.dart",
+          "test_locator": "fines link failure stays localized",
+          "assertions": "Launcher receives configured URL; false result yields localized feedback without route failure.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        }
+      },
+      "unreconciled_page_states": [],
+      "current_native_visual_revision": "completion_visual_refresh_revision; exact revised capture boundaries apply"
+    },
+    {
+      "screen": "WalletTopUpPage",
+      "source": "lib/main.dart",
+      "source_line": 14211,
+      "component_sha256": "d4154744d937e7d246df8d93c17afaac356f5579190926fb0613f0fa13500da9",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Wallet configuration read; empty means no configured payment account. Receipt picker/upload and transaction submission have separate action states; guest state precedes loading.",
+      "revision_evidence": [
+        "wallet_session_revision",
+        "wallet_currency_revision"
+      ],
+      "test_locators": [
+        "test/wallet_payment_polish_test.dart"
+      ],
+      "acceptance_status": "revision_scoped_current_font_and_mocked_state_evidence_recorded; staging_and_full_state_reconciliation_open",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/wallet_payment_polish_test.dart",
+          "test_locator": "wallet $brightness large text",
+          "assertions": "Five LTR formatted IQD choices; final action reachable without layout exceptions.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "empty": {
+          "source_test": "test/wallet_payment_polish_test.dart",
+          "test_locator": "settings failure retries and missing configuration is distinct",
+          "assertions": "Failure shows error without no-account message; retry to missing config shows no-account message and disables submit.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "error": {
+          "source_test": "test/wallet_payment_polish_test.dart",
+          "test_locator": "settings failure retries and missing configuration is distinct",
+          "assertions": "Failure shows error without no-account message; retry to missing config shows no-account message and disables submit.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "loading": {
+          "source_test": "test/wallet_payment_polish_test.dart",
+          "test_locator": "state gap wallet delayed configuration",
+          "assertions": "Blocked configuration read shows loading text, no missing-account claim and disabled submission; completion removes loading.",
+          "scope": "Arabic/light controlled fixture; broader locale/theme matrices remain separate.",
+          "result_log": "tool/ui_review_artifacts/eight_state_full.txt",
+          "native_revision": "eight_state_current_revision"
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "WalletAdminReviewPage",
+      "source": "lib/main.dart",
+      "source_line": 14840,
+      "component_sha256": "9421f7e59fdc443ee66662a49fad29107a20ac4a9151bfad82e35f6206c394de",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "wallet_admin_session_revision",
+        "list_loading_current_revision"
+      ],
+      "test_locators": [
+        "test/state_polish_test.dart",
+        "test/wallet_review_polish_test.dart"
+      ],
+      "acceptance_status": "revision_scoped_current_font_and_mocked_state_evidence_recorded; staging_and_full_state_reconciliation_open",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "WalletAdminReviewPage: delayed read shows loading before empty",
+          "assertions": "Blocked read shows progress with no false empty/error; completion replaces progress with empty feedback.",
+          "native_revision": "list_loading_current_revision",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "error": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "WalletAdminReviewPage: failure retry becomes successful empty state",
+          "assertions": "Failed table read gives localized error without internal diagnostics; retry performs a new read and removes error.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "empty": {
+          "source_test": "test/state_polish_test.dart",
+          "test": "WalletAdminReviewPage: failure retry becomes successful empty state",
+          "assertions": "Successful empty response shows this route-specific empty message.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        },
+        "populated": {
+          "source_test": "test/wallet_review_polish_test.dart",
+          "test": "${locale.code} wallet review dark=$dark populated large text",
+          "assertions": "Formatted IQD amount, long requester direction, permission-aware query",
+          "scope": "All3 locales/both themes at each suite enlarged-text viewport; direct content/layout assertions, not a claim of live deployed data.",
+          "result_log": "tool/ui_review_artifacts/feed_state_crosswalk_host.txt"
+        }
+      },
+      "native_populated_evidence_checks": [
+        {
+          "screen": "WalletAdminReviewPage",
+          "report": "tool/ui_review_artifacts/wallet_admin_final_android.json",
+          "accepted_suite_only": "review",
+          "component_matches": true,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        },
+        {
+          "screen": "WalletAdminReviewPage",
+          "report": "tool/ui_review_artifacts/wallet_admin_final_ios.json",
+          "accepted_suite_only": "review",
+          "component_matches": true,
+          "fonts_match": true,
+          "scope": "Populated suite assertion/capture scope only; unrelated suites in the same report are not accepted by this check."
+        }
+      ],
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "SearchHistoryPage",
+      "source": "lib/main.dart",
+      "source_line": 15264,
+      "component_sha256": "e639dbc3c5909e84967d79dd5b4c7c03f2a3e1be8f700e6c60cfb8c97d0828dc",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/settings_history_polish_test.dart"
+      ],
+      "acceptance_status": "current_fonts_native_static_matrix_and_host_recovery_reviewed_mocked_services",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "loading": {
+          "source_test": "test/settings_history_polish_test.dart",
+          "test": "History delayed read ${locale.code} dark=$dark",
+          "assertions": "Progress visible with no history row or premature empty feedback.",
+          "result_log": "tool/ui_review_artifacts/profile_history_host.txt"
+        },
+        "error": {
+          "source_test": "test/settings_history_polish_test.dart",
+          "test": "History delayed read ${locale.code} dark=$dark",
+          "assertions": "Dark fixture delayed storage failure shows error without empty feedback; retry yields original row.",
+          "result_log": "tool/ui_review_artifacts/profile_history_host.txt"
+        },
+        "populated": {
+          "source_test": "test/settings_history_polish_test.dart",
+          "test": "History delayed read ${locale.code} dark=$dark",
+          "assertions": "Original newest query shown after completion/retry.",
+          "result_log": "tool/ui_review_artifacts/profile_history_host.txt"
+        },
+        "empty": {
+          "source_test": "test/settings_history_polish_test.dart",
+          "test": "${locale.code} history clear cancels, then confirms with persistent removal",
+          "assertions": "Cancel retains row; confirmed removal clears stored history and displays empty feedback.",
+          "scope": "ar/ku; isolated preferences",
+          "result_log": "tool/ui_review_artifacts/profile_history_host.txt"
+        }
+      },
+      "current_native_state_evidence": "profile_history_state_current_revision: all applicable page states except history cleared-empty (separate accepted confirmation evidence); transition assertion scope only",
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "PrivacyPolicyPage",
+      "source": "lib/main.dart",
+      "source_line": 15404,
+      "component_sha256": "7a95aae4fd0828d101ccc2177869d5beeb109e973353459625f3cd3011578ba5",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "not_page_level",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Bundled localized PolicyDocument; no remote query, asynchronous loader or empty collection.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/about_page_test.dart",
+        "test/support_legal_polish_test.dart"
+      ],
+      "acceptance_status": "current_fonts_native_static_matrix_and_host_recovery_reviewed_mocked_services",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/support_legal_polish_test.dart",
+          "test": "${locale.code} privacy $brightness large text",
+          "assertions": "10 bundled sections, localized update date, selectable text, footer scrolls into hit-testable view without exceptions.",
+          "scope": "ar/ku/en;light/dark; suite enlarged text",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Existing1506-test full pass; inspected fixture unchanged in subsequent profile/history additions. Native visual acceptance remains revision-scoped."
+        }
+      },
+      "unreconciled_page_states": [],
+      "current_native_visual_revision": "completion_visual_refresh_revision; exact revised capture boundaries apply"
+    },
+    {
+      "screen": "TermsOfUsePage",
+      "source": "lib/main.dart",
+      "source_line": 15432,
+      "component_sha256": "54279add5f10a9083f4cd64e8a0ed7d9dc94a3b089add4ee3bbe32a1867fef6e",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "not_page_level",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Bundled localized PolicyDocument; no remote query, asynchronous loader or empty collection.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/about_page_test.dart",
+        "test/support_legal_polish_test.dart"
+      ],
+      "acceptance_status": "current_fonts_native_static_matrix_and_host_recovery_reviewed_mocked_services",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/support_legal_polish_test.dart",
+          "test": "${locale.code} terms $brightness large text",
+          "assertions": "11 bundled sections, localized update date, selectable text, footer scrolls into hit-testable view without exceptions.",
+          "scope": "ar/ku/en;light/dark; suite enlarged text",
+          "result_log": "tool/ui_review_artifacts/market_session_full.txt",
+          "scope_boundary": "Existing1506-test full pass; inspected fixture unchanged in subsequent profile/history additions. Native visual acceptance remains revision-scoped."
+        }
+      },
+      "unreconciled_page_states": [],
+      "current_native_visual_revision": "completion_visual_refresh_revision; exact revised capture boundaries apply"
+    },
+    {
+      "screen": "BusinessAdsPage",
+      "source": "lib/main.dart",
+      "source_line": 15905,
+      "component_sha256": "1c4435f5692821c4b1362457e0df27a04ca8551148e1bc7c34beda34e749c9e9",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Asynchronous list/query with loading, failed read, successful empty and populated response. Search also has an idle state; role/session gates are additional states.",
+      "revision_evidence": [
+        "business_current_font_revision",
+        "business_retained_current_revision"
+      ],
+      "test_locators": [
+        "test/business_discovery_polish_test.dart",
+        "test/home_visible_polish_test.dart",
+        "test/locale_filter_regression_test.dart"
+      ],
+      "acceptance_status": "current_fonts_initial_and_retained_states_reviewed; broader_state_and_staging_reconciliation_open",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/business_discovery_polish_test.dart",
+          "test_locator": "Business discovery populated",
+          "assertions": "Loaded card content direction; card opens detail.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "loading": {
+          "source_test": "test/business_discovery_polish_test.dart",
+          "test_locator": "Business discovery $surface",
+          "assertions": "Blocked read shows progress.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "ar/ku/en,both themes at1.6; separate native revision scope retained."
+        },
+        "empty": {
+          "source_test": "test/business_discovery_polish_test.dart",
+          "test_locator": "Business discovery $surface",
+          "assertions": "Completed empty read displays no-business-ads message.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "ar/ku/en,both themes at1.6; separate native revision scope retained."
+        },
+        "error": {
+          "source_test": "test/business_discovery_polish_test.dart",
+          "test_locator": "Business discovery $surface",
+          "assertions": "Error masks diagnostics; retry restores recovered card.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "ar/ku/en,both themes at1.6; separate native revision scope retained."
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "BusinessAdDetailsPage",
+      "source": "lib/main.dart",
+      "source_line": 16165,
+      "component_sha256": "dec1dabc8cfff0ffb22f85d2d910694be399ea9199e96a061e2384d601c4d979",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "not_page_level",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Receives BusinessAdData from the caller; missing media/contact/hours use local fallback. View counters and share/contact actions are independent side effects.",
+      "revision_evidence": [],
+      "test_locators": [
+        "test/business_discovery_polish_test.dart",
+        "test/share_price_polish_test.dart",
+        "test/detail_polish_test.dart",
+        "test/business_admin_polish_test.dart"
+      ],
+      "acceptance_status": "current_fonts_initial_states_reviewed; remaining_state_and_staging_limits_retained",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/detail_polish_test.dart",
+          "test_locator": "business details dark=",
+          "assertions": "No-photo hero collapses, exactly one local view event, share available and content scrollable.",
+          "result_log": "tool/ui_review_artifacts/remaining_state_proof.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "CreateBusinessAdPage",
+      "source": "lib/main.dart",
+      "source_line": 16543,
+      "component_sha256": "36c442e704b7371eaeac56954c7f5520f3e67ef5a86383214af0bfa86c82c3f1",
+      "page_states": {
+        "loading": "applicable",
+        "empty": "applicable",
+        "error": "applicable",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Draft remains visible while package selector loads; selector may fail, contain no packages, or contain selectable packages. Picker/upload/submission and acknowledgement states are additional.",
+      "revision_evidence": [
+        "business_creation_current_review",
+        "business_form_redesign"
+      ],
+      "test_locators": [
+        "test/form_polish_test.dart",
+        "test/business_submission_polish_test.dart"
+      ],
+      "acceptance_status": "revision_scoped_current_fonts_and_mocked_states_reviewed; broad_state_and_staging_reconciliation_open",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/business_submission_polish_test.dart",
+          "test_locator": "Business package placement direction",
+          "assertions": "Compact form/package placements reached with content direction; layout review sends no upload/publication.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "empty": {
+          "source_test": "test/business_submission_polish_test.dart",
+          "test_locator": "Business package recovery",
+          "assertions": "Package failure retries to no-packages state, typed name retained and no publication request.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "error": {
+          "source_test": "test/business_submission_polish_test.dart",
+          "test_locator": "Business package recovery",
+          "assertions": "Package failure retries to no-packages state, typed name retained and no publication request.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        },
+        "loading": {
+          "source_test": "test/business_submission_polish_test.dart",
+          "test_locator": "state gap business delayed packages",
+          "assertions": "Blocked package read shows progress without no-packages claim; completion restores package selection without publication requests.",
+          "scope": "Arabic/light controlled fixture; broader locale/theme matrices remain separate.",
+          "result_log": "tool/ui_review_artifacts/eight_state_full.txt",
+          "native_revision": "eight_state_current_revision"
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "PaymentPage",
+      "source": "lib/main.dart",
+      "source_line": 17610,
+      "component_sha256": "1b91edafa0153eeb588acf5fccdeb95d60867d39b965450ce8e9daecaddc08d7",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "not_page_level",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Receives selected ad/package/price from caller and renders a local summary. Support/contact handoff is an action, not a page-level data fetch.",
+      "revision_evidence": [
+        "wallet_session_revision"
+      ],
+      "test_locators": [
+        "test/wallet_payment_polish_test.dart",
+        "test/business_submission_polish_test.dart"
+      ],
+      "acceptance_status": "revision_scoped_current_font_and_mocked_state_evidence_recorded; staging_and_full_state_reconciliation_open",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/wallet_payment_polish_test.dart",
+          "test_locator": "payment $brightness large text",
+          "assertions": "Manual steps and multiline USD/IQD summary match expected LTR text; final action reachable.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        }
+      },
+      "unreconciled_page_states": []
+    },
+    {
+      "screen": "MarketItemDetailsPage",
+      "source": "lib/market_images.dart",
+      "source_line": 685,
+      "component_sha256": "1293077389f57942120c72e36eab00adc3cbd802e8c49b683053bf884d030b13",
+      "page_states": {
+        "loading": "not_page_level",
+        "empty": "not_page_level",
+        "error": "not_page_level",
+        "populated": "applicable"
+      },
+      "applicability_reason": "Receives item data from the caller; missing media/specs use local fallback. Admin lookup, image editor and delete actions are independent session-scoped states.",
+      "revision_evidence": [
+        "market_detail_current_review",
+        "market_detail_session_current_revision"
+      ],
+      "test_locators": [
+        "test/seller_profile_polish_test.dart",
+        "test/market_details_polish_test.dart"
+      ],
+      "acceptance_status": "revision_scoped_current_fonts_and_mocked_states_reviewed; broad_state_and_staging_reconciliation_open",
+      "evidence_limit": "Test locators aid discovery; they are not independent state acceptance. Referenced revision assertion/capture scope and staging limits apply.",
+      "direct_host_state_evidence": {
+        "populated": {
+          "source_test": "test/market_details_polish_test.dart",
+          "test_locator": "Market detail",
+          "assertions": "Formatted price, untruncated entered title/content direction, enlarged long-category layout; decoded photo assertion native-only.",
+          "result_log": "tool/ui_review_artifacts/discovery_loading_full.txt",
+          "scope_boundary": "Exact fixture locale/theme/viewport only; live backend and native visual scope not inferred."
+        }
+      },
+      "unreconciled_page_states": []
+    }
+  ],
+  "additional_state_register": "tool/ui_modal_flow_crosswalk.json and revision-specific action/media/session records in tool/ui_completion_audit.json",
+  "remaining": "Match each applicable page state to direct current assertions and revision-scoped native/visual evidence. Native media entry points and deployed authorization/storage/payment limits remain explicit.",
+  "remaining_direct_assertion_gaps": []
+}

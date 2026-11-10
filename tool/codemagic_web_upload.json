@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-23",
+  "visibility": "private",
+  "scope": "clean web app source snapshot; original checkout/history untouched",
+  "web_build": "passed Flutter 3.47.7 release",
+  "analysis": "clean on upload snapshot",
+  "focused_tests": "14 passed; web frame widths and locale wiring",
+  "browser_review": "Published HTTPS page opened in Chrome; current MOTRI IQ Arabic Home, live listing photos, carousel and centered app navigation visually verified",
+  "codemagic": "first cloud build finished successfully; published to Codemagic Static Pages",
+  "web_zip": "/tmp/motri-iq-web-preview.zip",
+  "guide": "tool/codemagic_web_preview.md",
+  "application_id": "6adb4d088693820398aa5ece",
+  "workflow_id": "6adb4d088693820398aa5ecd",
+  "build_url": "https://codemagic.io/app/6adb4d088693820398aa5ece/build/6adb4d9c4a72334e32e46031",
+  "preview_verified": true,
+  "commit": "f1ea83aed39024bd9ae93d42b3bcb74e8e0615df",
+  "cloud_checks": [
+    "Flutter analyzer",
+    "Flutter test",
+    "stop build on test/analysis failure"
+  ],
+  "flutter": "3.47.7",
+  "platforms": [
+    "Web"
+  ],
+  "cloud_duration": "3m14s",
+  "cloud_artifact": "web-web.zip (15.72 MB)",
+  "cloud_build_command": "flutter build web (release is the Flutter web default)"
+}

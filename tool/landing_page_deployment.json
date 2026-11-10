@@ -1,0 +1,18 @@
+{
+  "url": "https://motri-iq.me-0eca.chatgpt.site/",
+  "project_id": "appgprj_6add25a9f9c48191b681ee0c2c2d6351",
+  "version_id": "appgprj_6add25a9f9c48191b681ee0c2c2d6351~appgver_fd0415bda76081918f0af06f060cd4fc",
+  "deployment_id": "appgdep_6adde84ef0ec81919648567183840514",
+  "commit_sha": "73b5a585763852ff44f462d5921539a463eeaab8",
+  "status": "succeeded",
+  "access": "public",
+  "languages": [
+    "ar",
+    "en"
+  ],
+  "review": "Arabic desktop and Arabic/English 390px phone layouts reviewed; document width equals viewport; zero broken images in reviewed page; FAQ expansion verified; JS syntax, bilingual text and local asset links checked; live revised page verified after fonts and hero loaded",
+  "app_url": "https://motri-iq-app.me-0eca.chatgpt.site/",
+  "references": "sites/motri-iq-landing/design-references.md",
+  "privacy_policy_url": "https://motri-iq.me-0eca.chatgpt.site/privacy/",
+  "ad_free_release": "1.0.1+5"
+}

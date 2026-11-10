@@ -1,0 +1,13 @@
+{
+  "site_url": "https://motri-iq-account-deletion.me-0eca.chatgpt.site",
+  "admin_url": "https://motri-iq-account-deletion.me-0eca.chatgpt.site/admin",
+  "project_id": "appgprj_6adcd8bdcc988191ba6dabfb9943b8ee",
+  "version_id": "appgprj_6adcd8bdcc988191ba6dabfb9943b8ee~appgver_a0827a0e76308191ad182004c58a5132",
+  "deployment_id": "appgdep_6adcdc2f048c8191aaef220b9fb62e0f",
+  "source_commit": "46d25ba3ec89bcd5fad7a9c58d4bd5da589de0bb",
+  "audience": "public form; server-authorized admin queue",
+  "deployment": "succeeded",
+  "verification": "Public form viewed; support-email ChatGPT sign-in opened administrator dashboard with empty request queue; local API positive/negative tests passed",
+  "actual_supabase_account_deletion": "not connected; operator must process and verify deletion externally",
+  "email_notifications": "not configured"
+}

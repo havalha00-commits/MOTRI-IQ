@@ -1,0 +1,104 @@
+name: motri_iq
+publish_to: 'none'
+version: 1.0.1+5
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # يُجلب مع `flutter` من الـSDK، ويوفّر `GlobalMaterialLocalizations`
+  # فتصبح_locales العربية والكردية مدعومة رسميًا بدل السقوط إلى الإنجليزية.
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  http: ^1.6.0
+  video_player: ^2.10.0
+  shared_preferences: ^2.5.3
+  supabase_flutter: ^2.17.2
+  image_picker: ^1.2.3
+  geolocator: ^14.0.3
+  url_launcher: ^6.3.2
+  share_plus: ^13.3.0
+  # تُقرأ منه `version` و`buildNumber` مباشرةً من إعدادات البناء، فتبقى
+  # صفحة «عن التطبيق» مطابقةً لـpubspec.yaml بلا رقم مكتوب يدويًا.
+  package_info_plus: ^10.2.1
+  # استخدامه في lib/plate_detector.dart للكشف عن لوحة السيارة ووضع شعار MOTRI IQ.
+  image: ^4.3.0
+  # لعرض شعارات الماركات بصيغة SVG
+  flutter_svg: ^2.0.10
+  material_symbols_icons: ^4.2960.0
+  flutter_secure_storage: ^11.2.0
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.14.0
+  # مطلوب لـ test/widget_test.dart ولـ include في analysis_options.yaml
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  # لتوحيد صور السيارات في tool/car_photos.dart (قصّ 4:3 + موازنة إضاءة).
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: MotriLatin
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Inter-ExtraBold.ttf
+          weight: 800
+    - family: MotriSans
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Cairo-ExtraBold.ttf
+          weight: 800
+    - family: MotriKurdish
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/NotoSansArabic-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/NotoSansArabic-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/NotoSansArabic-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/NotoSansArabic-ExtraBold.ttf
+          weight: 800
+
+
+  assets:
+    - assets/fonts/OFL-NotoSansArabic.txt
+    - assets/fonts/OFL-Cairo.txt
+    - assets/fonts/OFL-Inter.txt
+    - assets/logo/motri_iq_logo.png
+    - assets/logos/
+
+# توليد أيقونة التطبيق (Android + iOS + Web) من assets/icon/app_icon.png
+flutter_launcher_icons:
+  android: "ic_launcher"
+  ios: true
+  web:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+    background_color: "#0B0B0D"
+    theme_color: "#0B0B0D"
+  image_path: "assets/icon/app_icon.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
